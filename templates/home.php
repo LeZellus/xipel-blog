@@ -1,5 +1,8 @@
 <?php
-require '../src/DAO/DAO.php';
+
+require '../config/Autoloader.php';
+use \App\config\Autoloader;
+Autoloader::register();
 ?>
 
 <!DOCTYPE html>
