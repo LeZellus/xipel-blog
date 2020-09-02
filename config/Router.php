@@ -1,25 +1,16 @@
 <?php
 
-namespace App\config;
+namespace App\src\controller;
 
-use Exception;
-
-class Router
+class FrontController
 {
-  public function run()
+
+  public function __construct()
   {
-    try {
-      if (isset($_GET['route'])) {
-        if ($_GET['route'] === 'article') {
-          require '../templates/single.php';
-        } else {
-          echo 'page inconnue';
-        }
-      } else {
-        require '../templates/home.php';
-      }
-    } catch (Exception $e) {
-      echo 'Erreur';
-    }
+  }
+
+  public function home()
+  {
+    require '../templates/home.php';
   }
 }
