@@ -19,15 +19,15 @@ class Router
     try {
       if (isset($_GET['route'])) {
         if ($_GET['route'] === 'article') {
-          $this->frontController->article($_GET['articleId']);
+          print_r('pas d\'article pour le moment');
         } else {
-          echo 'page inconnue';
+          print_r('page inconnue');
         }
       } else {
         $this->frontController->home();
       }
     } catch (Exception $e) {
-      echo 'Erreur';
+      print_r('Erreur');
     }
   }
 }
