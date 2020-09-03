@@ -4,7 +4,7 @@ namespace App\src\controller;
 
 use App\src\model\View;
 
-class FrontController
+class FrontController extends Controller
 {
   public function __construct()
   {
