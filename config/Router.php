@@ -26,12 +26,10 @@ class Router
       if (isset($route)) {
         if ($route === 'article') {
           print_r('pas d\'article');
-        } else {
-          $this->errorController->errorNotFound();
         }
-      } else {
-        $this->frontController->home();
+        $this->errorController->errorNotFound();
       }
+      $this->frontController->home();
     } catch (Exception $e) {
       $this->errorController->errorServer();
     }
