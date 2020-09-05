@@ -4,12 +4,14 @@ namespace App\config;
 
 use App\src\controller\ErrorController;
 use App\src\controller\FrontController;
+use App\src\controller\BackController;
 use Exception;
 
 class Router
 {
   private $frontController;
   private $errorController;
+  private $backController;
   private $request;
 
   public function __construct()
@@ -17,6 +19,7 @@ class Router
     $this->request = new Request();
     $this->frontController = new FrontController();
     $this->errorController = new ErrorController();
+    $this->backController = new BackController();
   }
 
   public function run()
@@ -31,6 +34,12 @@ class Router
           $this->frontController->register($this->request->getPost());
         } elseif ($route === 'login') {
           $this->frontController->login($this->request->getPost());
+        } elseif ($route === 'profile') {
+          $this->backController->profile();
+        } elseif ($route === 'updatePassword') {
+          $this->backController->updatePassword($this->request->getPost());
+        } elseif ($route === 'logout') {
+          $this->backController->logout();
         } else {
           $this->errorController->errorNotFound();
         }
