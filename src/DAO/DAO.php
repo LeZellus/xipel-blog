@@ -5,7 +5,7 @@ namespace App\src\DAO;
 use PDO;
 use Exception;
 
-abstract class Database
+abstract class DAO
 {
   private $connection;
 
@@ -27,7 +27,7 @@ abstract class Database
       $this->connection = new PDO(DB_HOST, DB_USER, DB_PASS);
       $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       //On renvoie la connexion
-            return $this->connection;
+      return $this->connection;
     }
     //On lève une erreur si la connexion échoue
     catch (Exception $errorConnection) {
@@ -39,12 +39,10 @@ abstract class Database
   {
     if ($parameters) {
       $result = $this->checkConnection()->prepare($sql);
-      $result->setFetchMode(PDO::FETCH_CLASS, static::class);
       $result->execute($parameters);
       return $result;
     }
     $result = $this->checkConnection()->query($sql);
-    $result->setFetchMode(PDO::FETCH_CLASS, static::class);
     return $result;
   }
 }

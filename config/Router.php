@@ -22,14 +22,19 @@ class Router
   public function run()
   {
     $route = $this->request->getGet()->get('route');
+
     try {
-      if (isset($route)) {
+      if ($route) {
         if ($route === 'article') {
-          print_r('pas d\'article');
+          require '../templates/single.php';
+        } elseif ($route === 'register') {
+          $this->frontController->register($this->request->getPost());
+        } else {
+          $this->errorController->errorNotFound();
         }
-        $this->errorController->errorNotFound();
+      } else {
+        $this->frontController->home();
       }
-      $this->frontController->home();
     } catch (Exception $e) {
       $this->errorController->errorServer();
     }
