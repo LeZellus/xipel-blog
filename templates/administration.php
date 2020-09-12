@@ -2,6 +2,7 @@
 
 <h1>Page d'administration</h1>
 <p>En construction</p>
+<a href="../public/index.php">Retour à l'accueil</a>
 
 <h2>Articles</h2>
 
