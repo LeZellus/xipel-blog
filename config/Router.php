@@ -40,6 +40,8 @@ class Router
           $this->backController->updatePassword($this->request->getPost());
         } elseif ($route === 'logout') {
           $this->backController->logout();
+        } elseif ($route === 'administration') {
+          $this->backController->administration();
         } else {
           $this->errorController->errorNotFound();
         }

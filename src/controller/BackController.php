@@ -6,6 +6,12 @@ use App\config\Parameter;
 
 class BackController extends Controller
 {
+    //Function to return administration profile
+    public function administration()
+    {
+        return $this->view->render('administration');
+    }
+
     //Function to return profile view
     public function profile()
     {
