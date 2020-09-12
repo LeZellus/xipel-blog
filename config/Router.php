@@ -42,6 +42,8 @@ class Router
           $this->backController->logout();
         } elseif ($route === 'administration') {
           $this->backController->administration();
+        } elseif ($route === 'deleteAccount') {
+          $this->backController->deleteAccount();
         } else {
           $this->errorController->errorNotFound();
         }
