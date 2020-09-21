@@ -110,4 +110,20 @@ class BackController extends Controller
             header('Location: ../public/index.php?route=administration');
         }
     }
+
+    public function addArticle($post)
+    {
+        if ($this->checkAdmin()) {
+            if ($post->get('submit')) {
+                $this->articleDAO->addArticle($post);
+                $this->session->set('create_article', 'Le nouvel article a bien été ajouté');
+                header('Location: ../public/index.php?route=administration');
+
+                return $this->view->render('add_article', [
+                    'post' => $post
+                ]);
+            }
+            return $this->view->render('add_article');
+        }
+    }
 }
