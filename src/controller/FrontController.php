@@ -28,7 +28,6 @@ class FrontController extends Controller
 				$this->userDAO->register($post);
 				$this->session->set('register', 'Votre inscription a bien été effectuée');
 				header('Location: ../public/index.php');
-				exit;
 			}
 			return  $this->view->render('register', [
 				'post' => $post,
@@ -52,7 +51,6 @@ class FrontController extends Controller
 				$this->session->set('pseudo', $post->get('pseudo'));
 				$this->session->set('role', $result['result']['name']);
 				header('Location: ../public/index.php');
-				exit;
 			} else {
 				$this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
 				return $this->view->render('login', [
@@ -60,7 +58,6 @@ class FrontController extends Controller
 				]);
 			}
 		}
-		return $this->view->render('login');
 	}
 
 	/**
