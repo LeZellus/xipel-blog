@@ -19,6 +19,9 @@ class ArticleDAO extends DAO
         return $article;
     }
 
+    /**
+     * Function to return add article
+     */
     public function addArticle(Parameter $articleData)
     {
         $sql = 'INSERT INTO article (title, content, author, chapo, createdAt) VALUES (?, ?, ?, ?, NOW())';
@@ -28,5 +31,33 @@ class ArticleDAO extends DAO
             $articleData->get('author'),
             $articleData->get('chapo')
         ]);
+    }
+
+    /**
+     * Function to return all articles
+     */
+    public function getArticles()
+    {
+        $sql = 'SELECT article.id, article.title, article.content, article.author, article.chapo, article.createdAt FROM article ORDER BY article.id DESC';
+        $result = $this->createQuery($sql);
+        $articles = [];
+        foreach ($result as $row) {
+            $articleId = $row['id'];
+            $articles[$articleId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $articles;
+    }
+
+    /**
+     * Function to return article by id
+     */
+    public function getArticle($articleId)
+    {
+        $sql = 'SELECT article.id, article.title, article.content, article.author, article.chapo, article.createdAt FROM article WHERE article.id = ?';
+        $result = $this->createQuery($sql, [$articleId]);
+        $article = $result->fetch();
+        $result->closeCursor();
+        return $this->buildObject($article);
     }
 }
