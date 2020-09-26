@@ -26,3 +26,19 @@ if ($this->session->get('pseudo')) {
 <?php
 }
 ?>
+<a href="../public/index.php?route=blog">Blog</a>
+
+
+<?php
+foreach ($articles as $article) {
+?>
+    <div>
+        <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>"><?= htmlspecialchars($article->getTitle()); ?></a></h2>
+        <p>Description : <?= htmlspecialchars($article->getChapo()); ?></p>
+        <p><?= htmlspecialchars($article->getAuthor()); ?></p>
+        <p>Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?></p>
+    </div>
+    <br>
+<?php
+}
+?>

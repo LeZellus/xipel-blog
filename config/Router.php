@@ -29,7 +29,7 @@ class Router
 		try {
 			if ($route) {
 				if ($route === 'article') {
-					require '../templates/single.php';
+					$this->frontController->article($this->request->getGet()->get('articleId'));
 				} elseif ($route === 'register') {
 					$this->frontController->register($this->request->getPost());
 				} elseif ($route === 'login') {
@@ -42,6 +42,8 @@ class Router
 					$this->backController->logout();
 				} elseif ($route === 'administration') {
 					$this->backController->administration();
+				} elseif ($route === 'blog') {
+					$this->frontController->blog();
 				} elseif ($route === 'deleteUser') {
 					$this->backController->deleteUser($this->request->getGet()->get('userId'));
 				} elseif ($route === 'deleteAccount') {
