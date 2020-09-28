@@ -58,6 +58,7 @@ class FrontController extends Controller
 				]);
 			}
 		}
+    return $this->view->render('login');
 	}
 
 	/**

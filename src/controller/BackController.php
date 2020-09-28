@@ -6,7 +6,9 @@ use App\config\Parameter;
 
 class BackController extends Controller
 {
-    //Function to return if user is currently logged
+    /**
+     * Function to return if user is currently logged
+     */
     private function checkLoggedIn()
     {
         if (!$this->session->get('pseudo')) {
@@ -17,7 +19,9 @@ class BackController extends Controller
         }
     }
 
-    //Function to return if a user is an admin
+    /**
+     * Function to return if a user is an admin
+     */
     private function checkAdmin()
     {
         $this->checkLoggedIn();
@@ -28,7 +32,10 @@ class BackController extends Controller
             return true;
         }
     }
-    //Function to return administration profile
+
+    /**
+     * Function to return administration profile
+     */
     public function administration()
     {
         if ($this->checkAdmin()) {
@@ -40,7 +47,9 @@ class BackController extends Controller
         }
     }
 
-    //Function to return profile view
+    /**
+     * Function to return profile view
+     */
     public function profile()
     {
         if ($this->checkLoggedIn()) {
@@ -48,7 +57,9 @@ class BackController extends Controller
         }
     }
 
-    //Function to update user password
+    /**
+     * Function to update user password
+     */
     public function updatePassword(Parameter $post)
     {
         if ($this->checkLoggedIn()) {
@@ -71,7 +82,9 @@ class BackController extends Controller
         }
     }
 
-    //Function to logout
+    /**
+     * Function to logout
+     */
     public function logout()
     {
         if ($this->checkLoggedIn()) {
@@ -79,7 +92,9 @@ class BackController extends Controller
         }
     }
 
-    //Function to delete current user
+    /**
+     * Function to delete current user
+     */
     public function deleteAccount()
     {
         if ($this->checkLoggedIn()) {
@@ -88,7 +103,9 @@ class BackController extends Controller
         }
     }
 
-    //Function to manage logout or delete 
+    /**
+     * Function to manage logout or delete 
+     */
     private function logoutOrDelete($param)
     {
         $this->session->stop();
@@ -101,7 +118,9 @@ class BackController extends Controller
         header('Location: ../public/index.php');
     }
 
-    //Function to delete user
+    /**
+     * Function to delete user from ID
+     */
     public function deleteUser($userId)
     {
         if ($this->checkAdmin()) {
@@ -111,6 +130,9 @@ class BackController extends Controller
         }
     }
 
+    /**
+     * Function to add article to website
+     */
     public function addArticle($post)
     {
         if ($this->checkAdmin()) {
