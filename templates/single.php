@@ -1,5 +1,4 @@
 <?php $this->title = 'Article'; ?>
-<?= $this->session->show('add_comment'); ?>
 
 <h1>Article</h1>
 <p>En construction</p>

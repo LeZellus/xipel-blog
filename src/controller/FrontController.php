@@ -58,7 +58,7 @@ class FrontController extends Controller
 				]);
 			}
 		}
-    return $this->view->render('login');
+		return $this->view->render('login');
 	}
 
 	/**
@@ -91,9 +91,20 @@ class FrontController extends Controller
 	public function addComment($post, $articleId)
 	{
 		if ($post->get('submit')) {
-			$this->commentDAO->addComment($post, $articleId);
-			$this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
-			header('Location: ../public/index.php?route=article&articleId=' . $articleId);
+			$errors = $this->validation->validate($post, 'Comment');
+			if (!$errors) {
+				$this->commentDAO->addComment($post, $articleId);
+				$this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
+				header('Location: ../public/index.php?route=article&articleId=' . $articleId);
+			}
+			$article = $this->articleDAO->getArticle($articleId);
+			$comments = $this->commentDAO->getCommentsFromArticle($articleId);
+			return $this->view->render('single', [
+				'article' => $article,
+				'comments' => $comments,
+				'post' => $post,
+				'errors' => $errors
+			]);
 		}
 	}
 }

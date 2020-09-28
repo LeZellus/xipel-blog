@@ -176,7 +176,8 @@ class BackController extends Controller
         $post->set('author', $article->getAuthor());
 
         return $this->view->render('edit_article', [
-            'post' => $post
+            'post' => $post,
+            'article' => $article
         ]);
     }
 }
