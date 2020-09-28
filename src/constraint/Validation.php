@@ -10,17 +10,17 @@ class Validation
             $userValidation = new UserValidation();
             $errors = $userValidation->check($data);
             return $errors;
-        }
-
-        if ($name === 'UpdatePassword') {
+        } elseif ($name === 'UpdatePassword') {
             $updatePassword = new UpdatePasswordValidation();
             $errors = $updatePassword->check($data);
             return $errors;
-        }
-
-        if ($name === 'Article') {
+        } elseif ($name === 'Article') {
             $articleValidation = new ArticleValidation();
             $errors = $articleValidation->check($data);
+            return $errors;
+        } elseif ($name === 'Comment') {
+            $commentValidation = new CommentValidation();
+            $errors = $commentValidation->check($data);
             return $errors;
         }
     }
