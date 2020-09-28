@@ -17,5 +17,11 @@ class Validation
             $errors = $updatePassword->check($data);
             return $errors;
         }
+
+        if ($name === 'Article') {
+            $articleValidation = new ArticleValidation();
+            $errors = $articleValidation->check($data);
+            return $errors;
+        }
     }
 }
