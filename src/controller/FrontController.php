@@ -67,8 +67,10 @@ class FrontController extends Controller
 	public function article($articleId)
 	{
 		$article = $this->articleDAO->getArticle($articleId);
+		$comments = $this->commentDAO->getCommentsFromArticle($articleId);
 		return $this->view->render('single', [
-			'article' => $article
+			'article' => $article,
+			'comments' => $comments
 		]);
 	}
 
@@ -81,5 +83,17 @@ class FrontController extends Controller
 		return $this->view->render('blog', [
 			'articles' => $articles
 		]);
+	}
+
+	/**
+	 * Function to add comment by article ID
+	 */
+	public function addComment($post, $articleId)
+	{
+		if ($post->get('submit')) {
+			$this->commentDAO->addComment($post, $articleId);
+			$this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
+			header('Location: ../public/index.php?route=article&articleId=' . $articleId);
+		}
 	}
 }

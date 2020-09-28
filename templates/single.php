@@ -1,4 +1,6 @@
 <?php $this->title = 'Article'; ?>
+<?= $this->session->show('add_comment'); ?>
+
 <h1>Article</h1>
 <p>En construction</p>
 <div>
@@ -15,3 +17,18 @@
 <?php } ?>
 
 <a href="../public/index.php">Retour à l'accueil</a>
+
+<div>
+    <h3>Ajouter un commentaire</h3>
+    <?php include 'form_comment.php'; ?>
+    <h3>Commentaires</h3>
+    <?php
+    foreach ($comments as $comment) {
+    ?>
+        <h4><?= htmlspecialchars($comment->getPseudo()); ?></h4>
+        <p><?= htmlspecialchars($comment->getContent()); ?></p>
+        <p>Posté le <?= htmlspecialchars($comment->getCreatedAt()); ?></p>
+    <?php
+    }
+    ?>
+</div>
