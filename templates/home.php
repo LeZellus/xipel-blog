@@ -7,6 +7,7 @@
 <?= $this->session->show('delete_account'); ?>
 <?= $this->session->show('edit_article'); ?>
 
+
 <h1>App Retour</h1>
 <p>En construction</p>
 
