@@ -42,7 +42,7 @@ class UserDAO extends DAO
             $post->get('lastName'),
             $post->get('email'),
             password_hash($post->get('password'), PASSWORD_BCRYPT),
-            2
+            1
         ]);
     }
 

@@ -13,7 +13,6 @@ class ArticleDAO extends DAO
         $article->setId($row['id']);
         $article->setTitle($row['title']);
         $article->setContent($row['content']);
-        $article->setAuthor($row['author']);
         $article->setChapo($row['chapo']);
         $article->setCreatedAt($row['createdAt']);
         return $article;
@@ -22,14 +21,18 @@ class ArticleDAO extends DAO
     /**
      * Function to return add article
      */
-    public function addArticle(Parameter $articleData)
+    public function addArticle(Parameter $articleData, $userId)
     {
-        $sql = 'INSERT INTO article (title, content, author, chapo, createdAt) VALUES (?, ?, ?, ?, NOW())';
+
+        $sql = 'INSERT INTO article (title, content, chapo, createdAt, user_id) VALUES (?, ?, ?, NOW(), ?)';
+        // var_dump($sql);
+        // var_dump($userId);
+        // exit;
         $this->createQuery($sql, [
             $articleData->get('title'),
             $articleData->get('content'),
-            $articleData->get('author'),
-            $articleData->get('chapo')
+            $articleData->get('chapo'),
+            $userId
         ]);
     }
 
@@ -38,7 +41,7 @@ class ArticleDAO extends DAO
      */
     public function getArticles()
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.author, article.chapo, article.createdAt FROM article ORDER BY article.id DESC';
+        $sql = 'SELECT article.id, article.title, article.content, user.pseudo, article.chapo, article.createdAt FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC';
         $result = $this->createQuery($sql);
         $articles = [];
         foreach ($result as $row) {
@@ -54,7 +57,7 @@ class ArticleDAO extends DAO
      */
     public function getArticle($articleId)
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.author, article.chapo, article.createdAt FROM article WHERE article.id = ?';
+        $sql = 'SELECT article.id, article.title, article.content, user.pseudo, article.chapo, article.createdAt FROM article INNER JOIN user ON article.user_id = user.id WHERE article.id = ?';
         $result = $this->createQuery($sql, [$articleId]);
         $article = $result->fetch();
         $result->closeCursor();
@@ -64,14 +67,14 @@ class ArticleDAO extends DAO
     /**
      * Function to edit article
      */
-    public function editArticle(Parameter $post, $articleId)
+    public function editArticle(Parameter $post, $articleId, $userId)
     {
-        $sql = 'UPDATE article SET title=:title, content=:content, author=:author, chapo=:chapo WHERE id=:articleId';
+        $sql = 'UPDATE article SET title=:title, content=:content, chapo=:chapo, user_id=:user_id WHERE id=:articleId';
         $this->createQuery($sql, [
             'title' => $post->get('title'),
             'content' => $post->get('content'),
-            'author' => $post->get('author'),
             'chapo' => $post->get('chapo'),
+            'user_id' => $userId,
             'articleId' => $articleId
         ]);
     }
