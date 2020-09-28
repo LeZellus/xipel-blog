@@ -8,4 +8,10 @@
     <p>Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?></p>
 </div>
 
+<?php if ($this->session->get('role') === 'admin') { ?>
+    <div class="actions">
+        <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+    </div>
+<?php } ?>
+
 <a href="../public/index.php">Retour à l'accueil</a>

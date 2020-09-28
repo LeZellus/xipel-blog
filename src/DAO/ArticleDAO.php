@@ -60,4 +60,19 @@ class ArticleDAO extends DAO
         $result->closeCursor();
         return $this->buildObject($article);
     }
+
+    /**
+     * Function to edit article
+     */
+    public function editArticle(Parameter $post, $articleId)
+    {
+        $sql = 'UPDATE article SET title=:title, content=:content, author=:author, chapo=:chapo WHERE id=:articleId';
+        $this->createQuery($sql, [
+            'title' => $post->get('title'),
+            'content' => $post->get('content'),
+            'author' => $post->get('author'),
+            'chapo' => $post->get('chapo'),
+            'articleId' => $articleId
+        ]);
+    }
 }
