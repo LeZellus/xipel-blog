@@ -25,13 +25,13 @@
     <h3>Ajouter un commentaire</h3>
     <?php include 'form_comment.php'; ?>
     <h3>Commentaires</h3>
-    <?php
-    foreach ($comments as $comment) {
-    ?>
-        <h4><?= htmlspecialchars($comment->getPseudo()); ?></h4>
-        <p><?= htmlspecialchars($comment->getContent()); ?></p>
-        <p>Posté le <?= htmlspecialchars($comment->getCreatedAt()); ?></p>
-    <?php
-    }
-    ?>
+
+    <?php foreach ($comments as $comment) { ?>
+        <?php if (htmlspecialchars($comment->getFlag()) === "1") { ?>
+            <h4><?= htmlspecialchars($comment->getPseudo()); ?></h4>
+            <p><?= htmlspecialchars($comment->getContent()); ?></p>
+            <p>Posté le <?= htmlspecialchars($comment->getCreatedAt()); ?></p>
+            <p>Flag : <?= htmlspecialchars($comment->getFlag()); ?></p>
+        <?php } ?>
+    <?php } ?>
 </div>
