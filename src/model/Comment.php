@@ -24,6 +24,11 @@ class Comment
    */
   private $createdAt;
 
+  /**
+   * @var bool
+   */
+  private $flag;
+
   /**********************************************************************/
   /*Comment ID Managamenent**********************************************/
   /**********************************************************************/
@@ -102,5 +107,25 @@ class Comment
   public function setCreatedAt($createdAt)
   {
     $this->createdAt = $createdAt;
+  }
+
+  /**********************************************************************/
+  /*Comment Flag Managamenent********************************************/
+  /**********************************************************************/
+
+  /**
+   * @return bool
+   */
+  public function getFlag()
+  {
+    return $this->flag;
+  }
+
+  /**
+   * @param bool $flag
+   */
+  public function setFlag($flag)
+  {
+    $this->flag = $flag;
   }
 }
