@@ -163,7 +163,7 @@ class BackController extends Controller
             if(!$errors) {
                 $this->articleDAO->editArticle($post, $articleId, $this->session->get('id'));
                 $this->session->set('edit_article', 'L\' article a bien été modifié');
-                header('Location: ../public/index.php');
+                header('Location: ../public/index.php?route=article&articleId='.$articleId);
             }
             return $this->view->render('edit_article', [
                 'post' => $post,
@@ -175,9 +175,11 @@ class BackController extends Controller
         $post->set('content', $article->getContent());
         $post->set('chapo', $article->getContent());
         $post->set('author', $article->getAuthor());
+        $post->set('updatedAt', $article->getUpdatedAt());
 
         return $this->view->render('edit_article', [
-            'post' => $post
+            'post' => $post,
+            'article' => $article
         ]);
     }
 }
