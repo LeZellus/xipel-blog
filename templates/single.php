@@ -15,6 +15,7 @@
 <?php if ($this->session->get('role') === 'admin') { ?>
     <div class="actions">
         <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+        <a href="../public/index.php?route=removeArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
     </div>
 <?php } ?>
 
