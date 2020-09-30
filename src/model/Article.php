@@ -34,6 +34,11 @@ class Article
      */
     private $createdAt;
 
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+
     /**********************************************************************/
     /*Article ID Managamenent**********************************************/
     /**********************************************************************/
@@ -152,5 +157,25 @@ class Article
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    /**********************************************************************/
+    /*Article UpdatedDate Managamenent*************************************/
+    /**********************************************************************/
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
     }
 }

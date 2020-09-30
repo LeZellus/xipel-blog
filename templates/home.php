@@ -5,8 +5,6 @@
 <?= $this->session->show('logout'); ?>
 <?= $this->session->show('update_password'); ?>
 <?= $this->session->show('delete_account'); ?>
-<?= $this->session->show('edit_article'); ?>
-
 
 <h1>App Retour</h1>
 <p>En construction</p>
@@ -39,6 +37,7 @@ foreach ($articles as $article) {
         <p>Description : <?= htmlspecialchars($article->getChapo()); ?></p>
         <p><?= htmlspecialchars($article->getAuthor()); ?></p>
         <p>Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?></p>
+        <p>Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></p>
     </div>
     <br>
 <?php

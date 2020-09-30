@@ -1,6 +1,6 @@
 <?php
 $route = isset($article) && $article->getId() ? 'editArticle&articleId=' . $article->getId() : 'addArticle';
-$submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
+$submit = $route === 'addArticle' ? 'Ajouter' : 'Mettre à jour';
 $title = isset($article) && $article->getTitle() ? htmlspecialchars($article->getTitle()) : '';
 $content = isset($article) && $article->getContent() ? htmlspecialchars($article->getContent()) : '';
 $author = isset($article) && $article->getAuthor() ? htmlspecialchars($article->getAuthor()) : '';
@@ -15,10 +15,6 @@ $chapo = isset($article) && $article->getChapo() ? htmlspecialchars($article->ge
   <label for="content">Contenu</label>
   <textarea id="content" name="content"><?= $content; ?></textarea>
   <?= isset($errors['content']) ? $errors['content'] : ''; ?>
-
-  <label for="author">Auteur</label>
-  <input type="text" id="author" name="author" value="<?= $author; ?>">
-  <?= isset($errors['author']) ? $errors['author'] : ''; ?>
 
   <label for="chapo">Description</label>
   <input type="text" id="chapo" name="chapo" value="<?= $chapo; ?>">

@@ -1,5 +1,7 @@
 <?php $this->title = 'Article'; ?>
 
+<?= $this->session->show('edit_article'); ?>
+
 <h1>Article</h1>
 <p>En construction</p>
 <div>
@@ -7,6 +9,7 @@
     <p><?= htmlspecialchars($article->getContent()); ?></p>
     <p><?= htmlspecialchars($article->getAuthor()); ?></p>
     <p>Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?></p>
+    <p>Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></p>
 </div>
 
 <?php if ($this->session->get('role') === 'admin') { ?>

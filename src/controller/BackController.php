@@ -139,7 +139,7 @@ class BackController extends Controller
             if ($post->get('submit')) {
                 $errors = $this->validation->validate($post, 'Article');
                 if (!$errors) {
-                    $this->articleDAO->addArticle($post);
+                    $this->articleDAO->addArticle($post, $this->session->get('id'));
                     $this->session->set('create_article', 'Le nouvel article a bien été ajouté');
                     header('Location: ../public/index.php?route=administration');
                 }
@@ -155,15 +155,15 @@ class BackController extends Controller
     /**
      * Function to edit article by ID
      */
-    public function editArticle(Parameter $post, $articleId)
+    public function editArticle($post, $articleId)
     {
         $article = $this->articleDAO->getArticle($articleId);
-        if ($post->get('submit')) {
+        if($post->get('submit')) {
             $errors = $this->validation->validate($post, 'Article');
-            if (!$errors) {
-                $this->articleDAO->editArticle($post, $articleId);
+            if(!$errors) {
+                $this->articleDAO->editArticle($post, $articleId, $this->session->get('id'));
                 $this->session->set('edit_article', 'L\' article a bien été modifié');
-                header('Location: ../public/index.php');
+                header('Location: ../public/index.php?route=article&articleId='.$articleId);
             }
             return $this->view->render('edit_article', [
                 'post' => $post,
@@ -173,7 +173,9 @@ class BackController extends Controller
         $post->set('id', $article->getId());
         $post->set('title', $article->getTitle());
         $post->set('content', $article->getContent());
+        $post->set('chapo', $article->getContent());
         $post->set('author', $article->getAuthor());
+        $post->set('updatedAt', $article->getUpdatedAt());
 
         return $this->view->render('edit_article', [
             'post' => $post,
