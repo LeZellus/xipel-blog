@@ -80,4 +80,15 @@ class ArticleDAO extends DAO
             'articleId' => $articleId
         ]);
     }
+
+    /**
+     * Function to remove article by ID
+     */
+    public function removeArticle($articleId)
+    {
+        $sql = 'DELETE FROM comment WHERE article_id = ?';
+        $this->createQuery($sql, [$articleId]);
+        $sql = 'DELETE FROM article WHERE id = ?';
+        $this->createQuery($sql, [$articleId]);
+    }
 }

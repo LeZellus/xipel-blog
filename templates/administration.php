@@ -13,6 +13,7 @@
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('delete_user'); ?>
+<?= $this->session->show('remove_article'); ?>
 
 <h2>Utilisateurs</h2>
 <table>

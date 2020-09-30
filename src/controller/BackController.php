@@ -182,4 +182,16 @@ class BackController extends Controller
             'article' => $article
         ]);
     }
+
+    /**
+     * Function to remove article from ID
+     */
+    public function removeArticle($articleId)
+    {
+        if ($this->checkAdmin()) {
+            $this->articleDAO->removeArticle($articleId);
+            $this->session->set('delete_user', 'L\'article a bien été supprimé');
+            header('Location: ../public/index.php?route=administration');
+        }
+    }
 }
