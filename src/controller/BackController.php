@@ -41,10 +41,12 @@ class BackController extends Controller
         if ($this->checkAdmin()) {
             $users = $this->userDAO->getUsers();
             $articles = $this->articleDAO->getArticles();
+            $comments = $this->commentDAO->getFlagComments();
 
             return $this->view->render('administration', [
                 'users' => $users,
-                'articles' => $articles
+                'articles' => $articles,
+                'comments' => $comments
             ]);
         }
     }
@@ -197,5 +199,15 @@ class BackController extends Controller
             $this->session->set('delete_user', 'L\'article a bien été supprimé');
             header('Location: ../public/index.php?route=administration');
         }
+    }
+
+    /**
+     * Function to flag comment from ID
+     */
+    public function flagComment($commentId)
+    {
+        $this->commentDAO->flagComment($commentId);
+        $this->session->set('flag_comment', 'Le commentaire a été validé');
+        header('Location: ../public/index.php?route=administration');
     }
 }

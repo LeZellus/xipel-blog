@@ -3,6 +3,8 @@
 <?= $this->session->show('create_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
+<?= $this->session->show('delete_user'); ?>
+<?= $this->session->show('flag_comment'); ?>
 
 <h1>Page d'administration</h1>
 <p>En construction</p>
@@ -41,13 +43,33 @@
     ?>
 </table>
 
-<h2>Commentaires signalés</h2>
+<h2>Commentaires en attente</h2>
 
-<?= $this->session->show('delete_article'); ?>
-<?= $this->session->show('unflag_comment'); ?>
-<?= $this->session->show('delete_comment'); ?>
-<?= $this->session->show('delete_user'); ?>
-<?= $this->session->show('remove_article'); ?>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Pseudo</td>
+        <td>Message</td>
+        <td>Date</td>
+        <td>Actions</td>
+    </tr>
+    <?php
+    foreach ($comments as $comment) {
+    ?>
+        <tr>
+            <td><?= htmlspecialchars($comment->getId()); ?></td>
+            <td><?= htmlspecialchars($comment->getPseudo()); ?></td>
+            <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150); ?></td>
+            <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt()); ?></td>
+            <td>
+                <a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Valider</a>
+                <a href="../public/index.php?route=reemoveComment&commentId=<?= $comment->getId(); ?> ?>">Supprimer</a>
+            </td>
+        </tr>
+    <?php
+    }
+    ?>
+</table>
 
 <h2>Utilisateurs</h2>
 <table>
