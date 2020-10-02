@@ -40,9 +40,11 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             $users = $this->userDAO->getUsers();
+            $articles = $this->articleDAO->getArticles();
 
             return $this->view->render('administration', [
-                'users' => $users
+                'users' => $users,
+                'articles' => $articles
             ]);
         }
     }
@@ -159,12 +161,12 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             $article = $this->articleDAO->getArticle($articleId);
-            if($post->get('submit')) {
+            if ($post->get('submit')) {
                 $errors = $this->validation->validate($post, 'Article');
-                if(!$errors) {
+                if (!$errors) {
                     $this->articleDAO->editArticle($post, $articleId, $this->session->get('id'));
                     $this->session->set('edit_article', 'L\' article a bien été modifié');
-                    header('Location: ../public/index.php?route=article&articleId='.$articleId);
+                    header('Location: ../public/index.php?route=article&articleId=' . $articleId);
                 }
                 return $this->view->render('edit_article', [
                     'post' => $post,
@@ -177,7 +179,7 @@ class BackController extends Controller
             $post->set('chapo', $article->getContent());
             $post->set('author', $article->getAuthor());
             $post->set('updatedAt', $article->getUpdatedAt());
-    
+
             return $this->view->render('edit_article', [
                 'post' => $post,
                 'article' => $article
