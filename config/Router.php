@@ -52,12 +52,13 @@ class Router
           $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
         } elseif ($route === 'addArticle') {
           $this->backController->addArticle($this->request->getPost());
+        } elseif ($route === 'flagComment') {
+          $this->backController->flagComment($this->request->getGet()->get('commentId'));
         } elseif ($route === 'editArticle') {
           $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
         } elseif ($route === 'removeArticle') {
           $this->backController->removeArticle($this->request->getGet()->get('articleId'));
-        }
-         else {
+        } else {
           $this->errorController->errorNotFound();
         }
       } else {
