@@ -196,7 +196,7 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             $this->articleDAO->removeArticle($articleId);
-            $this->session->set('delete_user', 'L\'article a bien été supprimé');
+            $this->session->set('delete_article', 'L\'article a bien été supprimé');
             header('Location: ../public/index.php?route=administration');
         }
     }
