@@ -5,6 +5,7 @@
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('delete_user'); ?>
 <?= $this->session->show('flag_comment'); ?>
+<?= $this->session->show('remove_comment'); ?>
 
 <h1>Page d'administration</h1>
 <p>En construction</p>
@@ -63,7 +64,7 @@
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt()); ?></td>
             <td>
                 <a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Valider</a>
-                <a href="../public/index.php?route=reemoveComment&commentId=<?= $comment->getId(); ?> ?>">Supprimer</a>
+                <a href="../public/index.php?route=removeComment&commentId=<?= $comment->getId(); ?>">Supprimer</a>
             </td>
         </tr>
     <?php

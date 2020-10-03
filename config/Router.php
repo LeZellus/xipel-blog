@@ -54,6 +54,8 @@ class Router
           $this->backController->addArticle($this->request->getPost());
         } elseif ($route === 'flagComment') {
           $this->backController->flagComment($this->request->getGet()->get('commentId'));
+        } elseif ($route === 'removeComment') {
+          $this->backController->removeComment($this->request->getGet()->get('commentId'));
         } elseif ($route === 'editArticle') {
           $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
         } elseif ($route === 'removeArticle') {
