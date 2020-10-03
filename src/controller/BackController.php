@@ -210,4 +210,14 @@ class BackController extends Controller
         $this->session->set('flag_comment', 'Le commentaire a été validé');
         header('Location: ../public/index.php?route=administration');
     }
+
+    /**
+     * Function to remove comment from comment ID
+     */
+    public function removeComment($commentId)
+    {
+        $this->commentDAO->removeComment($commentId);
+        $this->session->set('remove_comment', 'Le commentaire a été supprimé');
+        header('Location: ../public/index.php?route=administration');
+    }
 }

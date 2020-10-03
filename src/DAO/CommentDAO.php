@@ -43,7 +43,7 @@ class CommentDAO extends DAO
     public function addComment(Parameter $post, $articleId)
     {
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, flag, article_id) VALUES (?, ?, NOW(), ?, ?)';
-        $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), 1, $articleId]);
+        $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), 0, $articleId]);
     }
 
 
@@ -70,5 +70,14 @@ class CommentDAO extends DAO
     {
         $sql = 'UPDATE comment SET flag = ? WHERE id = ?';
         $this->createQuery($sql, [1, $commentId]);
+    }
+
+    /**
+     * Function to remove comment from comment ID
+     */
+    public function removeComment($commentId)
+    {
+        $sql = 'DELETE FROM comment WHERE id = ?';
+        $this->createQuery($sql, [$commentId]);
     }
 }
