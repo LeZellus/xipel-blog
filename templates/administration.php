@@ -36,7 +36,7 @@
             <td>Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></td>
             <td>
                 <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-                <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+                <a href="../public/index.php?route=removeArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
             </td>
         </tr>
     <?php
