@@ -1,0 +1,27 @@
+.alert {
+  background: $clr-alert-background;
+  border-radius: 1rem;
+  color: $clr-alert-color;
+  padding: 2rem;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2rem;
+  transition: $duration-quick;
+  box-shadow: $alert-box-shadow;
+  align-items: center;
+  display: none;
+
+  &.show{
+    display: flex;
+  }
+
+  i{
+    padding-left: 2rem;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
+}
