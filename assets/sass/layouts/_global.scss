@@ -1,0 +1,28 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $clr-background-body;
+  position: relative;
+}
+
+.valid {
+  border: 1px solid $clr-valid !important;
+}
+
+.error {
+  border: 1px solid $clr-error !important;
+}
+
+.bg-white {
+  background-color: $clr-background-items;
+  box-shadow: $box-shadow;
+}
+
+.total-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

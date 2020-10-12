@@ -1,0 +1,45 @@
+//Palette 
+
+$palette-mine-shaft: #222222;
+$palette-red-orange: #FF2D20;
+$palette-snow: #FFFFFF;
+$palette-java: #0FB4BD;
+$palette-corn: #E5C700;
+$palette-black: #000;
+$palette-silver: #CCCCCC;
+$palette-wild-sand: #F5F5F5;
+$palette-gallery: #ECECEC;
+$palette-alto: #DBDBDB;
+$palette-silver-chalice: #9E9E9E;
+
+//Functional
+
+$clr-background-body: $palette-wild-sand;
+$clr-background-items: $palette-snow;
+$clr-text: $palette-mine-shaft;
+$clr-secondary: $palette-java;
+$clr-primary: $palette-corn;
+$clr-error: $palette-red-orange;
+$clr-valid: $palette-java;
+
+//Border
+
+$clr-border: $palette-silver-chalice;
+$clr-border-focus: $palette-java;
+$clr-border-valid: $palette-java;
+$clr-border-invalid: $palette-red-orange;
+
+//Form
+
+$clr-input-background-hover: $palette-gallery;
+$clr-input-background-focus: $palette-alto;
+
+//Button
+$clr-button-background: $palette-java;
+$clr-button-color: $palette-snow;
+$clr-button-color-hover: $palette-java;
+$clr-button-border: $palette-java;
+
+//Alert
+$clr-alert-color: $palette-snow;
+$clr-alert-background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);

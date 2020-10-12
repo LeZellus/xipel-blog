@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+
+  &-gap-10 {
+    grid-gap: 1rem;
+  }
+
+  &-gap-20 {
+    grid-gap: 2rem;
+  }
+
+  &-gap-40 {
+    grid-gap: 2rem;
+  }
+}
