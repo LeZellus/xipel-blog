@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;900&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  font-size: 1.6rem;
+  font-family: "Poppins", Arial;
+  box-sizing: border-box;
+  transition: 0.3s;
+  border-radius: 0.5rem;
+  padding: 1.5rem; }
+  input[type="text"], input[type="email"], input[type="password"] {
+    border: 0.1rem solid #9E9E9E; }
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+      outline: none;
+      border: 0.1rem solid #0FB4BD; }
+    input[type="text"]:placeholder-shown, input[type="email"]:placeholder-shown, input[type="password"]:placeholder-shown {
+      background-color: inherit; }
+    input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
+      background-color: #ECECEC; }
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+      background-color: #DBDBDB; }
+    input[type="text"]:hover, input[type="text"]:focus, input[type="email"]:hover, input[type="email"]:focus, input[type="password"]:hover, input[type="password"]:focus {
+      transition: 0.3s; }
+    input[type="text"]:invalid, input[type="email"]:invalid, input[type="password"]:invalid {
+      box-shadow: none; }
+  input[type="submit"] {
+    padding: 1.5rem;
+    border: 1px solid #0FB4BD;
+    border-radius: 0.5rem;
+    box-shadow: rgba(15, 180, 189, 0.48) 2px 5px 10px;
+    background-color: #0FB4BD;
+    color: #FFFFFF; }
+    input[type="submit"]:hover {
+      background-color: transparent;
+      box-shadow: none;
+      color: #0FB4BD;
+      cursor: pointer; }
+
+.form-control {
+  width: 100%; }
+  .form-control-label {
+    font-weight: 700;
+    text-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px; }
+
+.wrapper-login {
+  max-width: calc(50rem - 8rem);
+  padding: 4rem;
+  border-radius: 1rem; }
+  .wrapper-login .wrapper-login-logo {
+    width: 100%; }
+
+.grid {
+  display: grid; }
+  .grid-gap-10 {
+    grid-gap: 1rem; }
+  .grid-gap-20 {
+    grid-gap: 2rem; }
+  .grid-gap-40 {
+    grid-gap: 2rem; }
+
+.main-login {
+  height: 100vh;
+  box-sizing: border-box; }
+
+.alert {
+  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+  border-radius: 1rem;
+  color: #FFFFFF;
+  padding: 2rem;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2rem;
+  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px;
+  align-items: center;
+  display: none; }
+  .alert.show {
+    display: flex; }
+  .alert i {
+    padding-left: 2rem; }
+  .alert:hover {
+    cursor: pointer; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  background-color: #F5F5F5;
+  position: relative; }
+
+.valid {
+  border: 1px solid #0FB4BD !important; }
+
+.error {
+  border: 1px solid #FF2D20 !important; }
+
+.bg-white {
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px; }
+
+.total-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+/*# sourceMappingURL=style.css.map */
