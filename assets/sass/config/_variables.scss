@@ -4,11 +4,13 @@ $duration-quick: .3s;
 $primary-font: 'Poppins',
 Arial;
 
-$input-radius: .5rem;
+$input-radius: 1.5rem;
+$input-submit-radius: 5rem;
 
 $button-box-shadow:rgba(15, 180, 189, 0.48) 2px 5px 10px;
 
 $label-text-shadow:rgba(0, 0, 0, 0.28) 0px 8px 28px;
 
-$box-shadow: rgba(0, 0, 0, .2) 1px 1px 5px;
+$box-shadow: 0 0 25px rgba(0, 0, 0, .06);
+
 $alert-box-shadow: rgba(0, 0, 0, .2) 1px 1px 5px;

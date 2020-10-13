@@ -1,12 +1,18 @@
-.wrapper{
-  
-  &-login{
+.wrapper {
+
+  &-login {
     max-width: calc(50rem - 8rem);
     padding: 4rem;
     border-radius: 1rem;
 
-    .wrapper-login-logo{
+    .wrapper-login-logo {
       width: 100%;
     }
+  }
+
+  &-register {
+    max-width: calc(50rem - 8rem);
+    padding: 4rem;
+    border-radius: 1rem;
   }
 }
