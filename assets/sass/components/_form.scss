@@ -10,12 +10,7 @@ input {
   &[type="text"],
   &[type="email"],
   &[type="password"] {
-    border: .1rem solid $clr-input-border;
-
-    &:focus {
-      outline: none;
-      border: .1rem solid $clr-input-border-focus;
-    }
+    border: 0.1rem solid $clr-input-border;
 
     &:placeholder-shown {
       background-color: inherit;
@@ -30,10 +25,6 @@ input {
       border-color: $clr-input-border-hover;
     }
 
-    &:focus {
-      background-color: $clr-input-background-focus;
-    }
-
     &:hover,
     &:focus {
       transition: $duration-quick;
@@ -41,6 +32,12 @@ input {
 
     &:invalid {
       box-shadow: none;
+    }
+
+    &:focus {
+      outline: none;
+      border: 0.1rem solid $clr-input-border-focus;
+      background-color: $clr-input-background-focus;
     }
   }
 
@@ -59,7 +56,6 @@ input {
 }
 
 .form-control {
-
   width: 100%;
 
   &-label {

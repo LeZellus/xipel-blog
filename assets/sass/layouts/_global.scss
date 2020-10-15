@@ -1,4 +1,4 @@
-//Global Layout 
+//Global Layout
 
 html {
   font-size: 62.5%;
@@ -13,11 +13,11 @@ body {
 //Functionnals classes
 
 .valid {
-  border: 1px solid $clr-valid !important;
+  border: 1px solid $clr-valid;
 }
 
 .error {
-  border: 1px solid $clr-error !important;
+  border: 1px solid $clr-error;
 }
 
 .bg-white {
