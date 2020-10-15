@@ -14,7 +14,7 @@ input {
 
     &:focus {
       outline: none;
-      border: .1rem solid $clr-input-border-focus;
+      border: 0.1rem solid $clr-input-border-focus;
     }
 
     &:placeholder-shown {
