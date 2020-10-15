@@ -13,15 +13,15 @@
   align-items: center;
   display: none;
 
-  &.show{
+  &.show {
     display: flex;
   }
 
-  i{
+  i {
     padding-left: 2rem;
   }
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }

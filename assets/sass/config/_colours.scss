@@ -1,12 +1,12 @@
-//Palette 
+//Palette
 
-$palette-mine-shaft: #222222;
+$palette-mine-shaft: #222;
 $palette-red-orange: #ff2d20;
-$palette-snow: #ffffff;
+$palette-snow: #fff;
 $palette-java: #31e2c2;
 $palette-corn: #e5c700;
 $palette-black: #000;
-$palette-silver: #cccccc;
+$palette-silver: #ccc;
 $palette-wild-sand: #f5f5f5;
 $palette-gallery: #ececec;
 $palette-alto: #dbdbdb;
@@ -43,6 +43,7 @@ $clr-input-border-hover: $palette-silver-chalice;
 $clr-input-color-placeholder: $palette-silver;
 
 //Button
+
 $clr-button-background: $palette-snow;
 $clr-button-color: $palette-java;
 $clr-button-color-hover: $palette-java;
@@ -52,5 +53,6 @@ $clr-button-secondary-color: $palette-silver-chalice;
 $clr-button-secondary-background: $palette-snow;
 
 //Alert
+
 $clr-alert-color: $palette-snow;
 $clr-alert-background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
