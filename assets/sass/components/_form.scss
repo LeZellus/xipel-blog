@@ -43,6 +43,22 @@ input {
       box-shadow: none;
     }
   }
+<<<<<<< HEAD
+=======
+
+  &[type="submit"] {
+    padding: 1.5rem 3rem;
+    border: 1px solid $clr-button-border;
+    border-radius: $input-submit-radius;
+    background-color: transparent;
+    color: $clr-button-color;
+    
+    &:hover {
+      box-shadow: $box-shadow;
+      cursor: pointer;
+    }
+  }
+>>>>>>> add-css-project
 }
 
 .form-control {
