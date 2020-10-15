@@ -188,6 +188,14 @@ input {
     .form-control-label:hover {
       cursor: pointer; }
 
+nav {
+  height: 8rem;
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
 .grid {
   display: grid; }
   .grid-gap-10 {
