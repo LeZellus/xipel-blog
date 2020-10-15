@@ -155,10 +155,6 @@ input {
   padding-left: 2rem; }
   input[type="text"], input[type="email"], input[type="password"] {
     border: 0.1rem solid #ccc; }
-    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-      outline: none;
-      border: 0.1rem solid #000;
-      background-color: #dbdbdb; }
     input[type="text"]:placeholder-shown, input[type="email"]:placeholder-shown, input[type="password"]:placeholder-shown {
       background-color: inherit; }
     input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder {
@@ -170,6 +166,10 @@ input {
       transition: 0.3s; }
     input[type="text"]:invalid, input[type="email"]:invalid, input[type="password"]:invalid {
       box-shadow: none; }
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+      outline: none;
+      border: 0.1rem solid #000;
+      background-color: #dbdbdb; }
   input[type="submit"] {
     padding: 1.5rem 3rem;
     border: 1px solid #31e2c2;

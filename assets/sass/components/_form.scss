@@ -12,12 +12,6 @@ input {
   &[type="password"] {
     border: 0.1rem solid $clr-input-border;
 
-    &:focus {
-      outline: none;
-      border: 0.1rem solid $clr-input-border-focus;
-      background-color: $clr-input-background-focus;
-    }
-
     &:placeholder-shown {
       background-color: inherit;
     }
@@ -38,6 +32,12 @@ input {
 
     &:invalid {
       box-shadow: none;
+    }
+
+    &:focus {
+      outline: none;
+      border: 0.1rem solid $clr-input-border-focus;
+      background-color: $clr-input-background-focus;
     }
   }
 
