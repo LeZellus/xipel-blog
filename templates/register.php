@@ -1,29 +1,44 @@
 <?php $this->title = "Inscription"; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
-<div>
-    <form method="post" action="../public/index.php?route=register">
-        <label for="pseudo">Pseudo</label><br>
-        <input type="text" id="pseudo" name="pseudo"><br>
-        <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
+<main class="wrapper-register total-flex m-h">
+    <section class="grid grid-gap-40 register bg-white">
+        <h1>Inscription</h1>
+        <a href="../public/index.php?route=login" class="button-secondary">Déjà inscrit? Connectez-vous</a>
+        <form id="form-register" method="post" class="grid grid-gap-20" action="../public/index.php?route=register">
+            <div class="form-control grid grid-gap-10">
+                <label for="pseudo" class="form-control-label">Pseudo</label>
+                <input type="text" id="pseudo" name="pseudo" placeholder="Jackcélère">
+                <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
+            </div>
 
-        <label for="firstName">Prénom</label><br>
-        <input type="text" id="firstName" name="firstName"><br>
-        <?= isset($errors['firstName']) ? $errors['firstName'] : ''; ?>
+            <div class="form-control grid grid-gap-10">
+                <label for="firstName" class="form-control-label">Prénom</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Jack">
+                <?= isset($errors['firstName']) ? $errors['firstName'] : ''; ?>
+            </div>
 
-        <label for="lastName">Nom</label><br>
-        <input type="text" id="lastName" name="lastName"><br>
-        <?= isset($errors['lastName']) ? $errors['lastName'] : ''; ?>
+            <div class="form-control grid grid-gap-10">
+                <label for="lastName" class="form-control-label">Nom</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Pot">
+                <?= isset($errors['lastName']) ? $errors['lastName'] : ''; ?>
+            </div>
 
-        <label for="email">Email</label><br>
-        <input type="text" id="email" name="email"><br>
-        <?= isset($errors['email']) ? $errors['email'] : ''; ?>
+            <div class="form-control grid grid-gap-10">
+                <label for="email" class="form-control-label">Email</label>
+                <input type="text" id="email" name="email" placeholder="jackpot@exemple.fr">
+                <?= isset($errors['email']) ? $errors['email'] : ''; ?>
+            </div>
 
-        <label for="password">Mot de passe</label><br>
-        <input type="password" id="password" name="password"><br>
-        <?= isset($errors['password']) ? $errors['password'] : ''; ?>
+            <div class="form-control grid grid-gap-10">
+                <label for="password" class="form-control-label">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="********">
+                <?= isset($errors['password']) ? $errors['password'] : ''; ?>
+            </div>
 
-        <input type="submit" value="Inscription" id="submit" name="submit">
-    </form>
-    <a href="../public/index.php">Retour à l'accueil</a>
-</div>
+        </form>
+        <div class="grid grid-gap-20 button-box">
+            <input type="submit" value="Inscription" id="submit" class="button-primary" form="form-register" name="submit">
+            <a href="../public/index.php" class="button-secondary">Retour à l'accueil</a>
+        </div>
+
+    </section>
+</main>

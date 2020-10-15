@@ -1,0 +1,35 @@
+.button {
+
+  &-primary {
+    padding: 1.5rem 3rem;
+    border: 1px solid $clr-button-border;
+    border-radius: $input-submit-radius;
+    background-color: $clr-button-background;
+    transition: $duration-quick;
+    color: $clr-button-color;
+
+    &:hover {
+      box-shadow: $button-box-shadow-hover;
+      transition: $duration-quick;
+      cursor: pointer;
+    }
+  }
+
+  &-secondary {
+    color: $clr-button-secondary-color;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+
+  &-box {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+    .button-secondary {
+      text-align: center;
+    }
+  }
+}

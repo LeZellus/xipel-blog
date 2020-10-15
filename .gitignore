@@ -1,3 +1,5 @@
 /vendor/
 /config/dev.php
 /SQL/
+/.sass-cache/
+/node_modules/
