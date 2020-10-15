@@ -5,23 +5,29 @@ input {
   transition: $duration-quick;
   border-radius: $input-radius;
   padding: 1.5rem;
+  padding-left: 2rem;
 
   &[type="text"],
   &[type="email"],
   &[type="password"] {
-    border: .1rem solid $clr-border;
+    border: .1rem solid $clr-input-border;
 
     &:focus {
       outline: none;
-      border: .1rem solid $clr-border-focus;
+      border: .1rem solid $clr-input-border-focus;
     }
 
     &:placeholder-shown {
       background-color: inherit;
     }
 
+    &::placeholder {
+      color: $clr-input-color-placeholder;
+    }
+
     &:hover {
       background-color: $clr-input-background-hover;
+      border-color: $clr-input-border-hover;
     }
 
     &:focus {
@@ -37,19 +43,6 @@ input {
       box-shadow: none;
     }
   }
-
-  &[type="submit"] {
-    padding: 1.5rem 3rem;
-    border: 1px solid $clr-button-border;
-    border-radius: $input-submit-radius;
-    background-color: transparent;
-    color: $clr-button-color;
-    
-    &:hover {
-      box-shadow: $box-shadow;
-      cursor: pointer;
-    }
-  }
 }
 
 .form-control {
@@ -58,6 +51,10 @@ input {
 
   &-label {
     font-weight: 700;
-    text-shadow: $label-text-shadow;
+    text-shadow: $text-shadow;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

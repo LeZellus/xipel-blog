@@ -1,3 +1,5 @@
+//Global Layout 
+
 html {
   font-size: 62.5%;
 }
@@ -7,6 +9,8 @@ body {
   background-color: $clr-background-body;
   position: relative;
 }
+
+//Functionnals classes
 
 .valid {
   border: 1px solid $clr-valid !important;
@@ -27,10 +31,16 @@ body {
   justify-content: center;
 }
 
+.m-h {
+  min-height: 100vh;
+}
+
+//Titles
+
 h1 {
   font-weight: 700;
   color: $clr-h1-color;
   font-size: 2.5rem;
   text-align: center;
-  text-shadow: $label-text-shadow;
+  text-shadow: $text-shadow;
 }

@@ -127,43 +127,56 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.button-primary {
+  padding: 1.5rem 3rem;
+  border: 1px solid #31e2c2;
+  border-radius: 5rem;
+  background-color: #ffffff;
+  transition: 0.3s;
+  color: #31e2c2; }
+  .button-primary:hover {
+    box-shadow: 0 6px 7px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    cursor: pointer; }
+.button-secondary {
+  color: #8d8d8d; }
+  .button-secondary:hover {
+    text-decoration: none; }
+
 input {
   font-size: 1.6rem;
   font-family: "Poppins", Arial;
   box-sizing: border-box;
   transition: 0.3s;
-  border-radius: 1.5rem;
-  padding: 1.5rem; }
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  padding-left: 2rem; }
   input[type="text"], input[type="email"], input[type="password"] {
-    border: 0.1rem solid #9e9e9e; }
+    border: 0.1rem solid #cccccc; }
     input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
       outline: none;
-      border: 0.1rem solid #31e2c2; }
+      border: 0.1rem solid #000; }
     input[type="text"]:placeholder-shown, input[type="email"]:placeholder-shown, input[type="password"]:placeholder-shown {
       background-color: inherit; }
+    input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder {
+      color: #cccccc; }
     input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
-      background-color: #ececec; }
+      background-color: #ececec;
+      border-color: #8d8d8d; }
     input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
       background-color: #dbdbdb; }
     input[type="text"]:hover, input[type="text"]:focus, input[type="email"]:hover, input[type="email"]:focus, input[type="password"]:hover, input[type="password"]:focus {
       transition: 0.3s; }
     input[type="text"]:invalid, input[type="email"]:invalid, input[type="password"]:invalid {
       box-shadow: none; }
-  input[type="submit"] {
-    padding: 1.5rem 3rem;
-    border: 1px solid #9e9e9e;
-    border-radius: 5rem;
-    background-color: transparent;
-    color: #9e9e9e; }
-    input[type="submit"]:hover {
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
-      cursor: pointer; }
 
 .form-control {
   width: 100%; }
   .form-control-label {
     font-weight: 700;
-    text-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px; }
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); }
+    .form-control-label:hover {
+      cursor: pointer; }
 
 .wrapper-login {
   max-width: calc(50rem - 8rem);
@@ -171,10 +184,6 @@ input {
   border-radius: 1rem; }
   .wrapper-login .wrapper-login-logo {
     width: 100%; }
-.wrapper-register {
-  max-width: calc(50rem - 8rem);
-  padding: 4rem;
-  border-radius: 1rem; }
 
 .grid {
   display: grid; }
@@ -183,7 +192,7 @@ input {
   .grid-gap-20 {
     grid-gap: 2rem; }
   .grid-gap-40 {
-    grid-gap: 2rem; }
+    grid-gap: 4rem; }
 
 .main-login {
   height: 100vh;
@@ -210,6 +219,17 @@ input {
   .alert:hover {
     cursor: pointer; }
 
+section.register {
+  max-width: calc(50rem - 8rem);
+  padding: 4rem;
+  width: 100%;
+  border-radius: 2rem; }
+section.button {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center; }
+  section.button .button-secondary {
+    text-align: center; }
+
 html {
   font-size: 62.5%; }
 
@@ -226,18 +246,21 @@ body {
 
 .bg-white {
   background-color: #ffffff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.06); }
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2); }
 
 .total-flex {
   display: flex;
   align-items: center;
   justify-content: center; }
 
+.m-h {
+  min-height: 100vh; }
+
 h1 {
   font-weight: 700;
   color: #31e2c2;
   font-size: 2.5rem;
   text-align: center;
-  text-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px; }
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); }
 
 /*# sourceMappingURL=style.css.map */
