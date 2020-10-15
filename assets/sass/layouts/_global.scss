@@ -8,6 +8,7 @@ body {
   font-size: 1.6rem;
   background-color: $clr-background-body;
   position: relative;
+  padding-top: 12rem;
 }
 
 //Functionnals classes
@@ -32,7 +33,7 @@ body {
 }
 
 .m-h {
-  min-height: 100vh;
+  min-height: calc(100vh - 12rem);
 }
 
 //Titles

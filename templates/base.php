@@ -8,27 +8,46 @@
 	<link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
+<body class="m-h">
 	<header>
 		<nav>
-			
-			<?php
-			if ($this->session->get('pseudo')) {
-			?>
-				<a href="../public/index.php?route=logout">Déconnexion</a>
-				<a href="../public/index.php?route=profile">Profil</a>
-				<?php if ($this->session->get('role') === 'admin') { ?>
-					<a href="../public/index.php?route=administration">Administration</a>
+			<a href="../public/index.php">
+				<i class='bx bx-md bx-cookie'></i>
+			</a>
+
+
+			<ul class="nav-link-items">
+				<li>
+					<a class="nav-link-item" href="../public/index.php?route=blog">Blog</a>
+				</li>
+				<?php if ($this->session->get('pseudo')) { ?>
+					<?php if ($this->session->get('role') === 'admin') { ?>
+						<li>
+							<a class="nav-link-item" href="../public/index.php?route=administration">
+								<i class='bx bx-cog'></i>
+							</a>
+						</li>
+					<?php } ?>
+
+					<li>
+						<a class="nav-link-item" href="../public/index.php?route=logout">
+							<i class='bx bx-log-in'></i>
+						</a>
+					</li>
+					<li>
+						<a class="nav-link-item" href="../public/index.php?route=profile">
+							<i class='bx bx-user'></i>
+						</a>
+					</li>
+				<?php } else { ?>
+					<li>
+						<a class="nav-link-item" href="../public/index.php?route=register">Inscription</a>
+					</li>
+					<li>
+						<a class="nav-link-item" href="../public/index.php?route=login">Connexion</a>
+					</li>
 				<?php } ?>
-			<?php
-			} else {
-			?>
-				<a href="../public/index.php?route=register">Inscription</a>
-				<a href="../public/index.php?route=login">Connexion</a>
-			<?php
-			}
-			?>
-			<a href="../public/index.php?route=blog">Blog</a>
+			</ul>
 		</nav>
 	</header>
 
