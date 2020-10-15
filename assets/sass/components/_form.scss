@@ -10,11 +10,12 @@ input {
   &[type="text"],
   &[type="email"],
   &[type="password"] {
-    border: .1rem solid $clr-input-border;
+    border: 0.1rem solid $clr-input-border;
 
     &:focus {
       outline: none;
       border: 0.1rem solid $clr-input-border-focus;
+      background-color: $clr-input-background-focus;
     }
 
     &:placeholder-shown {
@@ -28,10 +29,6 @@ input {
     &:hover {
       background-color: $clr-input-background-hover;
       border-color: $clr-input-border-hover;
-    }
-
-    &:focus {
-      background-color: $clr-input-background-focus;
     }
 
     &:hover,
@@ -50,7 +47,7 @@ input {
     border-radius: $input-submit-radius;
     background-color: transparent;
     color: $clr-button-color;
-    
+
     &:hover {
       box-shadow: $box-shadow;
       cursor: pointer;
@@ -59,7 +56,6 @@ input {
 }
 
 .form-control {
-
   width: 100%;
 
   &-label {
