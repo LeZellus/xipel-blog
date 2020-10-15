@@ -22,4 +22,14 @@
       text-decoration: none;
     }
   }
+
+
+  &-box {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+    .button-secondary {
+      text-align: center;
+    }
+  }
 }
