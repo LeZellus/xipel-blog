@@ -24,14 +24,14 @@
 					<?php if ($this->session->get('role') === 'admin') { ?>
 						<li>
 							<a class="nav-link-item" href="../public/index.php?route=administration">
-								<i class='bx bx-cog'></i>
+								<i class='bx bx-cog bx-spin-hover'></i>
 							</a>
 						</li>
 					<?php } ?>
 
 					<li>
 						<a class="nav-link-item" href="../public/index.php?route=logout">
-							<i class='bx bx-log-in'></i>
+							<i class='bx bx-log-in bx-fade-right-hover'></i>
 						</a>
 					</li>
 					<li>
