@@ -322,6 +322,10 @@ body {
 .error {
   border: 1px solid #ff2d20;
 }
+.error-text {
+  color: #ff2d20;
+  text-align: center;
+}
 
 .bg-white {
   background-color: #fff;

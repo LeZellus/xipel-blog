@@ -30,13 +30,13 @@
 					<?php } ?>
 
 					<li>
-						<a class="nav-link-item" href="../public/index.php?route=logout">
-							<i class='bx bx-log-in bx-fade-right-hover'></i>
+						<a class="nav-link-item" href="../public/index.php?route=profile">
+							<i class='bx bx-user'></i>
 						</a>
 					</li>
 					<li>
-						<a class="nav-link-item" href="../public/index.php?route=profile">
-							<i class='bx bx-user'></i>
+						<a class="nav-link-item" href="../public/index.php?route=logout">
+							<i class='bx bx-log-in'></i>
 						</a>
 					</li>
 				<?php } else { ?>
