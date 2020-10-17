@@ -5,5 +5,41 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  box-shadow: $box-shadow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  box-sizing: border-box;
 
+  i {
+    font-size: 3rem;
+  }
+}
+
+.nav {
+
+  &-link {
+
+    &-items {
+      display: flex;
+    }
+
+    &-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding-left: 4rem;
+      color: $clr-nav-link-item;
+      font-weight: 700;
+      transition: $duration-quick;
+
+      &:hover {
+        transition: $duration-quick;
+        color: $clr-nav-link-item-hover;
+        text-shadow: $nav-link-box-shadow-hover;
+      }
+    }
+  }
 }

@@ -43,6 +43,7 @@ $clr-input-border-hover: $palette-silver-chalice;
 $clr-input-color-placeholder: $palette-silver;
 
 //Button
+
 $clr-button-background: $palette-snow;
 $clr-button-color: $palette-java;
 $clr-button-color-hover: $palette-java;
@@ -52,8 +53,11 @@ $clr-button-secondary-color: $palette-silver-chalice;
 $clr-button-secondary-background: $palette-snow;
 
 //Alert
+
 $clr-alert-color: $palette-snow;
 $clr-alert-background: linear-gradient(to bottom left, #ef8d9c 40%, #ffc39e 100%);
 
 //Nav
 $clr-nav-background: $palette-snow;
+$clr-nav-link-item: $palette-mine-shaft;
+$clr-nav-link-item-hover: $palette-java;
