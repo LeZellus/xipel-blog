@@ -1,1 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;900&display=swap');
+@font-face {
+  font-family: "JetBrains Mono";
+  src:
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Light.woff2") format("woff2"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Medium.woff2") format("woff2"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Bold.woff2") format("woff2"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-ExtraBold.woff2") format("woff2"),
+
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Light.woff") format("woff"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Medium.woff") format("woff"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Regular.woff") format("woff"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Bold.woff") format("woff"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-ExtraBold.woff") format("woff"),
+
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Light.eot") format("eot"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Medium.eot") format("eot"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Regular.eot") format("eot"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-Bold.eot") format("eot"),
+    url("../fonts/JetBrainsMono/web/JetBrainsMono-ExtraBold.eot") format("eot"),
+
+    url("../fonts/JetBrainsMono/ttf/JetBrainsMono-Light.ttf") format("ttf"),
+    url("../fonts/JetBrainsMono/ttf/JetBrainsMono-Medium.ttf") format("ttf"),
+    url("../fonts/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf") format("ttf"),
+    url("../fonts/JetBrainsMono/ttf/JetBrainsMono-Bold.ttf") format("ttf"),
+    url("../fonts/JetBrainsMono/ttf/JetBrainsMono-ExtraBold.ttf") format("ttf")
+}
