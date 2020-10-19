@@ -16,14 +16,16 @@
         background-size: cover;
     }
 
-    &-date{
+    &-date {
         position: absolute;
-        right: 2rem;
+        right: -30rem;
         top: 2rem;
         border-radius: 1rem;
         padding: 1rem;
         color: $clr-card-date;
         background-color: $clr-card-date-background;
+        box-shadow: $box-shadow;
+        transition: $duration-quick;
     }
 
     &-title {
@@ -53,5 +55,10 @@
         transform: scale(1.01);
         transition: $duration-quick;
         box-shadow: $box-shadow-hover;
+
+        .card-date {
+            transition: $duration-quick;
+            right: 2rem;
+        }
     }
 }
