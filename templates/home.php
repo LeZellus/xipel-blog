@@ -6,14 +6,10 @@
 <?= $this->session->show('update_password'); ?>
 <?= $this->session->show('delete_account'); ?>
 
-<?php
-
-$dt = new \DateTime('2018-08-19T16:00:00Z');
-
-?>
+<p class="text-generic">Goutez aux pixels technologiques...</p>
 
 <main class="total-flex m-h">
-    <h1 class="mb-4">Derniers articles</h1>
+    <h2 class="mb-4">Derniers articles</h2>
 
     <section class="grid grid-gap-40 articles">
         <?php foreach ($articles as $article) { ?>
