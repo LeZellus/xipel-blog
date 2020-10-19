@@ -167,8 +167,11 @@ class Article
      * @return \DateTime
      */
     public function getUpdatedAt()
-    {
-        return $this->updatedAt;
+    { 
+        $date = $this->updatedAt;
+        $dt = new \DateTime($date);
+
+        return $dt->format('Y-m-d');
     }
 
     /**

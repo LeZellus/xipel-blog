@@ -1,11 +1,11 @@
 section {
-  padding: 4rem;
   box-sizing: border-box;
-  border-radius: 2rem;
 
   &.register,
   &.login {
     max-width: calc(50rem - 8rem);
+    padding: 4rem;
+    border-radius: 2rem;
     width: 100%;
 
     .button-secondary {
@@ -14,8 +14,7 @@ section {
   }
 
   &.articles {
-    max-width: calc(100vw - 8rem);
+    max-width: 150rem;
     width: 100%;
-    grid-template-columns: repeat(3, 1fr);
   }
 }
