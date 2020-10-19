@@ -36,6 +36,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .m-h {
@@ -47,7 +48,7 @@ body {
 h1 {
   font-weight: 700;
   color: $clr-h1-color;
-  font-size: 3.6rem;
+  font-size: 6rem;
   text-align: center;
   text-shadow: $text-shadow;
 }
@@ -55,4 +56,9 @@ h1 {
 h2 {
   color: $clr-h2-color;
   font-size: 3rem;
+  font-weight: 600;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
 }

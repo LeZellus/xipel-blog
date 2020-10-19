@@ -13,9 +13,9 @@ $dt = new \DateTime('2018-08-19T16:00:00Z');
 ?>
 
 <main class="total-flex m-h">
-    <section class="grid grid-gap-40 articles">
-        <h1>Derniers articles</h1>
+    <h1 class="mb-4">Derniers articles</h1>
 
+    <section class="grid grid-gap-40 articles">
         <?php foreach ($articles as $article) { ?>
             <article>
                 <a href="/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>" class="grid card card-article bg-white">

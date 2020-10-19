@@ -1,8 +1,8 @@
 <?php $this->title = "Connexion"; ?>
 
 <main class="total-flex m-h">
+    <h1>Connexion</h1>
     <section class="grid grid-gap-40 login bg-white">
-        <h1>Connexion</h1>
 
         <a href="/index.php?route=register" class="button-secondary">Pas de compte ? Inscrivez-vous</a>
 
@@ -23,7 +23,7 @@
 
         <div class="grid grid-gap-20 button-box">
             <input type="submit" value="Connexion" class="button-primary" id="submit" name="submit" form="form-login">
-            <a href="/index.php" class="button-secondary">Retour à l'accueil</a>
+            <a href="/index.php" class="button-secondary">Accueil</a>
         </div>
 
     </section>
