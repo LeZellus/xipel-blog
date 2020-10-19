@@ -9,6 +9,7 @@ body {
   background-color: $clr-background-body;
   position: relative;
   padding-top: 12rem;
+  padding-bottom: 4rem;
 }
 
 //Functionnals classes
@@ -46,7 +47,12 @@ body {
 h1 {
   font-weight: 700;
   color: $clr-h1-color;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   text-align: center;
   text-shadow: $text-shadow;
+}
+
+h2 {
+  color: $clr-h2-color;
+  font-size: 2rem;
 }

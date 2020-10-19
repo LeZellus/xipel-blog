@@ -14,12 +14,12 @@
 
 <?php if ($this->session->get('role') === 'admin') { ?>
     <div class="actions">
-        <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-        <a href="../public/index.php?route=removeArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+        <a href="/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+        <a href="/index.php?route=removeArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
     </div>
 <?php } ?>
 
-<a href="../public/index.php">Retour à l'accueil</a>
+<a href="/index.php">Retour à l'accueil</a>
 
 <div>
     <h3>Ajouter un commentaire</h3>

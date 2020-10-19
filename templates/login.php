@@ -1,12 +1,12 @@
 <?php $this->title = "Connexion"; ?>
 
-<main class="wrapper-login total-flex m-h">
+<main class="total-flex m-h">
     <section class="grid grid-gap-40 login bg-white">
-        <h1>Mon blog</h1>
+        <h1>Connexion</h1>
 
-        <a href="../public/index.php?route=register" class="button-secondary">Pas de compte ? Inscrivez-vous</a>
+        <a href="/index.php?route=register" class="button-secondary">Pas de compte ? Inscrivez-vous</a>
 
-        <form method="post" id="form-login" action="../public/index.php?route=login" class="grid grid-gap-20">
+        <form method="post" id="form-login" action="/index.php?route=login" class="grid grid-gap-20">
             <div class="form-control grid grid-gap-10">
                 <label for="pseudo" class="form-control-label">Pseudo</label>
                 <input type="text" id="pseudo" name="pseudo" placeholder="Jackcélère">
@@ -23,7 +23,7 @@
 
         <div class="grid grid-gap-20 button-box">
             <input type="submit" value="Connexion" class="button-primary" id="submit" name="submit" form="form-login">
-            <a href="../public/index.php" class="button-secondary">Retour à l'accueil</a>
+            <a href="/index.php" class="button-secondary">Retour à l'accueil</a>
         </div>
 
     </section>
