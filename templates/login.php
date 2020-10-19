@@ -19,7 +19,7 @@
 
         <?php if($this->session->show('error_login')){ ?>
             <p class="error-text">
-                <?= $this->session->show('error_login'); ?>
+                <?php echo $this->session->show('error_login'); ?>
             </p>
         <?php } ?>
 

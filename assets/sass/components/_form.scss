@@ -1,4 +1,5 @@
-input {
+input,
+textarea {
   font-size: 1.6rem;
   font-family: $primary-font;
   box-sizing: border-box;
@@ -65,5 +66,38 @@ input {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+textarea {
+  border: 0.1rem solid $clr-input-border;
+  height: 50rem;
+
+  &:placeholder-shown {
+    background-color: inherit;
+  }
+
+  &::placeholder {
+    color: $clr-input-color-placeholder;
+  }
+
+  &:hover {
+    background-color: $clr-input-background-hover;
+    border-color: $clr-input-border-hover;
+  }
+
+  &:hover,
+  &:focus {
+    transition: $duration-quick;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: none;
+    border: 0.1rem solid $clr-input-border-focus;
+    background-color: $clr-input-background-focus;
   }
 }

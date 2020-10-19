@@ -17,4 +17,11 @@ section {
     max-width: 150rem;
     width: 100%;
   }
+
+  &.add-article {
+    padding: 4rem;
+    max-width: 100rem;
+    width: 100%;
+    border-radius: 2rem;
+  }
 }

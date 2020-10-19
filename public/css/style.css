@@ -147,7 +147,8 @@ table {
   .button-box .button-secondary {
     text-align: center; }
 
-input {
+input,
+textarea {
   font-size: 1.6rem;
   font-family: "JetBrains Mono", Arial, sans-serif;
   box-sizing: border-box;
@@ -155,30 +156,56 @@ input {
   border-radius: 0.5rem;
   padding: 1.5rem;
   padding-left: 2rem; }
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="password"],
+  textarea[type="text"],
+  textarea[type="email"],
+  textarea[type="password"] {
     border: 0.1rem solid #ccc; }
-    input[type="text"]:placeholder-shown, input[type="email"]:placeholder-shown, input[type="password"]:placeholder-shown {
+    input[type="text"]:placeholder-shown, input[type="email"]:placeholder-shown, input[type="password"]:placeholder-shown,
+    textarea[type="text"]:placeholder-shown,
+    textarea[type="email"]:placeholder-shown,
+    textarea[type="password"]:placeholder-shown {
       background-color: inherit; }
-    input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder {
+    input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder,
+    textarea[type="text"]::placeholder,
+    textarea[type="email"]::placeholder,
+    textarea[type="password"]::placeholder {
       color: #ccc; }
-    input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
+    input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover,
+    textarea[type="text"]:hover,
+    textarea[type="email"]:hover,
+    textarea[type="password"]:hover {
       background-color: #ececec;
       border-color: #8d8d8d; }
-    input[type="text"]:hover, input[type="text"]:focus, input[type="email"]:hover, input[type="email"]:focus, input[type="password"]:hover, input[type="password"]:focus {
+    input[type="text"]:hover, input[type="text"]:focus, input[type="email"]:hover, input[type="email"]:focus, input[type="password"]:hover, input[type="password"]:focus,
+    textarea[type="text"]:hover,
+    textarea[type="text"]:focus,
+    textarea[type="email"]:hover,
+    textarea[type="email"]:focus,
+    textarea[type="password"]:hover,
+    textarea[type="password"]:focus {
       transition: 0.3s; }
-    input[type="text"]:invalid, input[type="email"]:invalid, input[type="password"]:invalid {
+    input[type="text"]:invalid, input[type="email"]:invalid, input[type="password"]:invalid,
+    textarea[type="text"]:invalid,
+    textarea[type="email"]:invalid,
+    textarea[type="password"]:invalid {
       box-shadow: none; }
-    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus,
+    textarea[type="text"]:focus,
+    textarea[type="email"]:focus,
+    textarea[type="password"]:focus {
       outline: none;
       border: 0.1rem solid #000;
       background-color: #dbdbdb; }
-  input[type="submit"] {
+  input[type="submit"],
+  textarea[type="submit"] {
     padding: 1.5rem 3rem;
     border: 1px solid #31e2c2;
     border-radius: 5rem;
     background-color: transparent;
     color: #31e2c2; }
-    input[type="submit"]:hover {
+    input[type="submit"]:hover,
+    textarea[type="submit"]:hover {
       box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
       cursor: pointer; }
 
@@ -189,6 +216,25 @@ input {
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); }
     .form-control-label:hover {
       cursor: pointer; }
+
+textarea {
+  border: 0.1rem solid #ccc;
+  height: 50rem; }
+  textarea:placeholder-shown {
+    background-color: inherit; }
+  textarea::placeholder {
+    color: #ccc; }
+  textarea:hover {
+    background-color: #ececec;
+    border-color: #8d8d8d; }
+  textarea:hover, textarea:focus {
+    transition: 0.3s; }
+  textarea:invalid {
+    box-shadow: none; }
+  textarea:focus {
+    outline: none;
+    border: 0.1rem solid #000;
+    background-color: #dbdbdb; }
 
 nav {
   height: 8rem;
@@ -271,6 +317,11 @@ section {
   section.articles {
     max-width: 150rem;
     width: 100%; }
+  section.add-article {
+    padding: 4rem;
+    max-width: 100rem;
+    width: 100%;
+    border-radius: 2rem; }
 
 .card {
   width: 100%;
