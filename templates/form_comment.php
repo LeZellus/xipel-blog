@@ -4,9 +4,9 @@ $author = $this->session->get('pseudo');
 
 ?>
 
-<form method="post" action="../public/index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId()); ?>">
-  
-  <?php if (!$this->session->get('pseudo')) {?>
+<form method="post" action="/index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId()); ?>">
+
+  <?php if (!$this->session->get('pseudo')) { ?>
 
     <label for="pseudo">Pseudo</label>
     <input type="text" id="pseudo" name="pseudo" value="">

@@ -12,4 +12,8 @@
   &-gap-40 {
     grid-gap: 4rem;
   }
+
+  &-title {
+    grid-column: 1 / 4;
+  }
 }

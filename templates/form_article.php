@@ -7,7 +7,7 @@ $author = isset($article) && $article->getAuthor() ? htmlspecialchars($article->
 $chapo = isset($article) && $article->getChapo() ? htmlspecialchars($article->getChapo()) : '';
 ?>
 
-<form method="post" action="../public/index.php?route=<?= $route; ?>">
+<form method="post" action="/index.php?route=<?= $route; ?>">
   <label for="title">Titre</label>
   <input type="text" id="title" name="title" value="<?= $title; ?>">
   <?= isset($errors['title']) ? $errors['title'] : ''; ?>
