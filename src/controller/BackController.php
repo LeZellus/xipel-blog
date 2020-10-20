@@ -68,7 +68,7 @@ class BackController extends Controller
     {
         if ($this->checkLoggedIn()) {
             if ($post->get('submit')) {
-
+                $this->session->set('add_article', 'Le nouvel article a bien été ajouté');
                 $errors = $this->validation->validate($post, 'UpdatePassword');
 
                 if (!$errors) {
@@ -137,19 +137,23 @@ class BackController extends Controller
     /**
      * Function to add article to website
      */
-    public function addArticle($post)
+    public function addArticle($post, $files)
     {
         if ($this->checkAdmin()) {
             if ($post->get('submit')) {
+                // var_dump($files['name']);
+                // var_dump($files);
                 $errors = $this->validation->validate($post, 'Article');
-                if (!$errors) {
-                    $this->articleDAO->addArticle($post, $this->session->get('id'));
+                $errorsThumb = $this->validation->validate($files, 'Thumb');
+                if (!$errors && !$errorsThumb) {
+                    $this->articleDAO->addArticle($post, $this->session->get('id'), $files['name']);
                     $this->session->set('create_article', 'Le nouvel article a bien été ajouté');
                     header('Location: /index.php?route=administration');
                 }
                 return $this->view->render('add_article', [
                     'post' => $post,
-                    'errors' => $errors
+                    'errors' => $errors,
+                    'errorsThumb' => $errorsThumb
                 ]);
             }
             return $this->view->render('add_article');

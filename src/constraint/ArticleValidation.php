@@ -33,13 +33,15 @@ class ArticleValidation extends Validation
     } elseif ($name === 'chapo') {
       $error = $this->checkChapo($name, $value);
       $this->addError($name, $error);
-    }
+    } elseif ($name === 'thumb') {
+      $error = $this->checkThumb($name, $value);
+      $this->addError($name, $error);
+    } 
   }
 
   private function addError($name, $error)
   {
     if ($error) {
-      var_dump($error);
       $this->errors += [
         $name => $error
       ];
@@ -79,6 +81,13 @@ class ArticleValidation extends Validation
     }
     if ($this->constraint->maxLength($name, $value, 255)) {
       return $this->constraint->maxLength('chapo', $value, 255);
+    }
+  }
+
+  private function checkThumb($name, $value)
+  {
+    if ($this->constraint->haveSpace($name, $value)) {
+      return $this->constraint->haveSpace('thumb', $value);
     }
   }
 }

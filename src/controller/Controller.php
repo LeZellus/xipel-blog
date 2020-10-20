@@ -19,6 +19,7 @@ abstract class Controller
 	protected $get;
 	protected $post;
 	protected $session;
+	protected $files;
 	protected $validation;
 
 	public function __construct()
@@ -32,5 +33,6 @@ abstract class Controller
 		$this->get = $this->request->getGet();
 		$this->post = $this->request->getPost();
 		$this->session = $this->request->getSession();
+		$this->files = $this->request->getFiles();
 	}
 }

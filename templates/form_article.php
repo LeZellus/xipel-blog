@@ -5,9 +5,10 @@ $title = isset($article) && $article->getTitle() ? htmlspecialchars($article->ge
 $content = isset($article) && $article->getContent() ? htmlspecialchars($article->getContent()) : '';
 $author = isset($article) && $article->getAuthor() ? htmlspecialchars($article->getAuthor()) : '';
 $chapo = isset($article) && $article->getChapo() ? htmlspecialchars($article->getChapo()) : '';
+$thumb = isset($article) && $article->getThumb() ? htmlspecialchars($article->getThumb()) : 'Choisir une image';
 ?>
 
-<form method="post" action="/index.php?route=<?= $route; ?>" class="grid grid-gap-20" id="form-add-article">
+<form method="post" action="/index.php?route=<?= $route; ?>" class="grid grid-gap-20" id="form-add-article" enctype="multipart/form-data">
   <div class="form-control grid grid-gap-10">
     <label for="title" class="form-control-label">Titre</label>
     <input type="text" id="title" name="title" value="<?= $title; ?>">
@@ -26,6 +27,11 @@ $chapo = isset($article) && $article->getChapo() ? htmlspecialchars($article->ge
     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
   </div>
 
+  <div class="form-control grid grid-gap-10">
+    <label for="thumb" class="form-control-label">Image d'entête</label>
+    <input type="file" id="thumb" name="thumb" value="<?= $thumb; ?>">
+    <?= isset($errorsThumb['name']) ? $errorsThumb['name'] : ''; ?>
+  </div>
 </form>
 
 <div class="grid grid-gap-20 button-box">
