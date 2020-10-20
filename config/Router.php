@@ -51,7 +51,7 @@ class Router
         } elseif ($route === 'addComment') {
           $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
         } elseif ($route === 'addArticle') {
-          $this->backController->addArticle($this->request->getPost());
+          $this->backController->addArticle($this->request->getPost(), $this->request->getFiles()->get('thumb'));
         } elseif ($route === 'flagComment') {
           $this->backController->flagComment($this->request->getGet()->get('commentId'));
         } elseif ($route === 'removeComment') {

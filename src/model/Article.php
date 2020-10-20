@@ -39,6 +39,11 @@ class Article
      */
     private $updatedAt;
 
+    /**
+     * @var string
+     */
+    private $thumb;
+
     /**********************************************************************/
     /*Article ID Managamenent**********************************************/
     /**********************************************************************/
@@ -180,5 +185,25 @@ class Article
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    /**********************************************************************/
+    /*Article Thumb Managamenent*******************************************/
+    /**********************************************************************/
+
+    /**
+     * @return string
+     */
+    public function getThumb()
+    {
+        return $this->thumb;
+    }
+
+    /**
+     * @param string $thumb
+     */
+    public function setThumb(string $thumb)
+    {
+        $this->thumb = $thumb;
     }
 }
