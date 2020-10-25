@@ -32,7 +32,34 @@ class Constraint
     public function haveSpace($name, $value)
     {
         if (preg_match("/\s/", $value)) {
-            return "Le nom du fichier ne doit pas contenir d'espace";
+            return "Le champ " . $name . " ne doit pas contenir d'espace";
+        }
+    }
+
+    public function minSize($name, $value)
+    {
+        $minSize = 1;
+        if ($value < $minSize) {
+            return "La " . $name . " minimum de l'image doit être de " . $minSize . "Ko";
+        }
+    }
+
+    public function maxSize($name, $value)
+    {
+        $maxSize = 4000000;
+        if ($value > $maxSize) {
+            return "La " . $name . " maximum de l'image doit être de " . $maxSize . "Ko";
+        }
+    }
+
+    public function haveExt($name, $value)
+    {
+        $validExt = [".jpg", ".jpeg", ".png"];
+        $validExtTips = implode(",", $validExt);
+        $fileExt = "." . strtolower(substr(strrchr($value, "/"), 1));
+
+        if (!in_array($fileExt, $validExt)) {
+            return "Le " . $name . "doit être une image de type : " . $validExtTips;
         }
     }
 

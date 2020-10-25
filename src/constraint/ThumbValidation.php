@@ -24,8 +24,15 @@ class ThumbValidation extends Validation
 
   private function checkField($name, $value)
   {
+
     if ($name === 'name') {
       $error = $this->checkName($name, $value);
+      $this->addError($name, $error);
+    } elseif ($name === 'type') {
+      $error = $this->checkType($name, $value);
+      $this->addError($name, $error);
+    } elseif ($name === 'size') {
+      $error = $this->checkSize($name, $value);
       $this->addError($name, $error);
     }
   }
@@ -42,7 +49,24 @@ class ThumbValidation extends Validation
   private function checkName($name, $value)
   {
     if ($this->constraint->haveSpace($name, $value)) {
-      return $this->constraint->haveSpace("thumb", $value);
+      return $this->constraint->haveSpace("image", $value);
+    }
+  }
+
+  private function checkSize($name, $value)
+  {
+    if ($this->constraint->minSize($name, $value)) {
+      return $this->constraint->minSize("taille", $value);
+    }
+    if ($this->constraint->maxSize($name, $value)) {
+      return $this->constraint->maxSize("taille", $value);
+    }
+  }
+
+  private function checkType($name, $value)
+  {
+    if ($this->constraint->haveExt($name, $value)) {
+      return $this->constraint->haveExt("fichier", $value);
     }
   }
 }

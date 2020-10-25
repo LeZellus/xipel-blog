@@ -141,12 +141,34 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             if ($post->get('submit')) {
-                // var_dump($files['name']);
-                // var_dump($files);
                 $errors = $this->validation->validate($post, 'Article');
                 $errorsThumb = $this->validation->validate($files, 'Thumb');
                 if (!$errors && !$errorsThumb) {
-                    $this->articleDAO->addArticle($post, $this->session->get('id'), $files['name']);
+
+                    $fileType = $files["type"];
+                    $fileExt = "." . strtolower(substr(strrchr($fileType, "/"), 1));
+                    $tmpName = $files["tmp_name"];
+                    $domainPath = $_SERVER['HTTP_HOST'];
+
+                    //Set unique name  to the thumb
+                    $uniqueName = md5(uniqid(rand(), true));
+                    $fileUploadPathName = "../public/uploads/" . $uniqueName . $fileExt;
+                    //Set path to image
+                    $fileName = "/uploads/" . $uniqueName . $fileExt;
+
+                    //Move image from tmp_space to upload folder
+                    $result = move_uploaded_file($tmpName, $fileUploadPathName);
+
+                    if ($result) {
+                        //Add article if image uploaded successful
+                        $this->articleDAO->addArticle($post, $this->session->get('id'), $fileName);
+                    } else {
+                        //Return error if upload fail
+                        $this->session->set('error_upload', 'Un problème est survenu lors du transfert de l\'image');
+                        header('Location: /index.php?route=add_article');
+                        exit;
+                    }
+
                     $this->session->set('create_article', 'Le nouvel article a bien été ajouté');
                     header('Location: /index.php?route=administration');
                 }

@@ -30,7 +30,9 @@ $thumb = isset($article) && $article->getThumb() ? htmlspecialchars($article->ge
   <div class="form-control grid grid-gap-10">
     <label for="thumb" class="form-control-label">Image d'entête</label>
     <input type="file" id="thumb" name="thumb" value="<?= $thumb; ?>">
-    <?= isset($errorsThumb['name']) ? $errorsThumb['name'] : ''; ?>
+    <?= isset($errorsThumb['name']) ? $errorsThumb['name'] : ''; ?><br>
+    <?= isset($errorsThumb['size']) ? $errorsThumb['size'] : ''; ?><br>
+    <?= isset($errorsThumb['type']) ? $errorsThumb['type'] : ''; ?>
   </div>
 </form>
 
