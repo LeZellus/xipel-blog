@@ -1,0 +1,29 @@
+.article {
+
+  &-thumb {
+    width: 30rem;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &-created,
+  &-updated {
+    color: $clr-card-date-background;
+  }
+
+  &-desc {
+    font-size: 1.6rem;
+    color: $clr-card-desc;
+  }
+
+  &-author {
+    color: $clr-card-author;
+    font-weight: 700;
+  }
+
+  &-content {
+    padding: 4rem;
+  }
+}

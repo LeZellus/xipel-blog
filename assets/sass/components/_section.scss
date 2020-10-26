@@ -19,10 +19,19 @@ section {
     padding: 0 4rem;
   }
 
-  &.add-article {
+  &.add-article,
+  &.edit-article,
+  &.article,
+  &.profil {
     padding: 4rem;
     max-width: 100rem;
     width: 100%;
     border-radius: 2rem;
+  }
+
+  &.profil {
+    .grid {
+      justify-content: center;
+    }
   }
 }
