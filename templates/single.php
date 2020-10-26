@@ -2,15 +2,17 @@
 
 <?= $this->session->show('edit_article'); ?>
 
-<h1>Article</h1>
-<p>En construction</p>
-<div>
-    <h2><?= htmlspecialchars($article->getTitle()); ?></h2>
-    <p><?= htmlspecialchars($article->getContent()); ?></p>
-    <p><?= htmlspecialchars($article->getAuthor()); ?></p>
-    <p>Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?></p>
-    <p>Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></p>
-</div>
+<main class="total-flex m-h">
+    <h1 class="mb-4"><?= htmlspecialchars($article->getTitle()); ?></h1>
+    <section class="grid grid-gap-40 article bg-white">
+        <p class="article-content"><?= htmlspecialchars($article->getContent()); ?></p>
+        <span class="article-created">
+            Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?> par
+            <span class="article-author"><?= htmlspecialchars($article->getAuthor()); ?></span>
+        </span>
+        <span class="article-updated">Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></span>
+    </section>
+</main>
 
 <?php if ($this->session->get('role') === 'admin') { ?>
     <div class="actions">
@@ -18,8 +20,6 @@
         <a href="/index.php?route=removeArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
     </div>
 <?php } ?>
-
-<a href="/index.php">Retour à l'accueil</a>
 
 <div>
     <h3>Ajouter un commentaire</h3>

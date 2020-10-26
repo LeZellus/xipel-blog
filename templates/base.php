@@ -5,14 +5,13 @@
 	<meta charset="UTF-8" />
 	<title><?= $title ?>| </title>
 	<link rel="stylesheet" href="/css/style.css">
-	<link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body class="m-h">
 	<header>
 		<nav>
 			<a href="/index.php">
-				<i class='bx bx-md bx-cookie'></i>
+				<img src="uploads/LeZellus.gif" alt="Logo de Mathéo en Pixel art" class="logo logo-nav">
 			</a>
 
 
@@ -24,19 +23,19 @@
 					<?php if ($this->session->get('role') === 'admin') { ?>
 						<li>
 							<a class="nav-link-item" href="/index.php?route=administration">
-								<i class='bx bx-cog bx-spin-hover'></i>
+								<img src="/icons/cog.svg" alt="Icon engrenage" class="icon">
 							</a>
 						</li>
 					<?php } ?>
 
 					<li>
 						<a class="nav-link-item" href="/index.php?route=profile">
-							<i class='bx bx-user'></i>
+							<img src="/icons/user.svg" alt="Icon utilisateur" class="icon">
 						</a>
 					</li>
 					<li>
 						<a class="nav-link-item" href="/index.php?route=logout">
-							<i class='bx bx-log-in'></i>
+							<img src="/icons/logout.svg" alt="Icon déconnexion" class="icon">
 						</a>
 					</li>
 				<?php } else { ?>

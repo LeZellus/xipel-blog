@@ -6,10 +6,12 @@
 <?= $this->session->show('update_password'); ?>
 <?= $this->session->show('delete_account'); ?>
 
-<p class="text-generic">Goutez aux pixels technologiques...</p>
-
 <main class="total-flex m-h">
-    <h2 class="mb-4">Derniers articles</h2>
+    <div class="grid grid-gap-40">
+        <img src="/uploads/LeZellus.gif" alt="Logo Mathéo" class="logo">
+        <p class="text-generic">“Goutez aux pixels technologiques...”</p>
+    </div>
+    <h1 class="mb-4">Derniers articles</h1>
 
     <section class="grid grid-gap-40 articles">
         <?php foreach ($articles as $article) { ?>

@@ -1,7 +1,8 @@
 <?php $this->title = "Modifier l'article"; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
-<div>
-  <?php include 'form_article.php'; ?>
-  <a href="/index.php">Retour à l'accueil</a>
-</div>
+
+<main class="total-flex m-h">
+  <h1 class="mb-4">Modifier un article</h1>
+  <section class="grid grid-gap-40 edit-article bg-white">
+    <?php include 'form_article.php'; ?>
+  </section>
+</main>

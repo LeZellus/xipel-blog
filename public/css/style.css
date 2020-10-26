@@ -1,7 +1,8 @@
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("../fonts/JetBrainsMono/web/JetBrainsMono-Light.woff2") format("woff2"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Medium.woff2") format("woff2"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Regular.woff2") format("woff2"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Bold.woff2") format("woff2"), url("../fonts/JetBrainsMono/web/JetBrainsMono-ExtraBold.woff2") format("woff2"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Light.woff") format("woff"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Medium.woff") format("woff"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Regular.woff") format("woff"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Bold.woff") format("woff"), url("../fonts/JetBrainsMono/web/JetBrainsMono-ExtraBold.woff") format("woff"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Light.eot") format("eot"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Medium.eot") format("eot"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Regular.eot") format("eot"), url("../fonts/JetBrainsMono/web/JetBrainsMono-Bold.eot") format("eot"), url("../fonts/JetBrainsMono/web/JetBrainsMono-ExtraBold.eot") format("eot"), url("../fonts/JetBrainsMono/ttf/JetBrainsMono-Light.ttf") format("ttf"), url("../fonts/JetBrainsMono/ttf/JetBrainsMono-Medium.ttf") format("ttf"), url("../fonts/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf") format("ttf"), url("../fonts/JetBrainsMono/ttf/JetBrainsMono-Bold.ttf") format("ttf"), url("../fonts/JetBrainsMono/ttf/JetBrainsMono-ExtraBold.ttf") format("ttf");
+@import 'https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@300;400;500;600;700;800&display=swap';
+.icon {
+  height: 3rem;
 }
+
 /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
 html,
 body,
@@ -88,7 +89,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: "JetBrains Mono", Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   vertical-align: baseline;
 }
 
@@ -141,6 +142,8 @@ table {
   background-color: #fff;
   transition: 0.3s;
   color: #31e2c2;
+  text-decoration: none;
+  text-align: center;
 }
 .button-primary:hover {
   box-shadow: 0 6px 7px rgba(0, 0, 0, 0.1);
@@ -164,7 +167,7 @@ table {
 input,
 textarea {
   font-size: 1.6rem;
-  font-family: "JetBrains Mono", Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   box-sizing: border-box;
   transition: 0.3s;
   border-radius: 0.5rem;
@@ -299,8 +302,8 @@ nav i {
   text-decoration: none;
   padding-left: 4rem;
   color: #222;
-  font-weight: 700;
   transition: 0.3s;
+  font-family: "Press Start 2P", Arial, sans-serif;
 }
 .nav-link-item:hover {
   transition: 0.3s;
@@ -371,11 +374,14 @@ section.articles {
   width: 100%;
   padding: 0 4rem;
 }
-section.add-article {
+section.add-article, section.edit-article, section.article, section.profil {
   padding: 4rem;
   max-width: 100rem;
   width: 100%;
   border-radius: 2rem;
+}
+section.profil .grid {
+  justify-content: center;
 }
 
 .card {
@@ -434,6 +440,28 @@ section.add-article {
   right: 2rem;
 }
 
+.article-thumb {
+  width: 30rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.article-created, .article-updated {
+  color: #ccc;
+}
+.article-desc {
+  font-size: 1.6rem;
+  color: #8d8d8d;
+}
+.article-author {
+  color: #31e2c2;
+  font-weight: 700;
+}
+.article-content {
+  padding: 4rem;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -480,18 +508,39 @@ h1 {
   font-size: 6rem;
   text-align: center;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-  margin: auto;
-  max-width: 50rem;
+  margin: 0 auto;
+  text-transform: uppercase;
 }
 
 h2 {
   color: #222;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
+  font-family: "Press Start 2P", Arial, sans-serif;
 }
 
 .mb-4 {
   margin-bottom: 4rem;
+}
+
+.text-generic {
+  color: #8d8d8d;
+  font-family: "Press Start 2P", Arial, sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 0 2rem 8rem 2rem;
+}
+
+img {
+  margin: auto;
+}
+
+.logo {
+  margin: auto;
+  max-width: 15rem;
+}
+.logo-nav {
+  max-width: 4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

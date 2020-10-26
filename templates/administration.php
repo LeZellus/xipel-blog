@@ -8,11 +8,11 @@
 <?= $this->session->show('remove_comment'); ?>
 
 <h1>Page d'administration</h1>
-<p>En construction</p>
-<a href="/index.php">Retour à l'accueil</a>
 
-<h2>Articles</h2>
-<a href="/index.php?route=addArticle">Nouvel article</a>
+<section class="grid grid-gap-40">
+    <h2>Articles</h2>
+    <a class="button-primary" href="/index.php?route=addArticle">Nouvel article</a>
+</section>
 
 <table>
     <tr>
