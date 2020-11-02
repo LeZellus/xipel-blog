@@ -3,7 +3,8 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title><?= $title ?>| </title>
+	<title><?= $title ?> • Xipel, de l'imagination à la conception d'un jeu.</title>
+	<meta name="description" content="Voici un exemple de description, elle est encore un peu courte mais va surement changer dans les prochains jours. Elle permet d&#x27;écrire une description" />
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -17,7 +18,9 @@
 
 			<ul class="nav-link-items">
 				<li>
-					<a class="nav-link-item" href="/index.php?route=blog">Blog</a>
+					<a class="nav-link-item" href="/index.php?route=blog">
+						Blog
+					</a>
 				</li>
 				<?php if ($this->session->get('pseudo')) { ?>
 					<?php if ($this->session->get('role') === 'admin') { ?>

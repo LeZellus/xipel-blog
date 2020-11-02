@@ -41,7 +41,7 @@ class Router
         } elseif ($route === 'logout') {
           $this->backController->logout();
         } elseif ($route === 'administration') {
-          $this->backController->administration();
+          $this->backController->administration($this->request->getGet()->get('userId'));
         } elseif ($route === 'blog') {
           $this->frontController->blog();
         } elseif ($route === 'deleteUser') {

@@ -153,7 +153,10 @@ class Article
      */
     public function getCreatedAt()
     {
-        return $this->createdAt;
+        $date = $this->updatedAt;
+        $dt = new \DateTime($date);
+        $dtFormat = str_replace(" ", "-", $dt->format('d-m-Y'));
+        return $dtFormat;
     }
 
     /**
@@ -176,7 +179,7 @@ class Article
         $date = $this->updatedAt;
         $dt = new \DateTime($date);
 
-        return $dt->format('Y-m-d');
+        return $dt->format('d-M-y');
     }
 
     /**

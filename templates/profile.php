@@ -6,7 +6,10 @@
         <img src="/uploads/LeZellus.gif" alt="Logo Mathéo" class="logo">
         <div class="grid grid-gap-20">
             <h2><?= $this->session->get('pseudo'); ?></h2>
-            <p><?= $this->session->get('id'); ?></p>
+            <p>Prénom : <?= $user->getFirstName(); ?></p>
+            <p>Nom : <?= $user->getLastName(); ?></p>
+            <p>Email : <?= $user->getEmail(); ?></p>
+            <p>Compte crée depuis le : <?= $user->getCreatedAt(); ?></p>
         </div>
 
         <div class="grid grid-gap-20 button-box">

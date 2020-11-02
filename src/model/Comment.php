@@ -98,7 +98,10 @@ class Comment
    */
   public function getCreatedAt()
   {
-    return $this->createdAt;
+    $date = $this->createdAt;
+    $dt = new \DateTime($date);
+
+    return $dt->format('d-m-Y');
   }
 
   /**

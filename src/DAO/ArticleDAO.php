@@ -53,6 +53,22 @@ class ArticleDAO extends DAO
     }
 
     /**
+     * Function to return last number articles
+     */
+    public function getLastArticles()
+    {
+        $sql = 'SELECT article.id, article.title, article.content, article.chapo, article.createdAt, user.pseudo, article.updatedAt, article.thumb FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC LIMIT 4';
+        $result = $this->createQuery($sql);
+        $articles = [];
+        foreach ($result as $row) {
+            $articleId = $row['id'];
+            $articles[$articleId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $articles;
+    }
+
+    /**
      * Function to return article by id
      */
     public function getArticle($articleId)

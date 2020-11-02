@@ -12,16 +12,19 @@ class UserDAO extends DAO
     {
         $user = new User();
         $user->setId($row['id']);
+        $user->setFirstName($row['firstName']);
+        $user->setLastName($row['lastName']);
+        $user->setEmail($row['email']);
         $user->setPseudo($row['pseudo']);
         $user->setCreatedAt($row['createdAt']);
-        $user->setRole($row['name']);
+        $user->setRole($row['role_id']);
         return $user;
     }
 
     //Function to getUsers
     public function getUsers()
     {
-        $sql = 'SELECT user.id, user.pseudo, user.createdAt, role.name FROM user INNER JOIN role ON user.role_id = role.id ORDER BY user.id DESC';
+        $sql = 'SELECT user.id, user.firstName, user.lastName, user.email, user.pseudo, user.createdAt, user.role_id FROM user INNER JOIN role ON user.role_id = role.id ORDER BY user.id DESC';
         $result = $this->createQuery($sql);
         $users = [];
         foreach ($result as $row) {
@@ -30,6 +33,16 @@ class UserDAO extends DAO
         }
         $result->closeCursor();
         return $users;
+    }
+
+    //Function to getUsers
+    public function getUser($userId)
+    {
+        $sql = 'SELECT user.id, user.firstName, user.lastName, user.email, user.pseudo, user.password, user.createdAt, user.role_id FROM user WHERE user.id = ?';
+        $result = $this->createQuery($sql, [$userId]);
+        $user = $result->fetch();
+        $result->closeCursor();
+        return $this->buildObject($user);
     }
 
     //Register member
