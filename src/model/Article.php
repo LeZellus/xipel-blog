@@ -176,7 +176,7 @@ class Article
         $date = $this->updatedAt;
         $dt = new \DateTime($date);
 
-        return $dt->format('Y-m-d');
+        return $dt->format('d-m-Y');
     }
 
     /**

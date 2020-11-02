@@ -23,10 +23,10 @@
             </p>
         <?php } ?>
 
-        <div class="grid grid-gap-20 button-box">
+        <section class="grid grid-gap-20 button-box">
             <input type="submit" value="Connexion" class="button-primary" id="submit" name="submit" form="form-login">
             <a href="/index.php" class="button-secondary">Accueil</a>
-        </div>
+        </section>
 
     </section>
 </main>

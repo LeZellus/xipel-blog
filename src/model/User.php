@@ -30,6 +30,11 @@ class User
     private $createdAt;
 
     /**
+     * @var string
+     */
+    private $email;
+
+    /**
      * @var int
      */
     private $role;
@@ -144,7 +149,10 @@ class User
      */
     public function getCreatedAt()
     {
-        return $this->createdAt;
+        $date = $this->createdAt;
+        $dt = new \DateTime($date);
+
+        return $dt->format('d-m-Y');
     }
 
     /**
@@ -153,6 +161,26 @@ class User
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    /**********************************************************************/
+    /*User Rôle Managamenent***********************************************/
+    /**********************************************************************/
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
     }
 
     /**********************************************************************/

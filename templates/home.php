@@ -6,7 +6,7 @@
 <?= $this->session->show('update_password'); ?>
 <?= $this->session->show('delete_account'); ?>
 
-<main class="total-flex m-h">
+<main class="grid grid-center grid-gap-40 m-h">
     <div class="grid grid-gap-40">
         <img src="/uploads/LeZellus.gif" alt="Logo Mathéo" class="logo">
         <p class="text-generic">“Goutez aux pixels technologiques...”</p>

@@ -282,6 +282,8 @@ nav {
     grid-gap: 4rem; }
   .grid-title {
     grid-column: 1 / 4; }
+  .grid-center {
+    justify-content: center; }
 
 .main-login {
   height: 100vh;
