@@ -100,4 +100,8 @@ textarea {
     border: 0.1rem solid $clr-input-border-focus;
     background-color: $clr-input-background-focus;
   }
+
+  &.comment{
+    height: 10rem;
+  }
 }

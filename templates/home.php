@@ -11,7 +11,7 @@
         <img src="/uploads/LeZellus.gif" alt="Logo Mathéo" class="logo">
         <p class="text-generic">“Goutez aux pixels technologiques...”</p>
     </div>
-    <h1 class="mb-4">Derniers articles</h1>
+    <h1 class="mt-4">Derniers articles</h1>
 
     <section class="grid grid-gap-40 articles">
         <?php foreach ($articles as $article) { ?>
@@ -31,5 +31,11 @@
                 </a>
             </article>
         <?php } ?>
+    </section>
+
+    <h1 class="mt-4">Mon parcours</h1>
+
+    <section class="grid grid-gap-40 articles">
+        <p>Mon CV :</p>
     </section>
 </main>

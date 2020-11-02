@@ -1,6 +1,6 @@
-<?php $this->title = "Ahah" ?>
+<?php $this->title = "Tout les articles" ?>
 
-<main class="grid grid-center grid-gap-40 m-h">
+<main class="grid grid-gap-40 m-h">
     <h1 class="mb-4">Tout les articles</h1>
 
     <section class="grid grid-gap-40 articles">

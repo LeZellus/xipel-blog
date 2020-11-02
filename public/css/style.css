@@ -238,6 +238,8 @@ textarea {
     outline: none;
     border: 0.1rem solid #000;
     background-color: #dbdbdb; }
+  textarea.comment {
+    height: 10rem; }
 
 nav {
   height: 8rem;
@@ -310,27 +312,6 @@ nav {
   .alert:hover {
     cursor: pointer; }
 
-section {
-  box-sizing: border-box; }
-  section.register, section.login {
-    max-width: calc(50rem - 8rem);
-    padding: 4rem;
-    border-radius: 2rem;
-    width: 100%; }
-    section.register .button-secondary, section.login .button-secondary {
-      text-align: center; }
-  section.articles {
-    max-width: 150rem;
-    width: 100%;
-    padding: 0 4rem; }
-  section.add-article, section.edit-article, section.article, section.profil {
-    padding: 4rem;
-    max-width: 100rem;
-    width: 100%;
-    border-radius: 2rem; }
-  section.profil .grid {
-    justify-content: center; }
-
 .card {
   width: 100%;
   text-decoration: none;
@@ -377,20 +358,65 @@ section {
       transition: 0.3s;
       right: 2rem; }
 
-.article-thumb {
-  width: 30rem;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-.article-created, .article-updated {
-  color: #ccc; }
-.article-desc {
-  font-size: 1.6rem;
-  color: #8d8d8d; }
-.article-author {
-  color: #31e2c2;
-  font-weight: 700; }
+section {
+  box-sizing: border-box; }
+  section.register, section.login {
+    max-width: calc(50rem - 8rem);
+    padding: 4rem;
+    border-radius: 2rem;
+    width: 100%; }
+    section.register .button-secondary, section.login .button-secondary {
+      text-align: center; }
+  section.articles {
+    max-width: 150rem;
+    width: 100%;
+    padding: 0 4rem;
+    margin: auto; }
+  section.add-article, section.edit-article, section.article, section.comments, section.profil {
+    padding: 4rem;
+    max-width: 100rem;
+    width: 100%;
+    border-radius: 2rem; }
+  section.profil .grid {
+    justify-content: center; }
+  section.comment {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ccc;
+    grid-template-columns: 5rem 1fr; }
+
+.article {
+  position: relative;
+  padding-top: 29rem !important;
+  margin-top: 25rem; }
+  .article-thumb {
+    width: 30rem;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; }
+  .article-created, .article-updated {
+    color: #ccc; }
+  .article-desc {
+    font-size: 1.6rem;
+    color: #8d8d8d; }
+  .article-author {
+    color: #31e2c2;
+    font-weight: 700; }
+  .article-thumb {
+    position: absolute;
+    width: calc(100% - 8rem);
+    height: 50rem;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 1.5rem;
+    left: 4rem;
+    bottom: calc(100% - 25rem); }
+
+.comment-thumb {
+  width: 5rem;
+  margin: 0; }
+.comment-content {
+  padding-left: 2rem; }
 
 html {
   font-size: 62.5%; }
@@ -442,12 +468,15 @@ h2 {
 .mb-4 {
   margin-bottom: 4rem; }
 
+.mt-4 {
+  margin-top: 8rem; }
+
 .text-generic {
   color: #8d8d8d;
   font-family: "Press Start 2P", Arial, sans-serif;
   font-size: 3.5rem;
   text-align: center;
-  margin: 0 2rem 8rem 2rem; }
+  margin: 0 2rem; }
 
 img {
   margin: auto; }
@@ -457,5 +486,27 @@ img {
   max-width: 15rem; }
   .logo-nav {
     max-width: 4rem; }
+
+@media screen and (max-width: 100rem) {
+  .nav-link-items {
+    position: fixed;
+    bottom: 0;
+    height: 8rem;
+    left: 0;
+    width: 100%;
+    background-color: #fff; }
+    .nav-link-items li {
+      flex: 1; }
+  .nav-link-item {
+    flex: 1;
+    padding: 0; }
+
+  .card {
+    max-height: 60rem; }
+    .card-article {
+      grid-template-columns: 1fr; }
+    .card-thumb {
+      width: 100%;
+      height: 30rem; } }
 
 /*# sourceMappingURL=style.css.map */

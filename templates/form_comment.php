@@ -24,12 +24,12 @@ $author = $this->session->get('pseudo');
   <?php } ?>
 
   <div class="form-control grid grid-gap-10">
-    <label for="content" class="form-control-label">Message</label>
-    <textarea id="content" name="content"><?= isset($post) ? htmlspecialchars($post->get('content')) : ''; ?></textarea>
+    <label for="content" class="form-control-label">Message :</label>
+    <textarea id="content" name="content" class="comment"><?= isset($post) ? htmlspecialchars($post->get('content')) : ''; ?></textarea>
     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
   </div>
 
-  <div class="grid grid-gap-20 button-box">
+  <div>
     <input type="submit" value="Ajouter un commentaire" id="submit" name="submit" form="form-add-comment" class="button-primary">
   </div>
 </form>

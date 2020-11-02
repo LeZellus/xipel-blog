@@ -55,7 +55,7 @@ class Constraint
     public function haveExt($name, $value)
     {
         $validExt = [".jpg", ".jpeg", ".png"];
-        $validExtTips = implode(",", $validExt);
+        $validExtTips = implode(", ", $validExt);
         $fileExt = "." . strtolower(substr(strrchr($value, "/"), 1));
 
         if (!in_array($fileExt, $validExt)) {
