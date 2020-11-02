@@ -2,8 +2,14 @@
 
 <?= $this->session->show('edit_article'); ?>
 
+<<<<<<< Updated upstream
 <main class="grid grid-center grid-gap-40 m-h">
     <h1><?= htmlspecialchars($article->getTitle()); ?></h1>
+=======
+<main class="total-flex m-h">
+    <img src="<?= htmlspecialchars($article->getThumb()) ?>" alt="">
+    <h1 class="mb-4"><?= htmlspecialchars($article->getTitle()); ?></h1>
+>>>>>>> Stashed changes
     <section class="grid grid-gap-40 article bg-white">
         <div class="article-thumb" style="background-image: url('<?= $article->getThumb(); ?>')"></div>
         <p class="article-content"><?= htmlspecialchars($article->getContent()); ?></p>
