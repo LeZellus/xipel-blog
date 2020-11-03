@@ -3,14 +3,6 @@
   padding-top: 29rem !important;
   margin-top: 25rem;
 
-  &-thumb {
-    width: 30rem;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-
   &-created,
   &-updated {
     color: $clr-card-date-background;
@@ -25,12 +17,13 @@
     color: $clr-card-author;
     font-weight: 700;
   }
-  
-  &-thumb{
+
+  &-thumb {
     position: absolute;
     width: calc(100% - 8rem);
     height: 50rem;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center center;
     border-radius: 1.5rem;
     left: 4rem;

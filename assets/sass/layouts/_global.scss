@@ -53,13 +53,23 @@ h1 {
   text-shadow: $text-shadow;
   margin: 0 auto;
   text-transform: uppercase;
+  font-family: $secondary-font;
 }
 
 h2 {
-  color: $clr-h2-color;
-  font-size: 2rem;
-  font-weight: 600;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h3 {
   font-family: $secondary-font;
+  font-size: 2rem;
+}
+
+h2,
+h3 {
+  color: $clr-h2-color;
 }
 
 .mb-4 {

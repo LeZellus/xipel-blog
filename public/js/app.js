@@ -1,4 +1,4 @@
 tinymce.init({
-  selector: '#article-content',
-  plugins: 'link'
+  selector: "#article-content",
+  plugins: "link"
 });

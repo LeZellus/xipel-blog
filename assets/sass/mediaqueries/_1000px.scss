@@ -23,16 +23,20 @@
     }
   }
 
-  .card{
+  .card {
     max-height: 60rem;
 
-    &-article{
+    &-article {
       grid-template-columns: 1fr;
     }
 
-    &-thumb{
+    &-thumb {
       width: 100%;
       height: 30rem;
     }
+  }
+
+  body{
+    padding-bottom: 12rem;
   }
 }

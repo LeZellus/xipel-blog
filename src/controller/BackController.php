@@ -151,7 +151,6 @@ class BackController extends Controller
                     $fileType = $files["type"];
                     $fileExt = "." . strtolower(substr(strrchr($fileType, "/"), 1));
                     $tmpName = $files["tmp_name"];
-                    $domainPath = $_SERVER['HTTP_HOST'];
 
                     //Set unique name  to the thumb
                     $uniqueName = md5(uniqid(rand(), true));
