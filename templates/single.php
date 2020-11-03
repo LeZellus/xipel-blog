@@ -6,7 +6,7 @@
     <h1><?= htmlspecialchars($article->getTitle()); ?></h1>
     <section class="grid grid-gap-40 article bg-white">
         <div class="article-thumb" style="background-image: url('<?= $article->getThumb(); ?>')"></div>
-        <p class="article-content"><?= htmlspecialchars($article->getContent()); ?></p>
+        <p class="article-content"><?= $article->getContent(); ?></p>
         <span class="article-created">
             Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?> par
             <span class="article-author"><?= htmlspecialchars($article->getAuthor()); ?></span>
@@ -31,7 +31,7 @@
                 <section class="grid grid-gap-10 comment-content">
                     <?php if (htmlspecialchars($comment->getFlag()) === "1") { ?>
                         <h3>Écrit par : <?= htmlspecialchars($comment->getPseudo()); ?></h3>
-                        <p><?= htmlspecialchars($comment->getContent()); ?></p>
+                        <?= htmlspecialchars($comment->getContent()); ?>
                         <p>Posté le <?= htmlspecialchars($comment->getCreatedAt()); ?></p>
                     <?php } ?>
                 </section>

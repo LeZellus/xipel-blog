@@ -54,6 +54,12 @@
 	</header>
 
 	<?= $content ?>
+
+
+	<footer>
+		<script src="https://cdn.tiny.cloud/1/rw78ruup0slekfnq1t5ss54hodg15wxelpobpasmfafy88c3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		<script src="/js/app.js"></script>
+	</footer>
 </body>
 
 </html>

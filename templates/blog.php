@@ -7,7 +7,7 @@
         <?php foreach ($articles as $article) { ?>
             <article>
                 <a href="/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>" class="grid card card-article bg-white">
-                    <div class="card-thumb" style="background-image: url('https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60')">
+                    <div class="card-thumb" style="background-image: url('<?= $article->getThumb(); ?>')">
 
                     </div>
                     <section class="card-content grid grid-gap-20">
