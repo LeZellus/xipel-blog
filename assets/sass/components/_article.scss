@@ -21,6 +21,7 @@
   &-thumb {
     position: absolute;
     width: calc(100% - 8rem);
+    box-shadow: $box-shadow;
     height: 50rem;
     background-size: cover;
     background-repeat: no-repeat;

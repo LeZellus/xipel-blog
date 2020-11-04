@@ -6,7 +6,8 @@
     <h1><?= htmlspecialchars($article->getTitle()); ?></h1>
     <section class="grid grid-gap-40 article bg-white">
         <div class="article-thumb" style="background-image: url('<?= $article->getThumb(); ?>')"></div>
-        <p class="article-content"><?= $article->getContent(); ?></p>
+
+        <div class="article-content"><?= $article->getContent(); ?></div>
         <span class="article-created">
             Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?> par
             <span class="article-author"><?= htmlspecialchars($article->getAuthor()); ?></span>
@@ -23,7 +24,7 @@
     <section class="grid grid-gap-40 comments bg-white">
         <h2>Ajouter un commentaire :</h2>
         <?php include 'form_comment.php'; ?>
-        
+
         <h2>Commentaires :</h2>
         <?php foreach ($comments as $comment) { ?>
             <section class="comment grid">
