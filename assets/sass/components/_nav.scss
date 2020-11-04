@@ -43,10 +43,42 @@ nav {
         text-shadow: $nav-link-box-shadow-hover;
       }
 
-      .icon{
+      .icon {
         margin: 0;
         padding-right: 1rem;
       }
     }
+  }
+
+  &-burger {
+    width: 5rem;
+    height: 4rem;
+    display: none;
+    z-index: 100000;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    transition: .3s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-bar {
+      height: .4rem;
+      width: 4rem;
+      background-color: $palette-mine-shaft;
+    }
+  }
+}
+
+.clicked {
+  justify-content: center;
+  transition: .3s;
+  transform: rotate(360deg);
+
+  .nav-burger-bar:first-child {
+    display: none;
+    transition: .3s;
   }
 }

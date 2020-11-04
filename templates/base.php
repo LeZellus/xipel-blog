@@ -16,7 +16,7 @@
 			</a>
 
 
-			<ul class="nav-link-items">
+			<ul class="nav-link-items" id="nav-link-items">
 				<li>
 					<a class="nav-link-item" href="/index.php?route=blog">
 						Blog
@@ -53,11 +53,15 @@
 					</li>
 				<?php } ?>
 			</ul>
+
+			<div class="nav-burger" id="nav-burger">
+				<div class="nav-burger-bar"></div>
+				<div class="nav-burger-bar"></div>
+			</div>
 		</nav>
 	</header>
 
 	<?= $content ?>
-
 
 	<footer>
 		<script src="https://cdn.tiny.cloud/1/rw78ruup0slekfnq1t5ss54hodg15wxelpobpasmfafy88c3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>

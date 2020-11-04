@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var articleContent = document.getElementsByClassName('article-content-input')
+  let articleContent = document.getElementsByClassName('article-content-input')
+  let menu = document.getElementById('nav-burger')
+  let navLinks = document.getElementById('nav-link-items')
+
+  window.onload = function () {
+    this.addEventListener('mousemove', mouseMonitor)
+    menu.addEventListener('click', toggleMenu)
+  }
+
+  /*******************************************************/
+  /**********************TinyCME**************************/
+  /*******************************************************/
 
   //Init TinyCME only if class exist on the DOM to block error
   if (articleContent.length > 0) {
@@ -12,12 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
   /*******************************************************/
   /********************CURSOR TRAIL***********************/
   /*******************************************************/
-  window.onload = function () {
-    this.addEventListener('mousemove', mouse_monitor)
-  }
 
   //Color array for cursor trail
-  var colorArray = [
+  let colorArray = [
     '#31e2c2',
     '#68e8cc',
     '#8dedd6',
@@ -33,22 +41,21 @@ document.addEventListener('DOMContentLoaded', function () {
   ]
 
   //Calculs and properties for cursor trail style
-  var mouse_monitor = function (e) {
-    var item = document.createElement('span')
+  let mouseMonitor = function (e) {
+    let item = document.createElement('span')
     item.classList.add('trail')
-    console.log(item)
 
-    //Variable color for trail
-    var curColor = colorArray[Math.floor(Math.random() * colorArray.length)]
+    //letiable color for trail
+    let curColor = colorArray[Math.floor(Math.random() * colorArray.length)]
 
     //Calcul cursor dimensions
-    var width = (height = Math.random() * (8 - 4) + 4)
+    let width = (height = Math.random() * (8 - 4) + 4)
 
     //Calcul cursor position
-    var curX = e.pageX
-    var curY = e.pageY
-    var left = curX.toString()
-    var top = curY.toString()
+    let curX = e.pageX + 1
+    let curY = e.pageY + 1
+    let left = curX.toString()
+    let top = curY.toString()
 
     //Add css properties defined by position
     item.style.left = left + 'px'
@@ -67,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //This function is like jQuery fadeOut
   function fadeOut(item) {
-    var fadeEffect = setInterval(function () {
+    let fadeEffect = setInterval(function () {
       if (!item.style.opacity) {
         item.style.opacity = 1
       }
@@ -77,5 +84,15 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(fadeEffect)
       }
     }, 300)
+  }
+
+  /*******************************************************/
+  /*********************BURGER MENU***********************/
+  /*******************************************************/
+
+  //Toggle menu function
+  let toggleMenu = function () {
+    navLinks.classList.toggle('show')
+    menu.classList.toggle('clicked')
   }
 })
