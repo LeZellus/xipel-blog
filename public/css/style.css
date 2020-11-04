@@ -498,6 +498,10 @@ img {
   .logo-nav {
     max-width: 4rem; }
 
+.trail {
+  position: absolute;
+  z-index: 1000000000000; }
+
 @media screen and (max-width: 100rem) {
   .nav-link-items {
     position: fixed;

@@ -23,7 +23,7 @@ $thumb = isset($article) && $article->getThumb() ? htmlspecialchars($article->ge
 
   <div class="form-control grid grid-gap-10">
     <label for="article-content" class="form-control-label">Contenu</label>
-    <textarea id="article-content" name="content"><?= $content; ?></textarea>
+    <textarea id="article-content" class="article-content-input" name=" content"><?= $content; ?></textarea>
     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
   </div>
 
