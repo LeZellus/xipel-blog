@@ -31,6 +31,7 @@ nav {
       display: flex;
       align-items: center;
       text-decoration: none;
+      justify-content: center;
       padding-left: 4rem;
       color: $clr-nav-link-item;
       transition: $duration-quick;
@@ -40,6 +41,11 @@ nav {
         transition: $duration-quick;
         color: $clr-nav-link-item-hover;
         text-shadow: $nav-link-box-shadow-hover;
+      }
+
+      .icon{
+        margin: 0;
+        padding-right: 1rem;
       }
     }
   }

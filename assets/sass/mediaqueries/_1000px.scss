@@ -5,11 +5,12 @@
 
       &-items {
         position: fixed;
-        bottom: 0;
-        height: 8rem;
+        top: 0;
+        height: 100%;
         left: 0;
         width: 100%;
         background-color: $clr-nav-bg-mobile;
+        flex-direction: column;
 
         li {
           flex: 1;

@@ -265,6 +265,7 @@ nav {
   display: flex;
   align-items: center;
   text-decoration: none;
+  justify-content: center;
   padding-left: 4rem;
   color: #222;
   transition: 0.3s;
@@ -273,6 +274,9 @@ nav {
     transition: 0.3s;
     color: #31e2c2;
     text-shadow: 0 6px 7px rgba(0, 0, 0, 0.1); }
+  .nav-link-item .icon {
+    margin: 0;
+    padding-right: 1rem; }
 
 .grid {
   display: grid; }
@@ -497,11 +501,12 @@ img {
 @media screen and (max-width: 100rem) {
   .nav-link-items {
     position: fixed;
-    bottom: 0;
-    height: 8rem;
+    top: 0;
+    height: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff; }
+    background-color: #fff;
+    flex-direction: column; }
     .nav-link-items li {
       flex: 1; }
   .nav-link-item {

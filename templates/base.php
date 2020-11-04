@@ -27,6 +27,7 @@
 						<li>
 							<a class="nav-link-item" href="/index.php?route=administration">
 								<img src="/icons/cog.svg" alt="Icon engrenage" class="icon">
+								Admin
 							</a>
 						</li>
 					<?php } ?>
@@ -34,11 +35,13 @@
 					<li>
 						<a class="nav-link-item" href="/index.php?route=profile">
 							<img src="/icons/user.svg" alt="Icon utilisateur" class="icon">
+							Profil
 						</a>
 					</li>
 					<li>
 						<a class="nav-link-item" href="/index.php?route=logout">
 							<img src="/icons/logout.svg" alt="Icon déconnexion" class="icon">
+							Déconnexion
 						</a>
 					</li>
 				<?php } else { ?>
