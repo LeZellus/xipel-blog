@@ -64,6 +64,33 @@
 	<?= $content ?>
 
 	<footer>
+		<ul class="grid social-links mt-4">
+			<li>
+				<a class="grid social-link total-flex" href="https://facebook.com">
+					<img class="icon" src="/icons/facebook.png" alt="Icone de facebook">
+				</a>
+			</li>
+			<li>
+				<a class="grid social-link total-flex" href="https://twitter.fr">
+					<img class="icon" src="/icons/twitter.png" alt="Icone de twitter">
+				</a>
+			</li>
+			<li>
+				<a class="grid social-link total-flex" href="https://linkedin.com">
+					<img class="icon" src="/icons/linkedin.png" alt="Icone de Linkedin">
+				</a>
+			</li>
+			<li>
+				<a class="grid social-link total-flex" href="https://github.com">
+					<img class="icon" src="/icons/github.png" alt="Icone de github">
+				</a>
+			</li>
+			<li>
+				<a class="grid social-link total-flex" href="https://instagram.com">
+					<img class="icon" src="/icons/instagram.png" alt="Icone d'instagram">
+				</a>
+			</li>
+		</ul>
 		<script src="https://cdn.tiny.cloud/1/rw78ruup0slekfnq1t5ss54hodg15wxelpobpasmfafy88c3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 		<script src="/js/app.js"></script>
 	</footer>

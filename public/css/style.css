@@ -445,6 +445,16 @@ section {
 .comment-content {
   padding-left: 2rem; }
 
+footer .nav {
+  display: flex; }
+footer .social-links {
+  grid-template-columns: repeat(5, 40px);
+  justify-content: center;
+  height: 4rem; }
+footer .social-link {
+  height: 100%;
+  width: 100%; }
+
 html {
   font-size: 62.5%; }
 
@@ -485,7 +495,9 @@ h1 {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   text-transform: uppercase;
-  font-family: "Press Start 2P", Arial, sans-serif; }
+  font-family: "Press Start 2P", Arial, sans-serif;
+  padding: 0 4rem;
+  line-height: 1.5; }
 
 h2 {
   text-align: center;
@@ -509,9 +521,9 @@ h3 {
 .text-generic {
   color: #8d8d8d;
   font-family: "Press Start 2P", Arial, sans-serif;
-  font-size: 3.5rem;
   text-align: center;
-  margin: 0 2rem; }
+  margin: 0 2rem;
+  font-size: 1.6rem; }
 
 img {
   margin: auto; }
@@ -553,6 +565,18 @@ img {
       grid-template-columns: 1fr; }
     .card-thumb {
       width: 100%;
-      height: 30rem; } }
+      height: 30rem; }
+
+  h1 {
+    font-size: 4.5rem; } }
+@media screen and (max-width: 75rem) {
+  section.articles {
+    max-width: 100vw; }
+
+  h1 {
+    font-size: 3.5rem; } }
+@media screen and (max-width: 50rem) {
+  h1 {
+    font-size: 2.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
