@@ -36,10 +36,10 @@
 
     <section class="grid grid-gap-40 curriculum">
         <h2 class="mt-4">Mon parcours :</h2>
-        <article class="bg-white card">
+        <article class="bg-white card card-">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga labore ipsum excepturi commodi ea saepe perferendis reprehenderit maxime temporibus consequuntur reiciendis accusamus perspiciatis suscipit distinctio, sint deleniti officiis dolorem sequi.</p>
         </article>
-        <article class="bg-white card">
+        <article class="bg-white card card-career">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt omnis voluptatem nulla ea? Voluptas est alias ea eligendi modi incidunt architecto corporis quos voluptates, a odit blanditiis nobis, at ullam.</p>
         </article>
     </section>

@@ -348,6 +348,8 @@ nav {
   overflow: hidden;
   transform: scale(1);
   transition: 0.3s; }
+  .card-career {
+    padding: 4rem; }
   .card-thumb {
     width: 30rem;
     height: 100%;
