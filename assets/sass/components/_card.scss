@@ -8,6 +8,10 @@
   transform: scale(1);
   transition: $duration-quick;
 
+  &-career{
+    padding: 4rem;
+  }
+
   &-thumb {
     width: 30rem;
     height: 100%;
@@ -44,11 +48,11 @@
 
   &-article {
     grid-template-columns: 300px 1fr;
+    position: relative;
   }
 
   &-content {
     padding: 4rem;
-    position: relative;
   }
 
   &:hover {

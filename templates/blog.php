@@ -14,11 +14,11 @@
                     <section class="card-content grid grid-gap-20">
                         <h3 class="card-title"><?= htmlspecialchars($article->getTitle()); ?></h3>
                         <p class="card-desc"><?= htmlspecialchars($article->getChapo()); ?></p>
-                        <p class="card-date">Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></p>
                         <p>Écrit par :
                             <span class="card-author"><?= htmlspecialchars($article->getAuthor()); ?></span>
                         </p>
                     </section>
+                    <p class="card-date">Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></p>
                 </a>
             </article>
         <?php } ?>

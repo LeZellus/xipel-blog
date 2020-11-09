@@ -48,12 +48,14 @@ document.addEventListener('DOMContentLoaded', function () {
     //letiable color for trail
     let curColor = colorArray[Math.floor(Math.random() * colorArray.length)]
 
+    console.log(curColor)
+
     //Calcul cursor dimensions
     let width = (height = Math.random() * (8 - 4) + 4)
 
     //Calcul cursor position
-    let curX = e.pageX + 1
-    let curY = e.pageY + 1
+    let curX = e.pageX + Math.round(Math.random() * 10)
+    let curY = e.pageY + Math.round(Math.random() * 10)
     let left = curX.toString()
     let top = curY.toString()
 

@@ -1,0 +1,20 @@
+footer {
+
+  .nav {
+    display: flex;
+  }
+
+  .social{
+
+    &-links {
+      grid-template-columns: repeat(5, 40px);
+      justify-content: center;
+      height: 4rem;
+    }
+
+    &-link{
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

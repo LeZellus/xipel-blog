@@ -54,6 +54,8 @@ h1 {
   margin: 0 auto;
   text-transform: uppercase;
   font-family: $secondary-font;
+  padding: 0 4rem;
+  line-height: 1.5;
 }
 
 h2 {
@@ -85,9 +87,9 @@ h3 {
   &-generic {
     color: $clr-text-generic-color;
     font-family: $secondary-font;
-    font-size: 3.5rem;
     text-align: center;
     margin: 0 2rem;
+    font-size: 1.6rem;
   }
 }
 
