@@ -7,6 +7,8 @@
     background-color: $clr-button-background;
     transition: $duration-quick;
     color: $clr-button-color;
+    text-decoration: none;
+    text-align: center;
 
     &:hover {
       box-shadow: $button-box-shadow-hover;

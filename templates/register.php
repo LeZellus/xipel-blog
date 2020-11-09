@@ -1,9 +1,9 @@
 <?php $this->title = "Inscription"; ?>
-<main class="wrapper-register total-flex m-h">
+<main class="total-flex m-h">
+    <h1 class="mb-4">Inscription</h1>
     <section class="grid grid-gap-40 register bg-white">
-        <h1>Inscription</h1>
-        <a href="../public/index.php?route=login" class="button-secondary">Déjà inscrit? Connectez-vous</a>
-        <form id="form-register" method="post" class="grid grid-gap-20" action="../public/index.php?route=register">
+        <a href="/index.php?route=login" class="button-secondary">Déjà inscrit? Connectez-vous</a>
+        <form id="form-register" method="post" class="grid grid-gap-20" action="/index.php?route=register">
             <div class="form-control grid grid-gap-10">
                 <label for="pseudo" class="form-control-label">Pseudo</label>
                 <input type="text" id="pseudo" name="pseudo" placeholder="Jackcélère">
@@ -37,7 +37,7 @@
         </form>
         <div class="grid grid-gap-20 button-box">
             <input type="submit" value="Inscription" id="submit" class="button-primary" form="form-register" name="submit">
-            <a href="../public/index.php" class="button-secondary">Retour à l'accueil</a>
+            <a href="/index.php" class="button-secondary">Retour à l'accueil</a>
         </div>
 
     </section>

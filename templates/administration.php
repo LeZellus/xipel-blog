@@ -8,11 +8,11 @@
 <?= $this->session->show('remove_comment'); ?>
 
 <h1>Page d'administration</h1>
-<p>En construction</p>
-<a href="../public/index.php">Retour à l'accueil</a>
 
-<h2>Articles</h2>
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
+<section class="grid grid-gap-40">
+    <h2>Articles</h2>
+    <a class="button-primary" href="/index.php?route=addArticle">Nouvel article</a>
+</section>
 
 <table>
     <tr>
@@ -29,14 +29,14 @@
     ?>
         <tr>
             <td><?= htmlspecialchars($article->getId()); ?></td>
-            <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>"><?= htmlspecialchars($article->getTitle()); ?></a></td>
+            <td><a href="/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>"><?= htmlspecialchars($article->getTitle()); ?></a></td>
             <td><?= htmlspecialchars($article->getChapo()); ?></td>
             <td><?= htmlspecialchars($article->getAuthor()); ?></td>
             <td>Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?></td>
             <td>Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></td>
             <td>
-                <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-                <a href="../public/index.php?route=removeArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+                <a href="/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+                <a href="/index.php?route=removeArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
             </td>
         </tr>
     <?php
@@ -63,8 +63,8 @@
             <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150); ?></td>
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt()); ?></td>
             <td>
-                <a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Valider</a>
-                <a href="../public/index.php?route=removeComment&commentId=<?= $comment->getId(); ?>">Supprimer</a>
+                <a href="/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Valider</a>
+                <a href="/index.php?route=removeComment&commentId=<?= $comment->getId(); ?>">Supprimer</a>
             </td>
         </tr>
     <?php
@@ -81,23 +81,24 @@
         <td>Rôle</td>
         <td>Actions</td>
     </tr>
-    <?php
-    foreach ($users as $user) {
-    ?>
+    <?php foreach ($users as $user) { ?>
         <tr>
+            <?php
+            echo '<pre>';
+            var_dump($user->getRole());
+            echo '</pre>'; 
+            ?>
             <td><?= htmlspecialchars($user->getId()); ?></td>
             <td><?= htmlspecialchars($user->getPseudo()); ?></td>
             <td>Créé le : <?= htmlspecialchars($user->getCreatedAt()); ?></td>
             <td><?= htmlspecialchars($user->getRole()); ?></td>
             <td>
-                <?php if ($user->getRole() != 'admin') { ?>
-                    <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId(); ?>">Supprimer</a>
+                <?php if ($user->getRole() != '1') { ?>
+                    <a href="/index.php?route=deleteUser&userId=<?= $user->getId(); ?>">Supprimer</a>
                 <?php } else { ?>
                     Suppression impossible
                 <?php } ?>
             </td>
         </tr>
-    <?php
-    }
-    ?>
+    <?php } ?>
 </table>

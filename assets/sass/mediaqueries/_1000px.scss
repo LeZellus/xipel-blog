@@ -1,0 +1,48 @@
+@media screen and (max-width: 100rem) {
+  .nav {
+    &-burger {
+      display: flex;
+    }
+
+    &-link {
+
+      &-items {
+        position: fixed;
+        display: flex;
+        top: 0;
+        height: 100%;
+        left: 100%;
+        transition: .3s;
+        width: 100%;
+        background-color: $clr-nav-bg-mobile;
+        flex-direction: column;
+
+        li {
+          flex: 1;
+        }
+      }
+
+      &-item {
+        flex: 1;
+        padding: 0;
+      }
+
+      &-items.show {
+        left: 0;
+      }
+    }
+  }
+
+  .card {
+    max-height: 60rem;
+
+    &-article {
+      grid-template-columns: 1fr;
+    }
+
+    &-thumb {
+      width: 100%;
+      height: 30rem;
+    }
+  }
+}

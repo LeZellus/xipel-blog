@@ -21,10 +21,12 @@ $clr-secondary: $palette-java;
 $clr-primary: $palette-corn;
 $clr-error: $palette-red-orange;
 $clr-valid: $palette-java;
+$clr-text-generic-color: $palette-silver-chalice;
 
 //Layout
 
 $clr-h1-color: $palette-java;
+$clr-h2-color: $palette-mine-shaft;
 
 //Border
 
@@ -57,7 +59,20 @@ $clr-button-secondary-background: $palette-snow;
 $clr-alert-color: $palette-snow;
 $clr-alert-background: linear-gradient(to bottom left, #ef8d9c 40%, #ffc39e 100%);
 
+$clr-error-color: $palette-red-orange;
+
 //Nav
 $clr-nav-background: $palette-snow;
 $clr-nav-link-item: $palette-mine-shaft;
 $clr-nav-link-item-hover: $palette-java;
+$clr-nav-bg-mobile: $palette-snow;
+
+//Card
+
+$clr-card-title: $palette-mine-shaft;
+$clr-card-desc: $palette-silver-chalice;
+$clr-card-author: $palette-java;
+$clr-card-date: $palette-snow;
+$clr-card-date-background: $palette-silver;
+
+$clr-comment-separator: $palette-silver;

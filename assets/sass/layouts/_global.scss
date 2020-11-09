@@ -9,6 +9,7 @@ body {
   background-color: $clr-background-body;
   position: relative;
   padding-top: 12rem;
+  padding-bottom: 4rem;
 }
 
 //Functionnals classes
@@ -19,6 +20,11 @@ body {
 
 .error {
   border: 1px solid $clr-error;
+
+  &-text {
+    color: $clr-error-color;
+    text-align: center;
+  }
 }
 
 .bg-white {
@@ -30,10 +36,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .m-h {
-  min-height: calc(100vh - 12rem);
+  min-height: calc(100vh - 16rem);
 }
 
 //Titles
@@ -41,7 +48,63 @@ body {
 h1 {
   font-weight: 700;
   color: $clr-h1-color;
-  font-size: 2.5rem;
+  font-size: 6rem;
   text-align: center;
   text-shadow: $text-shadow;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-family: $secondary-font;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: $secondary-font;
+  font-size: 2rem;
+}
+
+h2,
+h3 {
+  color: $clr-h2-color;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.mt-4 {
+  margin-top: 8rem;
+}
+
+.text {
+
+  &-generic {
+    color: $clr-text-generic-color;
+    font-family: $secondary-font;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 0 2rem;
+  }
+}
+
+img {
+  margin: auto;
+}
+
+.logo {
+  margin: auto;
+  max-width: 15rem;
+
+  &-nav {
+    max-width: 4rem;
+  }
+}
+
+.trail {
+  position: absolute;
+  z-index: 9999;
 }

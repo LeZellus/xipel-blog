@@ -17,24 +17,22 @@ class ArticleDAO extends DAO
         $article->setCreatedAt($row['createdAt']);
         $article->setAuthor($row['pseudo']);
         $article->setUpdatedAt($row['updatedAt']);
+        $article->setThumb($row['thumb']);
         return $article;
     }
 
     /**
      * Function to return add article
      */
-    public function addArticle(Parameter $articleData, $userId)
+    public function addArticle(Parameter $articleData, $userId, $fileName)
     {
-
-        $sql = 'INSERT INTO article (title, content, chapo, createdAt, user_id) VALUES (?, ?, ?, NOW(), ?)';
-        // var_dump($sql);
-        // var_dump($userId);
-        // exit;
+        $sql = 'INSERT INTO article (title, content, chapo, createdAt, user_id, thumb) VALUES (?, ?, ?, NOW(), ?, ?)';
         $this->createQuery($sql, [
             $articleData->get('title'),
             $articleData->get('content'),
             $articleData->get('chapo'),
-            $userId
+            $userId,
+            $fileName
         ]);
     }
 
@@ -43,7 +41,23 @@ class ArticleDAO extends DAO
      */
     public function getArticles()
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.chapo, article.createdAt, user.pseudo, article.updatedAt FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC';
+        $sql = 'SELECT article.id, article.title, article.content, article.chapo, article.createdAt, user.pseudo, article.updatedAt, article.thumb FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC';
+        $result = $this->createQuery($sql);
+        $articles = [];
+        foreach ($result as $row) {
+            $articleId = $row['id'];
+            $articles[$articleId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $articles;
+    }
+
+    /**
+     * Function to return last number articles
+     */
+    public function getLastArticles()
+    {
+        $sql = 'SELECT article.id, article.title, article.content, article.chapo, article.createdAt, user.pseudo, article.updatedAt, article.thumb FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC LIMIT 4';
         $result = $this->createQuery($sql);
         $articles = [];
         foreach ($result as $row) {
@@ -59,7 +73,7 @@ class ArticleDAO extends DAO
      */
     public function getArticle($articleId)
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.chapo, article.createdAt, user.pseudo, article.updatedAt FROM article INNER JOIN user ON article.user_id = user.id WHERE article.id = ?';
+        $sql = 'SELECT article.id, article.title, article.content, article.chapo, article.createdAt, user.pseudo, article.updatedAt, article.thumb FROM article INNER JOIN user ON article.user_id = user.id WHERE article.id = ?';
         $result = $this->createQuery($sql, [$articleId]);
         $article = $result->fetch();
         $result->closeCursor();

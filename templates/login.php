@@ -1,11 +1,12 @@
 <?php $this->title = "Connexion"; ?>
-<?= $this->session->show('error_login'); ?>
 
-<main class="wrapper-login total-flex m-h">
+<main class="total-flex m-h">
+    <h1 class="mb-4">Connexion</h1>
     <section class="grid grid-gap-40 login bg-white">
-        <h1>Mon blog</h1>
-        <a href="../public/index.php?route=register" class="button-secondary">Pas de compte ? Inscrivez-vous</a>
-        <form method="post" id="form-login" action="../public/index.php?route=login" class="grid grid-gap-20">
+
+        <a href="/index.php?route=register" class="button-secondary">Pas de compte ? Inscrivez-vous</a>
+
+        <form method="post" id="form-login" action="/index.php?route=login" class="grid grid-gap-20">
             <div class="form-control grid grid-gap-10">
                 <label for="pseudo" class="form-control-label">Pseudo</label>
                 <input type="text" id="pseudo" name="pseudo" placeholder="Jackcélère">
@@ -15,9 +16,17 @@
                 <input type="password" id="password" name="password" placeholder="********">
             </div>
         </form>
-        <div class="grid grid-gap-20 button-box">
+
+        <?php if($this->session->show('error_login')){ ?>
+            <p class="error-text">
+                <?php echo $this->session->show('error_login'); ?>
+            </p>
+        <?php } ?>
+
+        <section class="grid grid-gap-20 button-box">
             <input type="submit" value="Connexion" class="button-primary" id="submit" name="submit" form="form-login">
-            <a href="../public/index.php" class="button-secondary">Retour à l'accueil</a>
-        </div>
+            <a href="/index.php" class="button-secondary">Accueil</a>
+        </section>
+
     </section>
 </main>

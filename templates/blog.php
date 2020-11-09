@@ -1,13 +1,26 @@
-<?php
-foreach ($articles as $article) {
-?>
-    <div>
-        <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>"><?= htmlspecialchars($article->getTitle()); ?></a></h2>
-        <p><?= htmlspecialchars($article->getContent()); ?></p>
-        <p><?= htmlspecialchars($article->getAuthor()); ?></p>
-        <p>Créé le : <?= htmlspecialchars($article->getCreatedAt()); ?></p>
-    </div>
-    <br>
-<?php
-}
-?>
+<?php $this->title = "Tout les articles" ?>
+
+<main class="grid grid-gap-40 m-h">
+    <h1>Tout les articles</h1>
+    <h2>Retrouvez les derniers actualités de mon jeu</h2>
+
+    <section class="grid grid-gap-40 articles">
+        <?php foreach ($articles as $article) { ?>
+            <article>
+                <a href="/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>" class="grid card card-article bg-white">
+                    <div class="card-thumb" style="background-image: url('<?= $article->getThumb(); ?>')">
+
+                    </div>
+                    <section class="card-content grid grid-gap-20">
+                        <h3 class="card-title"><?= htmlspecialchars($article->getTitle()); ?></h3>
+                        <p class="card-desc"><?= htmlspecialchars($article->getChapo()); ?></p>
+                        <p class="card-date">Modifié le : <?= htmlspecialchars($article->getUpdatedAt()); ?></p>
+                        <p>Écrit par :
+                            <span class="card-author"><?= htmlspecialchars($article->getAuthor()); ?></span>
+                        </p>
+                    </section>
+                </a>
+            </article>
+        <?php } ?>
+    </section>
+</main>

@@ -22,6 +22,10 @@ class Validation
             $commentValidation = new CommentValidation();
             $errors = $commentValidation->check($data);
             return $errors;
+        } elseif ($name === 'Thumb') {
+            $thumbValidation = new ThumbValidation();
+            $errors = $thumbValidation->check($data);
+            return $errors;
         }
     }
 }

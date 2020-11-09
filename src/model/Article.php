@@ -39,6 +39,11 @@ class Article
      */
     private $updatedAt;
 
+    /**
+     * @var string
+     */
+    private $thumb;
+
     /**********************************************************************/
     /*Article ID Managamenent**********************************************/
     /**********************************************************************/
@@ -148,7 +153,10 @@ class Article
      */
     public function getCreatedAt()
     {
-        return $this->createdAt;
+        $date = $this->updatedAt;
+        $dt = new \DateTime($date);
+        $dtFormat = str_replace(" ", "-", $dt->format('d-m-Y'));
+        return $dtFormat;
     }
 
     /**
@@ -167,8 +175,11 @@ class Article
      * @return \DateTime
      */
     public function getUpdatedAt()
-    {
-        return $this->updatedAt;
+    { 
+        $date = $this->updatedAt;
+        $dt = new \DateTime($date);
+
+        return $dt->format('d-M-y');
     }
 
     /**
@@ -177,5 +188,25 @@ class Article
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    /**********************************************************************/
+    /*Article Thumb Managamenent*******************************************/
+    /**********************************************************************/
+
+    /**
+     * @return string
+     */
+    public function getThumb()
+    {
+        return $this->thumb;
+    }
+
+    /**
+     * @param string $thumb
+     */
+    public function setThumb(string $thumb)
+    {
+        $this->thumb = $thumb;
     }
 }

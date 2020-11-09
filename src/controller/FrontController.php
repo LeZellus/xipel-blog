@@ -9,7 +9,7 @@ class FrontController extends Controller
 	 */
 	public function home()
 	{
-		$articles = $this->articleDAO->getArticles();
+		$articles = $this->articleDAO->getLastArticles();
 		return $this->view->render('home', [
 			'articles' => $articles
 		]);
@@ -27,7 +27,7 @@ class FrontController extends Controller
 			if (!$errors) {
 				$this->userDAO->register($post);
 				$this->session->set('register', 'Votre inscription a bien été effectuée');
-				header('Location: ../public/index.php');
+				header('Location: /index.php');
 			}
 			return  $this->view->render('register', [
 				'post' => $post,
@@ -50,7 +50,7 @@ class FrontController extends Controller
 				$this->session->set('id', $result['result']['id']);
 				$this->session->set('pseudo', $post->get('pseudo'));
 				$this->session->set('role', $result['result']['name']);
-				header('Location: ../public/index.php');
+				header('Location: /index.php');
 			} else {
 				$this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
 				return $this->view->render('login', [
@@ -95,7 +95,7 @@ class FrontController extends Controller
 			if (!$errors) {
 				$this->commentDAO->addComment($post, $articleId);
 				$this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
-				header('Location: ../public/index.php?route=article&articleId=' . $articleId);
+				header('Location: /index.php?route=article&articleId=' . $articleId);
 			}
 			$article = $this->articleDAO->getArticle($articleId);
 			$comments = $this->commentDAO->getCommentsFromArticle($articleId);
