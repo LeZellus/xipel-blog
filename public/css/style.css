@@ -375,10 +375,10 @@ nav {
     color: #31e2c2;
     font-weight: 700; }
   .card-article {
-    grid-template-columns: 300px 1fr; }
-  .card-content {
-    padding: 4rem;
+    grid-template-columns: 300px 1fr;
     position: relative; }
+  .card-content {
+    padding: 4rem; }
   .card:hover {
     transform: scale(1.01);
     transition: 0.3s;

@@ -48,11 +48,11 @@
 
   &-article {
     grid-template-columns: 300px 1fr;
+    position: relative;
   }
 
   &-content {
     padding: 4rem;
-    position: relative;
   }
 
   &:hover {
