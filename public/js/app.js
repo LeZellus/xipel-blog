@@ -3,9 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
   let menu = document.getElementById('nav-burger')
   let navLinks = document.getElementById('nav-link-items')
 
+  let cvWrapper = document.getElementById('cv-wrapper')
+  let cvImg = document.getElementById('cv-img')
+
   window.onload = function () {
     this.addEventListener('mousemove', mouseMonitor)
     menu.addEventListener('click', toggleMenu)
+    cvWrapper.addEventListener('click', popupManage)
+    cvImg.addEventListener('click', popupManage)
   }
 
   /*******************************************************/
@@ -21,23 +26,30 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /*******************************************************/
+  /**********************Popup Img************************/
+  /*******************************************************/
+
+  //Start event on click
+  let popupManage = function popup() {
+    cvImg.classList.toggle('opened')
+  };
+
+  /*******************************************************/
   /********************CURSOR TRAIL***********************/
   /*******************************************************/
 
   //Color array for cursor trail
   let colorArray = [
-    '#31e2c2',
-    '#68e8cc',
-    '#8dedd6',
-    '#adf2e0',
-    '#caf7ea',
-    '#e5fbf5',
-    '#282828',
-    '#474747',
-    '#686868',
-    '#8c8c8b',
-    '#b1b1b1',
-    '#d7d7d7',
+    'rgba(49,226,194,1)',
+    'rgba(49,226,194,0.7)',
+    'rgba(49,226,194,0.5)',
+    'rgba(49,226,194,0.3)',
+    'rgba(49,226,194,0.1)',
+    'rgba(40,40,40,1)',
+    'rgba(40,40,40,0,7)',
+    'rgba(40,40,40,0,5)',
+    'rgba(40,40,40,0.3)',
+    'rgba(40,40,40,0.1)'
   ]
 
   //Calculs and properties for cursor trail style
@@ -71,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
       fadeOut(item)
       item.remove()
     }, 300)
-
   }
 
   //This function is like jQuery fadeOut

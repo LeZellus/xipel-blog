@@ -127,6 +127,26 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+img {
+  margin: auto; }
+
+.img-cv {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(40, 40, 40, 0.7);
+  z-index: 100000; }
+  .img-cv img {
+    height: 100%; }
+.img-cv.opened {
+  display: flex; }
+  .img-cv.opened:hover {
+    cursor: zoom-out; }
+
 .button-primary {
   padding: 1.5rem 3rem;
   border: 1px solid #31e2c2;
@@ -348,8 +368,24 @@ nav {
   overflow: hidden;
   transform: scale(1);
   transition: 0.3s; }
+  .card-download, .card-popup {
+    color: #222;
+    text-align: center; }
+  .card-careers {
+    display: flex;
+    width: 100%;
+    justify-content: center; }
   .card-career {
-    padding: 4rem; }
+    padding: 4rem;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 30rem;
+    justify-content: center;
+    display: block;
+    margin: 4rem 2rem 0 2rem; }
+    .card-career:hover {
+      cursor: pointer; }
   .card-thumb {
     width: 30rem;
     height: 100%;
@@ -526,9 +562,6 @@ h3 {
   text-align: center;
   margin: 0 2rem;
   font-size: 1.6rem; }
-
-img {
-  margin: auto; }
 
 .logo {
   margin: auto;

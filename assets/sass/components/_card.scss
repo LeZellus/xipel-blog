@@ -8,8 +8,31 @@
   transform: scale(1);
   transition: $duration-quick;
 
-  &-career{
+  &-download,
+  &-popup {
+    color: $clr-card-career;
+    text-align: center;
+  }
+
+  &-careers {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  &-career {
     padding: 4rem;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 30rem;
+    justify-content: center;
+    display: block;
+    margin: 4rem 2rem 0 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &-thumb {
