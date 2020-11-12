@@ -1,0 +1,28 @@
+.table {
+  width: calc(100% - 8rem);
+  margin: auto;
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+.tr {
+  height: 5.6rem;
+
+  &:nth-child(even) {
+    background-color: $clr-table-background-even;
+  }
+
+  &-menu {
+    font-weight: 700;
+  }
+
+}
+
+.td {
+  vertical-align: middle;
+  padding: 0 2rem;
+
+  a{
+    color: $clr-td-color;
+  }
+}

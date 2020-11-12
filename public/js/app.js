@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.onload = function () {
     this.addEventListener('mousemove', mouseMonitor)
-    menu.addEventListener('click', toggleMenu)
+    menu.addEventListener('click', toggle)
     cvWrapper.addEventListener('click', popupManage)
     cvImg.addEventListener('click', popupManage)
   }
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /*******************************************************/
 
   //Toggle menu function
-  let toggleMenu = function () {
+  let toggle = function () {
     navLinks.classList.toggle('show')
     menu.classList.toggle('clicked')
   }

@@ -9,4 +9,11 @@
   h1 {
     font-size: 3.5rem;
   }
+
+  .card{
+
+    &-careers{
+      flex-direction: column;
+    }
+  }
 }
