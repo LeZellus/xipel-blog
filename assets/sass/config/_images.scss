@@ -1,0 +1,30 @@
+img {
+  margin: auto;
+}
+
+.img {
+
+  &-cv {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $clr-popup-background;
+    z-index: 100000;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &-cv.opened {
+    display: flex;
+
+    &:hover{
+      cursor: zoom-out;
+    }
+  }
+}
