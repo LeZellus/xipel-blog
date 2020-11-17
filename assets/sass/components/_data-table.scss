@@ -1,5 +1,4 @@
 .table {
-  width: calc(100% - 8rem);
   margin: auto;
   border-radius: .5rem;
   overflow: hidden;
@@ -29,26 +28,29 @@ thead {
   a {
     color: $clr-td-color;
     text-decoration: none;
+
+    &:last-child img{
+      padding: 0;
+    }
   }
 
   img {
     width: 1.6rem;
     vertical-align: middle;
-    padding: 0 2rem;
+    padding-right: 2rem;
   }
 
-  &-title{
+  &-title {
     font-weight: 600;
     max-width: 30rem;
 
-    a{
+    a {
       text-decoration: underline;
     }
   }
 
-  &-actions{
+  &-actions {
     max-width: 11.6rem;
-    text-align: right;
   }
 }
 

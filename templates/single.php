@@ -27,16 +27,16 @@
 
         <h2>Commentaires :</h2>
         <?php foreach ($comments as $comment) { ?>
-            <section class="comment grid">
-                <img class="comment-thumb" src="/icons/user.svg" alt="Icone utilisateur">
-                <section class="grid grid-gap-10 comment-content">
-                    <?php if (htmlspecialchars($comment->getFlag()) === "1") { ?>
-                        <h3>Écrit par : <?= htmlspecialchars($comment->getPseudo()); ?></h3>
+            <?php if (htmlspecialchars($comment->getFlag()) === "1") { ?>
+                <section class="comment grid">
+                    <img class="comment-thumb" src="/icons/user.svg" alt="Icone utilisateur">
+                    <section class="grid grid-gap-10 comment-content">
+                        <h3><?= htmlspecialchars($comment->getPseudo()); ?></h3>
                         <?= htmlspecialchars($comment->getContent()); ?>
                         <p>Posté le <?= htmlspecialchars($comment->getCreatedAt()); ?></p>
-                    <?php } ?>
+                    </section>
                 </section>
-            </section>
+            <?php } ?>
         <?php } ?>
     </section>
 </main>

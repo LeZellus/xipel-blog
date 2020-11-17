@@ -108,10 +108,30 @@ h3 {
   z-index: 9999;
 }
 
-.ai-center{
+.ai-center {
   align-items: center;
 }
 
-.jc-center{
+.jc-center {
   justify-content: center;
+}
+
+.matheo {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+
+  span {
+    display: block;
+    font-family: $secondary-font;
+    font-size: 3rem;
+  }
+
+  .arrow {
+    margin: 0 2rem;
+  }
+
+  img {
+    margin: 0;
+  }
 }

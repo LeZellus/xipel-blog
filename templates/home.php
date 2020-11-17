@@ -9,7 +9,11 @@
 <main class="grid grid-center grid-gap-40 m-h">
     <h1>Xipel, le jeu tout en pixel.</h1>
     <div class="grid grid-gap-40">
-        <img src="/uploads/LeZellus.gif" alt="Logo Mathéo" class="logo">
+        <div class="matheo jc-center">
+            <img src="/uploads/LeZellus.gif" alt="Logo Mathéo" class="logo">
+            <img src="/icons/left-arrow.png" alt="Logo Flèche Gauche" class="arrow">
+            <span class="name">Mathéo Zeller</span>
+        </div>
         <p class="text-generic">“Goutez aux pixels technologiques...”</p>
     </div>
 

@@ -91,6 +91,15 @@
 					<img class="icon" src="/icons/instagram.png" alt="Icone d'instagram">
 				</a>
 			</li>
+			<?php if ($this->session->get('pseudo')) { ?>
+				<?php if ($this->session->get('role') === 'admin') { ?>
+					<li>
+						<a class="grid social-link total-flex" href="https://www.instagram.com/lepixzel">
+							<img class="icon" src="/icons/cog.svg" alt="Icone engrenage">
+						</a>
+					</li>
+				<?php } ?>
+			<?php } ?>
 		</ul>
 		<script src="https://cdn.tiny.cloud/1/rw78ruup0slekfnq1t5ss54hodg15wxelpobpasmfafy88c3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 		<script src="/js/app.js"></script>
