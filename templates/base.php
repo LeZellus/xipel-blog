@@ -6,6 +6,7 @@
 	<title><?= $title ?> • Xipel, de l'imagination à la conception d'un jeu.</title>
 	<meta name="description" content="Voici un exemple de description, elle est encore un peu courte mais va surement changer dans les prochains jours. Elle permet d&#x27;écrire une description" />
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="icon" href="icons/favicon.ico" />
 </head>
 
 <body class="m-h">
@@ -66,27 +67,27 @@
 	<footer>
 		<ul class="grid social-links mt-4">
 			<li>
-				<a class="grid social-link total-flex" href="https://facebook.com">
+				<a class="grid social-link total-flex" href="https://www.facebook.com/matheo.zeller/">
 					<img class="icon" src="/icons/facebook.png" alt="Icone de facebook">
 				</a>
 			</li>
 			<li>
-				<a class="grid social-link total-flex" href="https://twitter.fr">
+				<a class="grid social-link total-flex" href="https://twitter.com/LeZelller">
 					<img class="icon" src="/icons/twitter.png" alt="Icone de twitter">
 				</a>
 			</li>
 			<li>
-				<a class="grid social-link total-flex" href="https://linkedin.com">
+				<a class="grid social-link total-flex" href="https://www.linkedin.com/in/zellrdesign/">
 					<img class="icon" src="/icons/linkedin.png" alt="Icone de Linkedin">
 				</a>
 			</li>
 			<li>
-				<a class="grid social-link total-flex" href="https://github.com">
+				<a class="grid social-link total-flex" href="https://github.com/LeZellus">
 					<img class="icon" src="/icons/github.png" alt="Icone de github">
 				</a>
 			</li>
 			<li>
-				<a class="grid social-link total-flex" href="https://instagram.com">
+				<a class="grid social-link total-flex" href="https://www.instagram.com/lepixzel">
 					<img class="icon" src="/icons/instagram.png" alt="Icone d'instagram">
 				</a>
 			</li>
