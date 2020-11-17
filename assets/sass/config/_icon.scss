@@ -1,3 +1,11 @@
 .icon {
   height: 3rem;
+
+  &-forbidden {
+    color: $clr-icon-forbidden-color;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
 }

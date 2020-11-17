@@ -5,24 +5,53 @@
   overflow: hidden;
 }
 
-.tr {
-  height: 5.6rem;
+tbody {
 
-  &:nth-child(even) {
-    background-color: $clr-table-background-even;
+  .tr {
+    &:nth-child(odd) {
+      background-color: $clr-table-background-even;
+    }
   }
+}
 
-  &-menu {
+thead {
+  .tr {
+    background-color: $clr-thead-background;
     font-weight: 700;
+    color: $clr-thead-color;
   }
-
 }
 
 .td {
   vertical-align: middle;
   padding: 0 2rem;
 
-  a{
+  a {
     color: $clr-td-color;
+    text-decoration: none;
   }
+
+  img {
+    width: 1.6rem;
+    vertical-align: middle;
+    padding: 0 2rem;
+  }
+
+  &-title{
+    font-weight: 600;
+    max-width: 30rem;
+
+    a{
+      text-decoration: underline;
+    }
+  }
+
+  &-actions{
+    max-width: 11.6rem;
+    text-align: right;
+  }
+}
+
+.tr {
+  height: 5.6rem;
 }
