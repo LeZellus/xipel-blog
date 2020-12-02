@@ -4,5 +4,8 @@
       "App\\config\\": "config/",
       "App\\src\\": "src/"
     }
+  },
+  "require": {
+    "altorouter/altorouter": "^2.0"
   }
 }

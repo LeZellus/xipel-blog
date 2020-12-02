@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title><?= $title ?> • Xipel, de l'imagination à la conception d'un jeu.</title>
+	<title><?= $title ?? "Page" ?> • Xipel, de l'imagination à la conception d'un jeu.</title>
 	<meta name="description" content="Voici un exemple de description, elle est encore un peu courte mais va surement changer dans les prochains jours. Elle permet d&#x27;écrire une description" />
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="icon" href="icons/favicon.ico" />
@@ -61,6 +61,12 @@
 			</div>
 		</nav>
 	</header>
+
+	<section class="debug">
+	<?php if (defined('DEBUG_TIME')): ?>
+		Page générée en <?= round(1000 * (microtime(true) - DEBUG_TIME)) ?>ms
+		
+	</section>
 
 	<?= $content ?>
 
