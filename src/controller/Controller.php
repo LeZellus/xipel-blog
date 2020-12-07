@@ -7,6 +7,7 @@ use App\src\model\View;
 use App\src\DAO\UserDAO;
 use App\src\DAO\CommentDAO;
 use App\src\DAO\ArticleDAO;
+use App\config\Router;
 use App\src\constraint\Validation;
 
 abstract class Controller
@@ -16,6 +17,7 @@ abstract class Controller
 	protected $commentDAO;
 	protected $view;
 	private $request;
+	private $router;
 	protected $get;
 	protected $post;
 	protected $session;
@@ -29,6 +31,7 @@ abstract class Controller
 		$this->view = new View();
 		$this->request = new Request();
 		$this->userDAO = new UserDAO();
+		$this->router = new Router();
 		$this->validation = new Validation();
 		$this->get = $this->request->getGet();
 		$this->post = $this->request->getPost();

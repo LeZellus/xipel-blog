@@ -63,9 +63,9 @@
 	</header>
 
 	<section class="debug">
-	<?php if (defined('DEBUG_TIME')): ?>
-		Page générée en <?= round(1000 * (microtime(true) - DEBUG_TIME)) ?>ms
-		
+		<?php if (defined('DEBUG_TIME')) : ?>
+			Page générée en <?= round(1000 * (microtime(true) - DEBUG_TIME)) ?>ms
+		<?php endif; ?>
 	</section>
 
 	<?= $content ?>

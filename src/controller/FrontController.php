@@ -10,7 +10,7 @@ class FrontController extends Controller
 	public function home()
 	{
 		$articles = $this->articleDAO->getLastArticles();
-		return $this->view->render('home', [
+		return $this->router->run('home', [
 			'articles' => $articles
 		]);
 	}
