@@ -7,6 +7,7 @@
   },
   "require": {
     "altorouter/altorouter": "^2.0",
-    "filp/whoops": "^2.9"
+    "filp/whoops": "^2.9",
+    "symfony/var-dumper": "^5.2"
   }
 }
