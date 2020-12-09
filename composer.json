@@ -4,5 +4,9 @@
       "App\\config\\": "config/",
       "App\\src\\": "src/"
     }
+  },
+  "require": {
+    "filp/whoops": "^2.9",
+    "symfony/var-dumper": "^5.2"
   }
 }
