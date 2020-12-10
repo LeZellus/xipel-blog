@@ -8,6 +8,10 @@
   "require": {
     "filp/whoops": "^2.9",
     "symfony/var-dumper": "^5.2",
+<<<<<<< HEAD
     "altorouter/altorouter": "^2.0"
+=======
+    "symfony/routing": "^5.2"
+>>>>>>> routing-package
   }
 }
