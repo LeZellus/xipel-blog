@@ -1,10 +1,10 @@
 <?php $this->title = "Accueil"; ?>
 
-<?= $this->session->show('register'); ?>
-<?= $this->session->show('login'); ?>
-<?= $this->session->show('logout'); ?>
-<?= $this->session->show('update_password'); ?>
-<?= $this->session->show('delete_account'); ?>
+<?#= $this->session->show('register'); ?>
+<?#= $this->session->show('login'); ?>
+<?#= $this->session->show('logout'); ?>
+<?#= $this->session->show('update_password'); ?>
+<?#= $this->session->show('delete_account'); ?>
 
 <main class="grid grid-center grid-gap-40 m-h">
     <h1>Xipel, le jeu tout en pixel.</h1>

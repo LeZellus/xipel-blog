@@ -2,72 +2,116 @@
 
 namespace App\config;
 
-use App\src\controller\ErrorController;
-use App\src\controller\FrontController;
-use App\src\controller\BackController;
-use Exception;
+use AltoRouter;
 
 class Router
 {
-  private $frontController;
-  private $errorController;
-  private $backController;
-  private $request;
+  // Attributs ou proprietes
+  /**
+   * Variable du chemin de vue
+   *
+   * @var string
+   */
+  private $viewPath;
+  /**
+   * @var Altorouter
+   */
+  private $router;
 
-  public function __construct()
+  // Methodes
+  /**
+   * constructeur chage d'instancier les objets a l'appel
+   *
+   * @param string $viewPath
+   */
+  public function __construct(string $viewPath)
   {
-    $this->request = new Request();
-    $this->frontController = new FrontController();
-    $this->errorController = new ErrorController();
-    $this->backController = new BackController();
+    $this->router = new \AltoRouter();
+    $this->viewPath = $viewPath;
+  }
+  /**
+   * fonction chargee de definir la route selon le routeur
+   *
+   * @param string $url
+   * @param string $pathTofile
+   * @param string|null $linkName : utile pour (generer) les liens des boutons et autres
+   * @return self
+   */
+  public function get(string $url, string $pathTofile, ?string $linkName = null): self
+  {
+    $this->router->map('GET', $url, $pathTofile, $linkName);
+    return $this; // methode fluent pour autoriser l'enchainement des appels sans devoir redefenir la variable
   }
 
-  public function run()
+  public function post(string $url, string $pathTofile, ?string $linkName = null): self
   {
-    $route = $this->request->getGet()->get('route');
+    $this->router->map('POST', $url, $pathTofile, $linkName);
+    return $this; // methode fluent pour autoriser l'enchainement des appels sans devoir redefenir la variable
+  }
 
-    try {
-      if ($route) {
-        if ($route === 'article') {
-          $this->frontController->article($this->request->getGet()->get('articleId'));
-        } elseif ($route === 'register') {
-          $this->frontController->register($this->request->getPost());
-        } elseif ($route === 'login') {
-          $this->frontController->login($this->request->getPost());
-        } elseif ($route === 'profile') {
-          $this->backController->profile();
-        } elseif ($route === 'updatePassword') {
-          $this->backController->updatePassword($this->request->getPost());
-        } elseif ($route === 'logout') {
-          $this->backController->logout();
-        } elseif ($route === 'administration') {
-          $this->backController->administration($this->request->getGet()->get('userId'));
-        } elseif ($route === 'blog') {
-          $this->frontController->blog();
-        } elseif ($route === 'deleteUser') {
-          $this->backController->deleteUser($this->request->getGet()->get('userId'));
-        } elseif ($route === 'deleteAccount') {
-          $this->backController->deleteAccount();
-        } elseif ($route === 'addComment') {
-          $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
-        } elseif ($route === 'addArticle') {
-          $this->backController->addArticle($this->request->getPost(), $this->request->getFiles()->get('thumb'));
-        } elseif ($route === 'flagComment') {
-          $this->backController->flagComment($this->request->getGet()->get('commentId'));
-        } elseif ($route === 'removeComment') {
-          $this->backController->removeComment($this->request->getGet()->get('commentId'));
-        } elseif ($route === 'editArticle') {
-          $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
-        } elseif ($route === 'removeArticle') {
-          $this->backController->removeArticle($this->request->getGet()->get('articleId'));
-        } else {
-          $this->errorController->errorNotFound();
-        }
+  /**
+   * match methode pour eviter la collision entre les routes en GET et POST
+   * donc methode qui gere deux routes de meme nom mais de methodes differentes
+   * plus besoin de dupliquer les routes en faisant leur partie GET et POST separement
+   *
+   * @param  mixed $url
+   * @param  mixed $pathTofile
+   * @param  mixed $linkName
+   *
+   * @return self
+   */
+  public function match(string $url, string $pathTofile, ?string $linkName = null): self
+  {
+    $this->router->map('GET|POST', $url, $pathTofile, $linkName);
+    return $this; // methode fluent pour autoriser l'enchainement des appels sans devoir redefenir la variable
+  }
+  /**
+   * url : methode pour reecrire a sa facon la fonction native "generate()" de AltoRouter
+   *
+   * @param  mixed $nomRoute
+   * @param  mixed $params
+   *
+   * @return void
+   */
+  public function url(string $nomRoute, array $params = [])
+  {
+    return $this->router->generate($nomRoute, $params);
+  }
+
+  /**
+   * run
+   *
+   * @return self
+   */
+  public function run(): self
+  {
+
+    $match = $this->router->match();
+    if (is_array($match)) { // ou if ($match != false)
+      dd($match);
+      if (is_callable($match['target'])) {
+        call_user_func_array($match['target'], $match['params']);
       } else {
-        $this->frontController->home();
+        // Definir ici les variables a utiliser ou passer via le routeur !
+        $view = $match['target'];
+        $params = $match['params'];
+        $router = $this; // renvoyer l'objet courant plutot que $this->router... on pourra ecrire simplement $router
+        ob_start();
+        include_once $this->viewPath . DIRECTORY_SEPARATOR . $view . '.php';
+        $content_for_layout = ob_get_clean();
       }
-    } catch (Exception $e) {
-      $this->errorController->errorServer();
+      /*
+                 * Si l'URL commence par /admin/ aller charger le template destiné à l'administration
+                 */
+      if (!preg_match("#^(\/admin)\/{0,}(.)*#", $_SERVER['REQUEST_URI'])) {
+        include_once $this->viewPath . 'templates/layouts/default.php';
+      } else {
+        include_once $this->viewPath . 'templates/admin_default.php';
+      }
+    } else { // message d'erreur en cas de piratage de l'URL
+      $errorMsg =  "<strong>OOPS!</strong> Vous tentez d'acc&eacute;der &agrave; une page via une URL erron&eacute;e !";
+      include_once $this->viewPath . 'templates/e404.php';
     }
+    return $this;
   }
-}
+}// fin de la classe
