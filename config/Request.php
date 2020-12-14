@@ -6,14 +6,14 @@ class Request
 {
   private $get;
   private $post;
-  private $session;
+  // private $session;
   private $files;
 
   public function __construct()
   {
     $this->get = new Parameter($_GET);
     $this->post = new Parameter($_POST);
-    $this->session = new Session($_SESSION);
+    // $this->session = new Session($_SESSION);
     $this->files = new Files($_FILES);
   }
 
@@ -33,13 +33,13 @@ class Request
     return $this->post;
   }
 
-  /**
-   * @return Session
-   */
-  public function getSession()
-  {
-    return $this->session;
-  }
+  // /**
+  //  * @return Session
+  //  */
+  // public function getSession()
+  // {
+  //   return $this->session;
+  // }
 
   /**
    * @return Parameter

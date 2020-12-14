@@ -8,8 +8,7 @@ use App\src\model\Article;
 class ArticleDAO extends DAO
 {
     private function buildObject($row)
-    {
-        $article = new Article();
+    {        $article = new Article();
         $article->setId($row['id']);
         $article->setTitle($row['title']);
         $article->setContent($row['content']);
@@ -71,10 +70,10 @@ class ArticleDAO extends DAO
     /**
      * Function to return article by id
      */
-    public function getArticle($articleId)
+    public function getArticle($id)
     {
         $sql = 'SELECT article.id, article.title, article.content, article.chapo, article.createdAt, user.pseudo, article.updatedAt, article.thumb FROM article INNER JOIN user ON article.user_id = user.id WHERE article.id = ?';
-        $result = $this->createQuery($sql, [$articleId]);
+        $result = $this->createQuery($sql, [$id]);
         $article = $result->fetch();
         $result->closeCursor();
         return $this->buildObject($article);

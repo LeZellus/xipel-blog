@@ -1,11 +1,5 @@
 <?php $this->title = "Accueil"; ?>
 
-<?#= $this->session->show('register'); ?>
-<?#= $this->session->show('login'); ?>
-<?#= $this->session->show('logout'); ?>
-<?#= $this->session->show('update_password'); ?>
-<?#= $this->session->show('delete_account'); ?>
-
 <main class="grid grid-center grid-gap-40 m-h">
     <h1>Xipel, le jeu tout en pixel.</h1>
     <div class="grid grid-gap-40">
@@ -21,7 +15,7 @@
         <h2 class="mt-4">Derniers articles :</h2>
         <?php foreach ($articles as $article) { ?>
             <article>
-                <a href="/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>" class="grid card card-article bg-white">
+                <a href="/blog/<?= htmlspecialchars($article->getId()); ?>" class="grid card card-article bg-white">
                     <div class="card-thumb" style="background-image: url('<?= htmlspecialchars(($article->getThumb())) ?>')">
 
                     </div>

@@ -2,6 +2,9 @@
 
 namespace App\src\controller;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 class FrontController extends Controller
 {
 	/**
@@ -10,9 +13,14 @@ class FrontController extends Controller
 	public function home()
 	{
 		$articles = $this->articleDAO->getLastArticles();
-		return $this->view->render('home', [
-			'articles' => $articles
-		]);
+		// return $this->view->render('home', [
+		// 	'articles' => $articles
+		// ]);
+
+		ob_start();
+		include __DIR__ . '/../../templates/home.php';
+
+		return new Response(ob_get_clean());
 	}
 
 	/**
@@ -64,14 +72,15 @@ class FrontController extends Controller
 	/**
 	 * Function to display article by id
 	 */
-	public function article($articleId)
+	public function article(Request $request, int $id)
 	{
-		$article = $this->articleDAO->getArticle($articleId);
-		$comments = $this->commentDAO->getCommentsFromArticle($articleId);
-		return $this->view->render('single', [
-			'article' => $article,
-			'comments' => $comments
-		]);
+		$article = $this->articleDAO->getArticle($id);
+		$comments = $this->commentDAO->getCommentsFromArticle($id);
+		// $this->session->set('edit_article', 'L\'article à été modifié avec succès');
+		ob_start();
+		include __DIR__ . '/../../templates/single.php';
+
+		return new Response(ob_get_clean());
 	}
 
 	/**

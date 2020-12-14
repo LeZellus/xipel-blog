@@ -1,7 +1,5 @@
 <?php $this->title = 'Article'; ?>
 
-<?= $this->session->show('edit_article'); ?>
-
 <main class="grid grid-center grid-gap-40 m-h">
     <h1><?= htmlspecialchars($article->getTitle()); ?></h1>
     <section class="grid grid-gap-40 article bg-white">

@@ -6,12 +6,10 @@
     }
   },
   "require": {
-    "filp/whoops": "^2.9",
+    "symfony/http-foundation": "^5.2",
     "symfony/var-dumper": "^5.2",
-<<<<<<< HEAD
-    "altorouter/altorouter": "^2.0"
-=======
-    "symfony/routing": "^5.2"
->>>>>>> routing-package
+    "filp/whoops": "^2.9",
+    "symfony/routing": "^5.2",
+    "symfony/http-kernel": "^5.2"
   }
 }

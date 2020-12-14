@@ -14,7 +14,7 @@ class View
   public function __construct()
   {
     $this->request = new Request();
-    $this->session = $this->request->getSession();
+    // $this->session = $this->request->getSession();
   }
 
   public function render($template, $data = [])
