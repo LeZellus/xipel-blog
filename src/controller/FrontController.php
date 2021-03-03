@@ -10,7 +10,7 @@ class FrontController extends Controller
 	public function home()
 	{
 		$articles = $this->articleDAO->getLastArticles();
-		return $this->router->run('home', [
+		return $this->view->render('home', [
 			'articles' => $articles
 		]);
 	}
@@ -23,11 +23,17 @@ class FrontController extends Controller
 		if ($post->get('submit')) {
 
 			$errors = $this->validation->validate($post, 'User');
+			$pseudoAlreadyUsed = $this->userDAO->checkDuplicatePseudo($post);
+
+            if($pseudoAlreadyUsed) {
+                $this->session->set('duplicatePseudo', 'Le pseudo est déjà pris');
+                return $this->view->render('register');
+            }
 
 			if (!$errors) {
 				$this->userDAO->register($post);
 				$this->session->set('register', 'Votre inscription a bien été effectuée');
-				header('Location: /index.php');
+                return $this->view->render('index');
 			}
 			return  $this->view->render('register', [
 				'post' => $post,

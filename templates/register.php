@@ -1,4 +1,7 @@
 <?php $this->title = "Inscription"; ?>
+
+<?= $this->session->show('duplicatePseudo'); ?>
+
 <main class="total-flex m-h">
     <h1 class="mb-4">Inscription</h1>
     <section class="grid grid-gap-40 register bg-white">

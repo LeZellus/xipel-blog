@@ -66,6 +66,7 @@ class BackController extends Controller
 
     /**
      * Function to update user password
+     * @param Parameter $post
      */
     public function updatePassword(Parameter $post)
     {
@@ -80,7 +81,7 @@ class BackController extends Controller
                     $this->session->set('update_password', 'Le mot de passe a été mis à jour');
                     header('Location: /index.php?route=profile');
                 }
-                return  $this->view->render('update_password', [
+                return $this->view->render('update_password', [
                     'post' => $post,
                     'errors' => $errors
                 ]);
@@ -111,7 +112,7 @@ class BackController extends Controller
     }
 
     /**
-     * Function to manage logout or delete 
+     * Function to manage logout or delete
      */
     private function logoutOrDelete($param)
     {
