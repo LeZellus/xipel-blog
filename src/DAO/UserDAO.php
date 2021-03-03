@@ -7,7 +7,11 @@ use App\src\model\User;
 
 class UserDAO extends DAO
 {
-    //Function to build user
+    /**
+     * @param $row
+     * @return User
+     * Function to build user
+     */
     private function buildObject($row)
     {
         $user = new User();
@@ -21,7 +25,10 @@ class UserDAO extends DAO
         return $user;
     }
 
-    //Function to getUsers
+    /**
+     * @return array
+     * Function to getUsers
+     */
     public function getUsers()
     {
         $sql = 'SELECT user.id, user.firstName, user.lastName, user.email, user.pseudo, user.createdAt, user.role_id FROM user INNER JOIN role ON user.role_id = role.id ORDER BY user.id DESC';
@@ -35,7 +42,11 @@ class UserDAO extends DAO
         return $users;
     }
 
-    //Function to getUsers
+    /**
+     * @param $userId
+     * @return User
+     * Function to getUsers
+     */
     public function getUser($userId)
     {
         $sql = 'SELECT user.id, user.firstName, user.lastName, user.email, user.pseudo, user.password, user.createdAt, user.role_id FROM user WHERE user.id = ?';
@@ -45,7 +56,10 @@ class UserDAO extends DAO
         return $this->buildObject($user);
     }
 
-    //Register member
+    /**
+     * @param Parameter $post
+     * Register member
+     */
     public function register(Parameter $post)
     {
         $sql = 'INSERT INTO user (pseudo, firstName, lastName,  email, password, createdAt, role_id) VALUES (?, ?, ?, ?, ?, NOW(), ?)';
@@ -59,7 +73,25 @@ class UserDAO extends DAO
         ]);
     }
 
-    //Login request (check pseudo and password)
+    /**
+     * @param Parameter $pseudo
+     * @return array
+     * Check if pseudo already exist (check pseudo)
+     */
+    public function checkDuplicatePseudo(Parameter $post)
+    {
+        $sql = 'SELECT user.id, user.role_id, user.password, role.name FROM user INNER JOIN role ON role.id = user.role_id WHERE pseudo = ?';
+        $data = $this->createQuery($sql, [$post->get('pseudo')]);
+        $result = $data->fetch();
+
+        return $result;
+    }
+
+    /**
+     * @param Parameter $post
+     * @return array
+     * Login request (check pseudo and password)
+     */
     public function login(Parameter $post)
     {
         $sql = 'SELECT user.id, user.role_id, user.password, role.name FROM user INNER JOIN role ON role.id = user.role_id WHERE pseudo = ?';
@@ -72,21 +104,31 @@ class UserDAO extends DAO
         ];
     }
 
-    //Update existing password
+    /**
+     * @param Parameter $post
+     * @param $pseudo
+     * Update existing password
+     */
     public function updatePassword(Parameter $post, $pseudo)
     {
         $sql = 'UPDATE user SET password = ? WHERE pseudo = ?';
         $this->createQuery($sql, [password_hash($post->get('password'), PASSWORD_BCRYPT), $pseudo]);
     }
 
-    //Remove current user
+    /**
+     * @param $pseudo
+     * Remove current user
+     */
     public function deleteAccount($pseudo)
     {
         $sql = 'DELETE FROM user WHERE pseudo = ?';
         $this->createQuery($sql, [$pseudo]);
     }
 
-    //Remove user account
+    /**
+     * @param $userId
+     * Remove user account
+     */
     public function deleteUser($userId)
     {
         $sql = 'DELETE FROM user WHERE id = ?';
