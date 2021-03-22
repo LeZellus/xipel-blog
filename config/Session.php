@@ -26,7 +26,10 @@ class Session
   public function show($name)
   {
     if (isset($_SESSION[$name])) {
-      $key = $this->get($name);
+      $key = "<p class='session'>"
+        . $this->get($name) .
+        "<img src='/icons/cancel.png' class='icon-remove' alt='Icone supprimer'>
+        </p>";
       $this->remove($name);
       return $key;
     }

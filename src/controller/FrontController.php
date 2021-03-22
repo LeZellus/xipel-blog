@@ -58,6 +58,7 @@ class FrontController extends Controller
 				$this->session->set('role', $result['result']['name']);
 				header('Location: /index.php');
 			} else {
+
 				$this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
 				return $this->view->render('login', [
 					'post' => $post
