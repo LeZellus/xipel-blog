@@ -1,6 +1,5 @@
 <?php $this->title = "Accueil"; ?>
 
-<?= $this->session->show('register'); ?>
 <?= $this->session->show('login'); ?>
 <?= $this->session->show('logout'); ?>
 <?= $this->session->show('update_password'); ?>

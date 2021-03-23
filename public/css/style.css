@@ -342,27 +342,6 @@ nav {
   height: 100vh;
   box-sizing: border-box; }
 
-.alert {
-  background: linear-gradient(to bottom left, #ef8d9c 40%, #ffc39e 100%);
-  border-radius: 1rem;
-  color: #fff;
-  padding: 2rem;
-  font-weight: 600;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 2rem;
-  transition: 0.3s;
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px;
-  align-items: center;
-  display: none; }
-  .alert.show {
-    display: flex; }
-  .alert i {
-    padding-left: 2rem; }
-  .alert:hover {
-    cursor: pointer; }
-
 .card {
   width: 100%;
   text-decoration: none;
@@ -543,6 +522,38 @@ thead .tr {
 .tr {
   height: 5.6rem; }
 
+.notification {
+  position: fixed;
+  left: -200rem;
+  bottom: 2rem;
+  padding: 2rem 3rem;
+  border-radius: 1.5rem;
+  font-weight: 400;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  animation: 1s fromLeft forwards;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  z-index: 100000;
+  align-items: center; }
+  .notification:hover {
+    cursor: pointer; }
+  .notification::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    border-left: 1px solid;
+    border-right: 2px solid;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 20px; }
+
+@keyframes fromLeft {
+  100% {
+    left: 2rem; } }
 html {
   font-size: 62.5%; }
 

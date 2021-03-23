@@ -1,5 +1,7 @@
 <?php $this->title = "Connexion"; ?>
 
+<?= $this->session->show('register'); ?>
+
 <main class="total-flex m-h">
     <h1 class="mb-4">Connexion</h1>
     <section class="grid grid-gap-40 login bg-white">

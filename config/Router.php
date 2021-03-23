@@ -42,7 +42,7 @@ class Router
         } elseif ($route === 'logout') {
           $this->backController->logout();
         } elseif ($route === 'administration') {
-          $this->backController->administration($this->request->getGet()->get('userId'));
+          $this->backController->administration();
         } elseif ($route === 'blog') {
           $this->frontController->blog();
         } elseif ($route === 'deleteUser') {
@@ -62,7 +62,7 @@ class Router
         } elseif ($route === 'removeArticle') {
           $this->backController->removeArticle($this->request->getGet()->get('articleId'));
         } elseif ($route === 'contact') {
-          $this->contactController->contact($this->request->getPost());
+          $this->frontController->contact($this->request->getPost());
         } else {
           $this->errorController->errorNotFound();
         }
