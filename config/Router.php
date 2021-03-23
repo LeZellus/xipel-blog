@@ -12,7 +12,6 @@ class Router
   private $frontController;
   private $errorController;
   private $backController;
-  private $contactController;
   private $request;
 
   public function __construct()
