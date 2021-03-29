@@ -33,6 +33,14 @@ section {
     margin: 0 2rem;
   }
 
+  &.contact {
+    padding: 4rem;
+    max-width: 100rem;
+    width: calc(100% - 4rem);
+    border-radius: 2rem;
+    margin: auto;
+  }
+
   &.profil {
     .grid {
       justify-content: center;

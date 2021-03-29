@@ -7,7 +7,6 @@
   },
   "require": {
     "filp/whoops": "^2.9",
-    "symfony/var-dumper": "^5.2",
-    "symfony/routing": "^5.2"
+    "phpmailer/phpmailer": "^6.3"
   }
 }

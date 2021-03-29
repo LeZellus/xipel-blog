@@ -1,6 +1,5 @@
 <?php $this->title = "Accueil"; ?>
 
-<?= $this->session->show('register'); ?>
 <?= $this->session->show('login'); ?>
 <?= $this->session->show('logout'); ?>
 <?= $this->session->show('update_password'); ?>
@@ -18,7 +17,7 @@
     </div>
 
     <section class="grid grid-gap-40 articles">
-        <h2 class="mt-4">Derniers articles :</h2>
+        <h2 class="mt-4">Derniers articles</h2>
         <?php foreach ($articles as $article) { ?>
             <article>
                 <a href="/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>" class="grid card card-article bg-white">
@@ -39,7 +38,7 @@
     </section>
 
     <section class="total-flex curriculum">
-        <h2 class="mt-4">Mon parcours :</h2>
+        <h2 class="mt-4">Mon parcours</h2>
         <article class="card-careers">
             <div class="bg-white card card-career total-flex" id="cv-wrapper">
                 Voir le CV
@@ -48,6 +47,33 @@
                 Télécharger le CV
             </a>
         </article>
+    </section>
+
+    <h2 class="mt-4">Contact</h2>
+    <section class="grid grid-gap-40 contact bg-white">
+        <?= $this->session->show('contact'); ?>
+
+        <form method="post" id="form-login" action="/index.php?route=contact" class="grid grid-gap-20">
+            <div class="form-control grid grid-gap-10">
+                <label for="name" class="form-control-label">Nom, Prénom</label>
+                <input type="text" id="name" name="name" placeholder="Jack Pot">
+                <?= isset($errors['name']) ? $errors['name'] : ''; ?>
+            </div>
+            <div class="form-control grid grid-gap-10">
+                <label for="email" class="form-control-label">Email</label>
+                <input type="email" id="email" name="email" placeholder="jackpot@exemple.fr">
+                <?= isset($errors['email']) ? $errors['email'] : ''; ?>
+            </div>
+            <div class="form-control grid grid-gap-10">
+                <label for="message" class="form-control-label">Message</label>
+                <textarea id="message" name="message" placeholder="Je vous contacte pour ..."></textarea>
+                <?= isset($errors['message']) ? $errors['message'] : ''; ?>
+            </div>
+
+            <div class="form-control">
+                <input type="submit" value="Envoyer" class="button-primary" id="submit" name="submit" form="form-login">
+            </div>
+        </form>
     </section>
 
     <div class="img-cv" id="cv-img">

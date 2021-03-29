@@ -4,7 +4,7 @@ footer {
     display: flex;
   }
 
-  .social{
+  .social {
 
     &-links {
       grid-template-columns: repeat(6, 40px);
@@ -12,7 +12,7 @@ footer {
       height: 4rem;
     }
 
-    &-link{
+    &-link {
       height: 100%;
       width: 100%;
     }

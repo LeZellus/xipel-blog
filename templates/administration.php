@@ -14,7 +14,7 @@
 </section>
 
 <section class="grid grid-gap-40 table-box">
-    <h2 class="mt-4">Articles :</h2>
+    <h2 class="mt-4">Articles</h2>
     <table class="table bg-white">
         <thead>
             <tr class="tr">
@@ -49,21 +49,21 @@
     </table>
 </section>
 
-<?php foreach ($comments as $comment) { ?>
-    <?php if ($comment) { ?>
-        <section class="grid grid-gap-40 table-box">
-            <h2 class="mt-4">Commentaire(s) en attente :</h2>
-            <table class="table bg-white">
-                <thead>
-                    <tr class="tr tr-menu">
-                        <td class="td">Pseudo</td>
-                        <td class="td">Message</td>
-                        <td class="td">Date</td>
-                        <td class="td">Actions</td>
-                    </tr>
-                </thead>
+<?php if ($comments) { ?>
+    <section class="grid grid-gap-40 table-box">
+        <h2 class="mt-4">Commentaire(s) en attente</h2>
+        <table class="table bg-white">
+            <thead>
+                <tr class="tr tr-menu">
+                    <td class="td">Pseudo</td>
+                    <td class="td">Message</td>
+                    <td class="td">Date</td>
+                    <td class="td">Actions</td>
+                </tr>
+            </thead>
 
-                <tbody>
+            <tbody>
+                <?php foreach ($comments as $comment) { ?>
                     <tr class="tr">
                         <td class="td td-title"><?= htmlspecialchars($comment->getPseudo()); ?></td>
                         <td class="td"><?= substr(htmlspecialchars($comment->getContent()), 0, 150); ?></td>
@@ -77,14 +77,14 @@
                             </a>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-        </section>
-    <?php } ?>
+                <?php } ?>
+            </tbody>
+        </table>
+    </section>
 <?php } ?>
 
 <section class="grid grid-gap-40 table-box">
-    <h2 class="mt-4">Utilisateurs :</h2>
+    <h2 class="mt-4">Utilisateurs</h2>
     <table class="table bg-white">
         <thead>
             <tr class="tr tr-menu">

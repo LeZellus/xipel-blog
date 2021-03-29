@@ -1,7 +1,9 @@
 /vendor/
+<<<<<<< HEAD
 /SQL/
+=======
+>>>>>>> 69496bb1b9758f2dce4ed619a9f0e72b634455ed
 /.sass-cache/
 /node_modules/
-/.sass-cache/
-**/.DS_Store
+.DS_Store
 .idea/

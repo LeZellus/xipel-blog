@@ -1,6 +1,7 @@
 <?php $this->title = 'Article'; ?>
 
 <?= $this->session->show('edit_article'); ?>
+<?= $this->session->show('add_comment'); ?>
 
 <main class="grid grid-center grid-gap-40 m-h">
     <h1><?= htmlspecialchars($article->getTitle()); ?></h1>
@@ -22,10 +23,10 @@
     </section>
 
     <section class="grid grid-gap-40 comments bg-white">
-        <h2>Ajouter un commentaire :</h2>
+        <h2>Ajouter un commentaire</h2>
         <?php include 'form_comment.php'; ?>
 
-        <h2>Commentaires :</h2>
+        <h2>Commentaires</h2>
         <?php foreach ($comments as $comment) { ?>
             <?php if (htmlspecialchars($comment->getFlag()) === "1") { ?>
                 <section class="comment grid">
