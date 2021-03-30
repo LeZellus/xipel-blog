@@ -30,7 +30,7 @@ abstract class DAO
             return $this->connection;
         } //On lève une erreur si la connexion échoue
         catch (Exception $errorConnection) {
-            echo('Erreur de connection :' . $errorConnection->getMessage());
+            return ($errorConnection->getMessage());
         }
     }
 
