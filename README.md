@@ -5,11 +5,11 @@ Aucune technologie extérieure à été utilisée.
 ## Installation
 
 Clonez le projet avec cette URL : 
-```
+```bash
 git clone git@github.com:LeZellus/xipel-blog.git
 ```
 Puis lancez composer :
-```
+```bash
 composer install
 ```
 

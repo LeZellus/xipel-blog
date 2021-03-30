@@ -309,21 +309,21 @@ nav {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  transition: .3s; }
+  transition: 0.3s; }
   .nav-burger:hover {
     cursor: pointer; }
   .nav-burger-bar {
-    height: .4rem;
+    height: 0.4rem;
     width: 4rem;
     background-color: #222; }
 
 .clicked {
   justify-content: center;
-  transition: .3s;
+  transition: 0.3s;
   transform: rotate(360deg); }
   .clicked .nav-burger-bar:first-child {
     display: none;
-    transition: .3s; }
+    transition: 0.3s; }
 
 .grid {
   display: grid; }
@@ -502,15 +502,15 @@ tbody .tr:nth-child(odd) {
 .td {
   vertical-align: middle;
   padding: 0 2rem; }
+  .td img {
+    width: 1.6rem;
+    vertical-align: middle;
+    padding-right: 2rem; }
   .td a {
     color: #222;
     text-decoration: none; }
     .td a:last-child img {
       padding: 0; }
-  .td img {
-    width: 1.6rem;
-    vertical-align: middle;
-    padding-right: 2rem; }
   .td-title {
     font-weight: 600;
     max-width: 30rem; }
@@ -663,7 +663,7 @@ h3 {
     top: 0;
     height: 100%;
     left: 100%;
-    transition: .3s;
+    transition: 0.3s;
     width: 100%;
     background-color: #fff;
     flex-direction: column; }

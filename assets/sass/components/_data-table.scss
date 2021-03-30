@@ -13,7 +13,6 @@ thead {
 }
 
 tbody {
-
   .tr {
     &:nth-child(odd) {
       background-color: $clr-table-background-even;
@@ -25,6 +24,12 @@ tbody {
   vertical-align: middle;
   padding: 0 2rem;
 
+  img {
+    width: 1.6rem;
+    vertical-align: middle;
+    padding-right: 2rem;
+  }
+
   a {
     color: $clr-td-color;
     text-decoration: none;
@@ -32,12 +37,6 @@ tbody {
     &:last-child img {
       padding: 0;
     }
-  }
-
-  img {
-    width: 1.6rem;
-    vertical-align: middle;
-    padding-right: 2rem;
   }
 
   &-title {

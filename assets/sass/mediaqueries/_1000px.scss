@@ -11,7 +11,7 @@
         top: 0;
         height: 100%;
         left: 100%;
-        transition: .3s;
+        transition: 0.3s;
         width: 100%;
         background-color: $clr-nav-bg-mobile;
         flex-direction: column;
@@ -54,5 +54,4 @@
   .td-updated {
     display: none;
   }
-
 }
