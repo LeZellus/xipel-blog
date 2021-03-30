@@ -1,11 +1,9 @@
 footer {
-
   .nav {
     display: flex;
   }
 
   .social {
-
     &-links {
       grid-template-columns: repeat(6, 40px);
       justify-content: center;

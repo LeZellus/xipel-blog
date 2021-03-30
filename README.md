@@ -19,6 +19,17 @@ Puis allez dans config -> `dev.php`
 
 Remplacez les valeurs par les votre pour permettre la connexion à la base de données.
 
+## Paramétrage Mails
+
+Rendez-vous dans le fichier ``src/controller/backController.php`` et éditez les valeurs du SMTP pour ajouter le votre afin de faire fonctionner l'envoi des mails.
+```
+$mail->Host       = '';                                     //Set the SMTP server to send through
+$mail->Username   = '';                                     //SMTP username
+$mail->Password   = '';                                     //SMTP password
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+$mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+```
+
 ## Comptes de connexion
 
 ### Admin

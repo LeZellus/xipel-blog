@@ -127,8 +127,6 @@ class FrontController extends Controller
      */
     public function contact($post)
     {
-        $articles = $this->articleDAO->getLastArticles();
-
         if ($post->get('submit')) {
             $mail = new PHPMailer(true);
 
