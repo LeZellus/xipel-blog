@@ -100,7 +100,7 @@
         <?php if ($this->session->get('pseudo')) { ?>
             <?php if ($this->session->get('role') === 'admin') { ?>
                 <li>
-                    <a class="grid social-link total-flex" href="https://www.instagram.com/lepixzel">
+                    <a class="grid social-link total-flex" href="/index.php?route=administration">
                         <img class="icon" src="/icons/cog.svg" alt="Icone engrenage">
                     </a>
                 </li>
