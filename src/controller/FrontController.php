@@ -107,9 +107,10 @@ class FrontController extends Controller
 			$errors = $this->validation->validate($post, 'Comment');
 			if (!$errors) {
 				$this->commentDAO->addComment($post, $articleId);
-				$this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
-				header('Location: /index.php?route=article&articleId=' . $articleId);
+                $this->session->set('add_comment', 'Le commentaire est soumis à validation');
+                header('Location: /index.php?route=article&articleId=' . $articleId);
 			}
+
 			$article = $this->articleDAO->getArticle($articleId);
 			$comments = $this->commentDAO->getCommentsFromArticle($articleId);
 			return $this->view->render('single', [

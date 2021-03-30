@@ -426,7 +426,7 @@ section {
     max-width: 100rem;
     width: calc(100% - 4rem);
     border-radius: 2rem;
-    margin: 0 2rem; }
+    margin: 0 auto; }
   section.contact {
     padding: 4rem;
     max-width: 100rem;

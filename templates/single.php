@@ -6,7 +6,7 @@
 <main class="grid grid-center grid-gap-40 m-h">
     <h1><?= htmlspecialchars($article->getTitle()); ?></h1>
     <section class="grid grid-gap-40 article bg-white">
-        <div class="article-thumb" style="background-image: url('<?= $article->getThumb(); ?>')"></div>
+        <div class="article-thumb" style="background-image: url('uploads/<?= $article->getThumb(); ?>')"></div>
 
         <div class="article-content"><?= $article->getContent(); ?></div>
         <span class="article-created">

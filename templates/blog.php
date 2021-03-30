@@ -8,7 +8,7 @@
         <?php foreach ($articles as $article) { ?>
             <article>
                 <a href="/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>" class="grid card card-article bg-white">
-                    <div class="card-thumb" style="background-image: url('<?= $article->getThumb(); ?>')">
+                    <div class="card-thumb" style="background-image: url('uploads/<?= $article->getThumb(); ?>')">
 
                     </div>
                     <section class="card-content grid grid-gap-20">
