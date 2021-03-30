@@ -33,13 +33,15 @@ $mail->Port       = 587;                                    //TCP port to connec
 ## Comptes de connexion
 
 ### Admin
- - Nom d'utilisateur : Admin
- - Email : admin@exemple.fr
- - Mot de passe : Admin12$
+
+-   Nom d'utilisateur : Admin
+-   Email : admin@exemple.fr
+-   Mot de passe : Admin12$
 
 ### Visiteur
- - Nom d'utilisateur : Visiteur
- - Email : visiteur@exemple.fr
- - Mot de passe : Visiteur12$
+
+-   Nom d'utilisateur : Visiteur
+-   Email : visiteur@exemple.fr
+-   Mot de passe : Visiteur12$
 
 Le site est désormais prêt, vous pouvez naviguer dessus.
