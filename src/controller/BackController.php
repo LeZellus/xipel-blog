@@ -118,9 +118,9 @@ class BackController extends Controller
         $this->session->start();
         if ($param === 'logout') {
             $this->session->set($param, 'À bientôt');
-        } else {
-            $this->session->set($param, 'Votre compte a bien été supprimé');
         }
+        $this->session->set($param, 'Votre compte a bien été supprimé');
+        
         header('Location: /index.php');
     }
 
