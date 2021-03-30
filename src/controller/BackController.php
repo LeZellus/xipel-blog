@@ -169,7 +169,6 @@ class BackController extends Controller
                         //Return error if upload fail
                         $this->session->set('error_upload', 'Un problème est survenu lors du transfert de l\'image');
                         header('Location: /index.php?route=add_article');
-                        exit;
                     }
 
                     $this->session->set('create_article', 'Le nouvel article a bien été ajouté');
