@@ -6,12 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let cvWrapper = document.getElementById("cv-wrapper");
   let cvImg = document.getElementById("cv-img");
 
-  window.onload = function () {
-    menu.addEventListener("click", toggle);
-    cvWrapper.addEventListener("click", popupManage);
-    cvImg.addEventListener("click", popupManage);
-  };
-
   /*******************************************************/
   /**********************TinyCME**************************/
   /*******************************************************/
@@ -41,5 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let toggle = function () {
     navLinks.classList.toggle("show");
     menu.classList.toggle("clicked");
+  };
+
+  window.onload = function () {
+    menu.addEventListener("click", toggle);
+    cvWrapper.addEventListener("click", popupManage);
+    cvImg.addEventListener("click", popupManage);
   };
 });

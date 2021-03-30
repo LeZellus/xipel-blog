@@ -1,7 +1,15 @@
 .table {
   margin: auto;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
+}
+
+thead {
+  .tr {
+    background-color: $clr-thead-background;
+    font-weight: 700;
+    color: $clr-thead-color;
+  }
 }
 
 tbody {
@@ -10,14 +18,6 @@ tbody {
     &:nth-child(odd) {
       background-color: $clr-table-background-even;
     }
-  }
-}
-
-thead {
-  .tr {
-    background-color: $clr-thead-background;
-    font-weight: 700;
-    color: $clr-thead-color;
   }
 }
 

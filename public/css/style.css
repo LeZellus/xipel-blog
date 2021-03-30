@@ -488,16 +488,16 @@ footer .social-link {
 
 .table {
   margin: auto;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden; }
-
-tbody .tr:nth-child(odd) {
-  background-color: #f5f5f5; }
 
 thead .tr {
   background-color: #31e2c2;
   font-weight: 700;
   color: #222; }
+
+tbody .tr:nth-child(odd) {
+  background-color: #f5f5f5; }
 
 .td {
   vertical-align: middle;
