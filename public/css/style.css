@@ -491,6 +491,9 @@ footer .social-link {
   border-radius: 0.5rem;
   overflow: hidden; }
 
+.tr {
+  height: 5.6rem; }
+
 thead .tr {
   background-color: #31e2c2;
   font-weight: 700;
@@ -518,9 +521,6 @@ tbody .tr:nth-child(odd) {
       text-decoration: underline; }
   .td-actions {
     max-width: 11.6rem; }
-
-.tr {
-  height: 5.6rem; }
 
 .notification {
   position: fixed;

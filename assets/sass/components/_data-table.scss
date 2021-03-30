@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+.tr {
+  height: 5.6rem;
+}
+
 thead {
   .tr {
     background-color: $clr-thead-background;
@@ -51,8 +55,4 @@ tbody {
   &-actions {
     max-width: 11.6rem;
   }
-}
-
-.tr {
-  height: 5.6rem;
 }
