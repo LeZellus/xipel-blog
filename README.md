@@ -21,7 +21,7 @@ Remplacez les valeurs par les votre pour permettre la connexion à la base de do
 
 ## Paramétrage Mails
 
-Rendez-vous dans le fichier ``src/controller/backController.php`` et éditez les valeurs du SMTP pour ajouter le votre afin de faire fonctionner l'envoi des mails.
+Rendez-vous dans le fichier ``src/controller/frontController.php`` et éditez les valeurs du SMTP pour ajouter le votre afin de faire fonctionner l'envoi des mails.
 ```php
 $mail->Host       = '';                                     //Set the SMTP server to send through
 $mail->Username   = '';                                     //SMTP username
