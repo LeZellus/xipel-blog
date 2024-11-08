@@ -1,4 +1,4 @@
-# 1er Blog de Matheo Zeller (avex font Pixel Art)
+# 1er Blog de Matheo Zeller (avec font Pixel Art)
 Je suis Mathéo Zeller, un jeune développeur en formation. Retrouvez ici mon blog qui à été développé avec PHP depuis un modèle MVC.
 Aucune technologie extérieure à été utilisée.
 
